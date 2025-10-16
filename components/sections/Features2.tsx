@@ -3,7 +3,8 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 
-const API_BASE = "http://127.0.0.1:8000/voice-agent";
+const API_BASE = "https://mynapi.onrender.com/voice-agent";
+// const API_BASE = "http://127.0.0.1:8000/voice-agent";
 
 export default function Features2(): JSX.Element {
   const [status, setStatus] = useState<
