@@ -1,190 +1,291 @@
+"use client";
+
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 
-export default function Features2() {
+const API_BASE = "http://127.0.0.1:8000/voice-agent";
+
+export default function Features2(): JSX.Element {
+  const [status, setStatus] = useState<
+    "idle" | "connecting" | "listening" | "connected" | "error"
+  >("idle");
+
+  const pcRef = useRef<RTCPeerConnection | null>(null);
+  const dcRef = useRef<RTCDataChannel | null>(null);
+  const remoteAudioRef = useRef<HTMLAudioElement | null>(null);
+  const micStreamRef = useRef<MediaStream | null>(null);
+
+  const start = async (): Promise<void> => {
+    try {
+      setStatus("connecting");
+      micStreamRef.current = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+      const pc = new RTCPeerConnection();
+      pcRef.current = pc;
+      micStreamRef.current.getTracks().forEach((t) => pc.addTrack(t, micStreamRef.current!));
+
+      pc.ontrack = (ev) => {
+        if (remoteAudioRef.current) {
+          remoteAudioRef.current.srcObject = ev.streams[0];
+          remoteAudioRef.current.play().catch(() => {});
+        }
+      };
+
+      const dc = pc.createDataChannel("oai-events");
+      dcRef.current = dc;
+
+      const pendingCalls = new Map<
+        string,
+        { callId: string; name: string; argsText: string }
+      >();
+
+      dc.onmessage = async (e) => {
+        let msg: any;
+        try {
+          msg = JSON.parse(e.data);
+        } catch {
+          console.warn("Non-JSON DC message:", e.data);
+          return;
+        }
+
+        if (msg.type === "response.output_item.added" && msg.item?.type === "function_call") {
+          const responseId: string = msg.response_id;
+          const callId: string = msg.item?.id || msg.item?.call_id || "";
+          const name: string = msg.item?.name;
+          if (!responseId || !callId) return;
+          pendingCalls.set(responseId, { callId, name, argsText: "" });
+        }
+
+        if (msg.type === "response.function_call_arguments.delta") {
+          const responseId: string = msg.response_id;
+          const delta: string = msg.delta || "";
+          const entry = pendingCalls.get(responseId);
+          if (entry) entry.argsText += delta;
+        }
+
+        if (msg.type === "response.done") {
+          const responseId: string = msg.response?.id || msg.response_id || msg.id;
+          const entry = pendingCalls.get(responseId);
+          if (!entry) return;
+
+          let args: Record<string, any> = {};
+          try {
+            args = entry.argsText ? JSON.parse(entry.argsText) : {};
+          } catch {
+            console.warn("Could not parse function args JSON:", entry.argsText);
+          }
+
+          if (entry.name === "search_knowledge") {
+            const query = args.query || "";
+            const top_k = args.top_k || 5;
+            const ragRes = await fetch(`${API_BASE}/search_knowledge`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ query, top_k }),
+            }).then((r) => r.json());
+
+            const context = ragRes?.context_snippet || "No results found.";
+
+            dc.send(
+              JSON.stringify({
+                type: "conversation.item.create",
+                item: { type: "function_call_output", call_id: entry.callId, output: context },
+              })
+            );
+
+            dc.send(
+              JSON.stringify({
+                type: "response.create",
+                response: {
+                  modalities: ["audio", "text"],
+                  instructions: `Answer ONLY using this context:\n${context}\nIf nothing relevant, say "I couldn't find anything about that."`,
+                },
+              })
+            );
+          }
+
+          pendingCalls.delete(responseId);
+        }
+      };
+
+      const offer = await pc.createOffer();
+      await pc.setLocalDescription(offer);
+
+      const sess = await fetch(`${API_BASE}/session`, { method: "POST" }).then((r) => r.json());
+      const token: string = sess?.client_secret?.value || sess?.client_secret || sess?.id;
+      const model = sess?.model || "gpt-4o-realtime-preview-2025-06-03";
+      if (!token) {
+        setStatus("error");
+        return;
+      }
+
+      const answerSDP = await fetch(`https://api.openai.com/v1/realtime?model=${model}`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/sdp" },
+        body: offer.sdp,
+      }).then((r) => r.text());
+
+      await pc.setRemoteDescription({ type: "answer", sdp: answerSDP });
+      setStatus("connected"); // active state; waves will remain visible
+    } catch {
+      setStatus("error");
+      stop();
+    }
+  };
+
+  const stop = (): void => {
+    setStatus("idle");
+    try {
+      dcRef.current?.close();
+      pcRef.current?.getSenders()?.forEach((s) => s.track?.stop());
+      micStreamRef.current?.getTracks()?.forEach((t) => t.stop());
+      pcRef.current?.close();
+    } catch {}
+    dcRef.current = null;
+    pcRef.current = null;
+    micStreamRef.current = null;
+  };
+
+  const toggleVoice = (): void => {
+    if (status === "idle" || status === "error") {
+      // show listening immediately for UX, then switch to connected
+      setStatus("listening");
+      void start();
+    } else {
+      stop();
+    }
+  };
+
   return (
-    <>
-      <section>
-        <div className="container-fluid position-relative bg-primary-light section-padding">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-4 col-md-6 mb-lg-0 mb-8 position-relative z-1">
-                <img
-                  src="/assets/imgs/features-2/icon-1.svg"
-                  alt="my-yoga-network"
-                  className="hover-up"
-                />
-                <h2 className="text-white mt-3 mb-4 fw-medium hover-up">
-                  Wellness Solutions for{" "}
-                  <span className="fw-bold">Startups</span>.
-                </h2>
-                <ul className="list-unstyled phase-items">
-                  <li>
-                    <Link
-                      href="#"
-                      className="phase-item d-flex align-items-center mb-3"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={23}
-                        height={24}
-                        viewBox="0 0 23 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.5 12C22.5 12.96 21.3206 13.7512 21.0844 14.6362C20.8406 15.5512 21.4575 16.8263 20.9944 17.6269C20.5238 18.4406 19.1081 18.5381 18.4481 19.1981C17.7881 19.8581 17.6906 21.2738 16.8769 21.7444C16.0763 22.2075 14.8012 21.5906 13.8862 21.8344C13.0012 22.0706 12.21 23.25 11.25 23.25C10.29 23.25 9.49875 22.0706 8.61375 21.8344C7.69875 21.5906 6.42375 22.2075 5.62313 21.7444C4.80938 21.2738 4.71187 19.8581 4.05188 19.1981C3.39188 18.5381 1.97625 18.4406 1.50563 17.6269C1.0425 16.8263 1.65938 15.5512 1.41563 14.6362C1.17938 13.7512 0 12.96 0 12C0 11.04 1.17938 10.2487 1.41563 9.36375C1.65938 8.44875 1.0425 7.17375 1.50563 6.37313C1.97625 5.55938 3.39188 5.46187 4.05188 4.80188C4.71187 4.14188 4.80938 2.72625 5.62313 2.25563C6.42375 1.7925 7.69875 2.40938 8.61375 2.16563C9.49875 1.92938 10.29 0.75 11.25 0.75C12.21 0.75 13.0012 1.92938 13.8862 2.16563C14.8012 2.40938 16.0763 1.7925 16.8769 2.25563C17.6906 2.72625 17.7881 4.14188 18.4481 4.80188C19.1081 5.46187 20.5238 5.55938 20.9944 6.37313C21.4575 7.17375 20.8406 8.44875 21.0844 9.36375C21.3206 10.2487 22.5 11.04 22.5 12Z"
-                          fill="white"
-                        />
-                        <path
-                          d="M14.5013 8.64754L10.2188 12.93L7.99875 10.7119C7.51688 10.23 6.735 10.23 6.25313 10.7119C5.77125 11.1938 5.77125 11.9757 6.25313 12.4575L9.36751 15.5719C9.83626 16.0407 10.5975 16.0407 11.0663 15.5719L16.245 10.3932C16.7269 9.91129 16.7269 9.12941 16.245 8.64754C15.7631 8.16566 14.9831 8.16566 14.5013 8.64754Z"
-                          fill="#FFB703"
-                        />
-                      </svg>
-                      <p className="text-white mb-0 ms-3">Wellness Boosters</p>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#"
-                      className="phase-item d-flex align-items-center mb-3"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={23}
-                        height={24}
-                        viewBox="0 0 23 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.5 12C22.5 12.96 21.3206 13.7512 21.0844 14.6362C20.8406 15.5512 21.4575 16.8263 20.9944 17.6269C20.5238 18.4406 19.1081 18.5381 18.4481 19.1981C17.7881 19.8581 17.6906 21.2738 16.8769 21.7444C16.0763 22.2075 14.8012 21.5906 13.8862 21.8344C13.0012 22.0706 12.21 23.25 11.25 23.25C10.29 23.25 9.49875 22.0706 8.61375 21.8344C7.69875 21.5906 6.42375 22.2075 5.62313 21.7444C4.80938 21.2738 4.71187 19.8581 4.05188 19.1981C3.39188 18.5381 1.97625 18.4406 1.50563 17.6269C1.0425 16.8263 1.65938 15.5512 1.41563 14.6362C1.17938 13.7512 0 12.96 0 12C0 11.04 1.17938 10.2487 1.41563 9.36375C1.65938 8.44875 1.0425 7.17375 1.50563 6.37313C1.97625 5.55938 3.39188 5.46187 4.05188 4.80188C4.71187 4.14188 4.80938 2.72625 5.62313 2.25563C6.42375 1.7925 7.69875 2.40938 8.61375 2.16563C9.49875 1.92938 10.29 0.75 11.25 0.75C12.21 0.75 13.0012 1.92938 13.8862 2.16563C14.8012 2.40938 16.0763 1.7925 16.8769 2.25563C17.6906 2.72625 17.7881 4.14188 18.4481 4.80188C19.1081 5.46187 20.5238 5.55938 20.9944 6.37313C21.4575 7.17375 20.8406 8.44875 21.0844 9.36375C21.3206 10.2487 22.5 11.04 22.5 12Z"
-                          fill="white"
-                        />
-                        <path
-                          d="M14.5013 8.64754L10.2188 12.93L7.99875 10.7119C7.51688 10.23 6.735 10.23 6.25313 10.7119C5.77125 11.1938 5.77125 11.9757 6.25313 12.4575L9.36751 15.5719C9.83626 16.0407 10.5975 16.0407 11.0663 15.5719L16.245 10.3932C16.7269 9.91129 16.7269 9.12941 16.245 8.64754C15.7631 8.16566 14.9831 8.16566 14.5013 8.64754Z"
-                          fill="#FFB703"
-                        />
-                      </svg>
-                      <p className="text-white mb-0 ms-3">
-                        Launched Wellness Community
-                      </p>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#"
-                      className="phase-item d-flex align-items-center mb-3"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={23}
-                        height={24}
-                        viewBox="0 0 23 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.5 12C22.5 12.96 21.3206 13.7512 21.0844 14.6362C20.8406 15.5512 21.4575 16.8263 20.9944 17.6269C20.5238 18.4406 19.1081 18.5381 18.4481 19.1981C17.7881 19.8581 17.6906 21.2738 16.8769 21.7444C16.0763 22.2075 14.8012 21.5906 13.8862 21.8344C13.0012 22.0706 12.21 23.25 11.25 23.25C10.29 23.25 9.49875 22.0706 8.61375 21.8344C7.69875 21.5906 6.42375 22.2075 5.62313 21.7444C4.80938 21.2738 4.71187 19.8581 4.05188 19.1981C3.39188 18.5381 1.97625 18.4406 1.50563 17.6269C1.0425 16.8263 1.65938 15.5512 1.41563 14.6362C1.17938 13.7512 0 12.96 0 12C0 11.04 1.17938 10.2487 1.41563 9.36375C1.65938 8.44875 1.0425 7.17375 1.50563 6.37313C1.97625 5.55938 3.39188 5.46187 4.05188 4.80188C4.71187 4.14188 4.80938 2.72625 5.62313 2.25563C6.42375 1.7925 7.69875 2.40938 8.61375 2.16563C9.49875 1.92938 10.29 0.75 11.25 0.75C12.21 0.75 13.0012 1.92938 13.8862 2.16563C14.8012 2.40938 16.0763 1.7925 16.8769 2.25563C17.6906 2.72625 17.7881 4.14188 18.4481 4.80188C19.1081 5.46187 20.5238 5.55938 20.9944 6.37313C21.4575 7.17375 20.8406 8.44875 21.0844 9.36375C21.3206 10.2487 22.5 11.04 22.5 12Z"
-                          fill="white"
-                        />
-                        <path
-                          d="M14.5013 8.64754L10.2188 12.93L7.99875 10.7119C7.51688 10.23 6.735 10.23 6.25313 10.7119C5.77125 11.1938 5.77125 11.9757 6.25313 12.4575L9.36751 15.5719C9.83626 16.0407 10.5975 16.0407 11.0663 15.5719L16.245 10.3932C16.7269 9.91129 16.7269 9.12941 16.245 8.64754C15.7631 8.16566 14.9831 8.16566 14.5013 8.64754Z"
-                          fill="#FFB703"
-                        />
-                      </svg>
-                      <p className="text-white mb-0 ms-3">Health Enhancers</p>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#"
-                      className="phase-item d-flex align-items-center mb-3"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={23}
-                        height={24}
-                        viewBox="0 0 23 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.5 12C22.5 12.96 21.3206 13.7512 21.0844 14.6362C20.8406 15.5512 21.4575 16.8263 20.9944 17.6269C20.5238 18.4406 19.1081 18.5381 18.4481 19.1981C17.7881 19.8581 17.6906 21.2738 16.8769 21.7444C16.0763 22.2075 14.8012 21.5906 13.8862 21.8344C13.0012 22.0706 12.21 23.25 11.25 23.25C10.29 23.25 9.49875 22.0706 8.61375 21.8344C7.69875 21.5906 6.42375 22.2075 5.62313 21.7444C4.80938 21.2738 4.71187 19.8581 4.05188 19.1981C3.39188 18.5381 1.97625 18.4406 1.50563 17.6269C1.0425 16.8263 1.65938 15.5512 1.41563 14.6362C1.17938 13.7512 0 12.96 0 12C0 11.04 1.17938 10.2487 1.41563 9.36375C1.65938 8.44875 1.0425 7.17375 1.50563 6.37313C1.97625 5.55938 3.39188 5.46187 4.05188 4.80188C4.71187 4.14188 4.80938 2.72625 5.62313 2.25563C6.42375 1.7925 7.69875 2.40938 8.61375 2.16563C9.49875 1.92938 10.29 0.75 11.25 0.75C12.21 0.75 13.0012 1.92938 13.8862 2.16563C14.8012 2.40938 16.0763 1.7925 16.8769 2.25563C17.6906 2.72625 17.7881 4.14188 18.4481 4.80188C19.1081 5.46187 20.5238 5.55938 20.9944 6.37313C21.4575 7.17375 20.8406 8.44875 21.0844 9.36375C21.3206 10.2487 22.5 11.04 22.5 12Z"
-                          fill="white"
-                        />
-                        <path
-                          d="M14.5013 8.64754L10.2188 12.93L7.99875 10.7119C7.51688 10.23 6.735 10.23 6.25313 10.7119C5.77125 11.1938 5.77125 11.9757 6.25313 12.4575L9.36751 15.5719C9.83626 16.0407 10.5975 16.0407 11.0663 15.5719L16.245 10.3932C16.7269 9.91129 16.7269 9.12941 16.245 8.64754C15.7631 8.16566 14.9831 8.16566 14.5013 8.64754Z"
-                          fill="#FFB703"
-                        />
-                      </svg>
-                      <p className="text-white mb-0 ms-3">
-                        Transformational Wellness
-                      </p>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-lg-4 col-md-6 mb-lg-0 mb-8">
-                <div className="position-relative d-inline-block z-2  hover-up">
-                  <img
-                    className="rounded-3 border border-3 border-white"
-                    src="/assets/imgs/features-2/img-1.png"
-                    alt="infinia"
-                  />
-                  <div className="position-absolute bottom-0 start-0 end-0 mb-3 mx-3 backdrop-filter rounded-3 text-start p-3">
-                    <Link
-                      href="/ #"
-                      className="d-flex align-items-center bg-white-keep d-inline-flex rounded-pill px-2 py-1"
-                    >
-                      <span className="bg-primary fs-9 fw-bold rounded-pill px-2 py-1 text-white">
-                        Get
-                      </span>
-                      <span className="fs-7 fw-medium text-primary mx-2">
-                        Free Wellness Tips
-                      </span>
-                    </Link>
-                    <h6 className="mt-3">
-                      Elevate Your Organization’s <br />
-                      Well-Being
-                    </h6>
-                    <p className="fs-7 text-700">Achieve Your Wellness Goals</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 mb-lg-0 mb-8">
-                <div className="px-lg-8">
-                  <img
-                    src="/assets/imgs/features-2/icon-2.svg"
-                    alt="infinia"
-                    className="hover-up"
-                  />
-                  <div data-aos="fade-zoom-in" data-aos-delay={100}>
-                    <h5 className="text-white mt-3 mb-3">Wellness Experts</h5>
-                    <p className="text-white border-bottom pb-3">
-                      My Yoga Network offers expert guidance and tailored yoga
-                      programs to enhance well-being for organizations.
-                    </p>
-                  </div>
-                  <div data-aos="fade-zoom-in" data-aos-delay={4200}>
-                    <h5 className="text-white mt-8 mb-3">
-                      Wellness Strategies
-                    </h5>
-                    <p className="text-white">
-                     Discover why thousands of organizations trust My Yoga Network to enhance their wellness programs daily.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="position-absolute bg-rotate z-0">
-            <img
-              className="rotate-center"
-              src="/assets/imgs/features-2/bg-img-favicon.png"
-              alt="infinia"
-            />
-          </div>
-          <div className="position-absolute top-0 end-0 z-1 p-8">
-            <div className="bloom" />
-          </div>
+  <section id="voice-agent" className="position-relative overflow-hidden bg-warning text-center py-5">
+  <div className="container-fluid position-relative">
+    <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 position-relative z-2">
+      <h2 className="display-5 fw-bold text-white mb-3">Got questions? Speak with us now.</h2>
+
+      <p className="text-light opacity-75 mb-2 fs-5">
+        Your AI wellness guide — ready to talk, listen, and assist you on your yoga and wellness journey.
+      </p>
+
+    
+      {/* Voice Button + Waves */}
+      <div className="d-flex justify-content-center position-relative overflow-visible">
+        <div className="wave-wrap position-relative">
+          {/* Waves visible during active states */}
+          {status !== "idle" && status !== "error" && (
+            <>
+              <span className="wave ring ring1" />
+              <span className="wave ring ring2" />
+              <span className="wave ring ring3" />
+            </>
+          )}
+
+          <button
+            onClick={toggleVoice}
+            aria-label={status === "idle" ? "Start Talking" : "Stop"}
+            className="btn rounded-circle fw-semibold d-flex align-items-center justify-content-center shadow-lg position-absolute top-50 start-50 translate-middle"
+            style={{
+              width: "160px",
+              height: "160px",
+              backgroundColor: "#ffffff",
+              color: "#000000",
+              fontSize: "1.05rem",
+              zIndex: 3,
+              transition: "transform .25s ease",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.06)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
+            {status === "idle" ? "Start Talking" : "Stop"}
+          </button>
         </div>
-      </section>
-    </>
+      </div>
+
+      <audio ref={remoteAudioRef} autoPlay playsInline />
+    </div>
+
+    {/* Background Decoration */}
+    <div className="position-absolute start-0 bottom-0 z-0 opacity-25">
+      <img
+        src="/assets/imgs/features-2/bg-img-favicon.png"
+        alt="background pattern"
+        className="img-fluid rotate-center"
+        style={{ maxWidth: "400px" }}
+      />
+    </div>
+  </div>
+
+  <style jsx>{`
+    .wave-wrap {
+      width: 400px;
+      height: 400px;
+      overflow: visible;
+      margin-top: 0.5rem; /* slight space under status */
+    }
+
+    .wave {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ring {
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 224, 130, 0.4) 40%,
+        rgba(255, 193, 7, 0.15) 70%,
+        rgba(255, 193, 7, 0) 100%
+      );
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.5),
+        0 0 60px rgba(255, 193, 7, 0.25);
+      animation: ripple 2.8s ease-out infinite;
+      mix-blend-mode: screen;
+    }
+
+    .ring1 {
+      animation-delay: 0s;
+    }
+    .ring2 {
+      animation-delay: 0.9s;
+    }
+    .ring3 {
+      animation-delay: 1.8s;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      70% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+      }
+    }
+
+    .rotate-center {
+      animation: rotate-center 60s linear infinite;
+    }
+
+    @keyframes rotate-center {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  `}</style>
+</section>
+
   );
 }

@@ -19,13 +19,14 @@ export default function Home() {
 			<Layout headerStyle={1} footerStyle={1}>
 				<Hero1 />
 				<LogoCloud1 />
-				<Cta9/>
 				<Features1 />
+				<Cta9/>
+				
 				<Features2 />
 				<Features3 />
 				<Services1 />
 				
-				<Pricing1 />
+				{/* <Pricing1 /> */}
 				<Testimonial1 />
 				<Blog1 />
 				<Newsletter1 />
