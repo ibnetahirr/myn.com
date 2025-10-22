@@ -3,12 +3,14 @@ import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 
+
+
 export default function Features1() {
   const [isOpen, setOpen] = useState(false);
-
+ 
   return (
     <>
-      <section className="features-1 section-padding">
+      <section id="solutions" className="features-1 section-padding">
         <div className="container">
           <div className="row">
             <div className="col-lg-4">

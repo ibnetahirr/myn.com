@@ -158,12 +158,16 @@ export default function Features2(): JSX.Element {
   };
 
   return (
-  <section id="voice-agent" className="position-relative overflow-hidden bg-warning text-center py-5">
+
+    
+
+
+  <section id="voice-agent" className="position-relative overflow-hidden text-center py-5">
   <div className="container-fluid position-relative">
     <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 position-relative z-2">
-      <h2 className="display-5 fw-bold text-white mb-3">Got questions? Speak with us now.</h2>
+      <h2 className="display-5 fw-bold mb-3">Got questions? Speak with us now.</h2>
 
-      <p className="text-light opacity-75 mb-2 fs-5">
+      <p className="opacity-75 mb-2 fs-5">
         Your AI wellness guide — ready to talk, listen, and assist you on your yoga and wellness journey.
       </p>
 
@@ -286,6 +290,13 @@ export default function Features2(): JSX.Element {
       }
     }
   `}</style>
+
+
+   <div className="position-absolute top-0 start-50 translate-middle-x z-0">
+            <img src="/assets/imgs/team-1/bg-line.png" alt="infinia" />
+          </div>
+          <div className="rotate-center ellipse-rotate-success position-absolute z-0" />
+          <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
 </section>
 
   );

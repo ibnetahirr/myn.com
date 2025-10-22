@@ -12,12 +12,12 @@ export default function HowItWork2() {
 							<span className="tag-spacing fs-7 fw-bold text-linear-2 ms-2 text-uppercase">working process</span>
 						</div>
 						<h3 className="ds-3 my-3 fw-black">How It Works</h3>
-						<p className="fs-5 mb-0">Comprehensive Suite of Cutting-Edge IT Services.</p>
+						<p className="fs-5 mb-0">Get yoga when you want, where you want.</p>
 					</div>
 				</div>
-				<div className="position-absolute top-0 start-50 translate-middle-x z-0">
+				{/* <div className="position-absolute top-0 start-50 translate-middle-x z-0">
 					<img src="/assets/imgs/howitwork-2/img-bg-line.png" alt="infinia" />
-				</div>
+				</div> */}
 				<div className="container">
 					<div className="row position-relative justify-content-center">
 						<div className="col-lg-4 text-center px-md-10">
@@ -27,8 +27,8 @@ export default function HowItWork2() {
 										<img src="/assets/imgs/howitwork-2/icon-1.svg" alt="infinia" />
 									</div>
 								</div>
-								<h5 className="my-3">Choose Services</h5>
-								<p className="mb-6">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+								<h5 className="my-3">Consultation</h5>
+								<p className="mb-6">We assess your needs and space to design the perfect program.</p>
 							</div>
 						</div>
 						<div className="col-lg-4 text-center px-md-10">
@@ -38,8 +38,8 @@ export default function HowItWork2() {
 										<img src="/assets/imgs/howitwork-2/icon-2.svg" alt="infinia" />
 									</div>
 								</div>
-								<h5 className="my-3">Project Analysis</h5>
-								<p className="mb-6">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+								<h5 className="my-3">Customized Plan</h5>
+								<p className="mb-6">Choose from flexible session formats—monthly, on-demand events, or luxury wellness retreats.</p>
 							</div>
 						</div>
 						<div className="col-lg-4 text-center px-md-10">
@@ -49,8 +49,8 @@ export default function HowItWork2() {
 										<img src="/assets/imgs/howitwork-2/icon-3.svg" alt="infinia" />
 									</div>
 								</div>
-								<h5 className="my-3">Got Final Result</h5>
-								<p className="mb-6">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+								<h5 className="my-3">Execution & Support</h5>
+								<p className="mb-6">We handle session delivery, feedback, and ongoing program enhancement.</p>
 							</div>
 						</div>
 					</div>
@@ -60,18 +60,13 @@ export default function HowItWork2() {
 					<div className="navigation-arrow-2 d-none d-lg-block position-absolute">
 						<img src="/assets/imgs/howitwork-2/arrow-2.png" alt="infinia" />
 					</div>
-					<div className="row">
-						<div className="text-center mt-6">
-							<p className="text-900 fw-bold"> Need more help? Go to our <Link href="/ #" className="text-primary text-decoration-underline">Support Center</Link></p>
-						</div>
-					</div>
-					<div className="bouncing-blobs-container">
+					{/* <div className="bouncing-blobs-container">
 						<div className="bouncing-blobs-glass" />
 						<div className="bouncing-blobs">
 							<div className="bouncing-blob bouncing-blob--green" />
 							<div className="bouncing-blob bouncing-blob--primary" />
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</section>
 

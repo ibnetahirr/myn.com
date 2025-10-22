@@ -47,13 +47,14 @@ export default function YogaAiPage() {
 
       {/* Chat Section */}
       <section className="section py-10" id="yoga-ai-chat">
-        <div className="container">
+        <h2>Coming Soon!</h2>
+        {/* <div className="container">
           <h2 className="text-center mb-3">🧘 Yoga AI Assistant</h2>
           <p className="text-center mb-10 max-w-2xl mx-auto">
             Chat with your personal Yoga Assistant. Ask about yoga poses, routines, or meditation tips.
           </p>
           <YogaAi />
-        </div>
+        </div> */}
       </section>
     </Layout>
   );

@@ -51,9 +51,7 @@ export default function Header1({
               height={50}
             />
             <span className="ms-2">
-              <strong>My Yoga</strong>
-              <br />
-              <strong>Network</strong>
+              My Yoga Network
             </span>
           </Link>
 
@@ -97,7 +95,7 @@ export default function Header1({
               href="/page-login"
               className="btn btn-gradient d-none d-md-block"
             >
-              Login
+              Dashboard
             </Link>
 
             {/* Mobile Menu Burger */}

@@ -369,9 +369,6 @@ export default function Services1() {
                 </div>
               </div>
             </div>
-            <div className="position-absolute top-50 start-50 translate-middle z-0">
-              <img src="/assets/imgs/service-1/img-bg.png" alt="infinia" />
-            </div>
           </div>
         </div>
       </section>

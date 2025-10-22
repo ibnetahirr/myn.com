@@ -125,70 +125,71 @@ export default function YogaAi() {
   };
 
   return (
-    <div className={styles.mainWrapper}>
-      {/* Sidebar */}
-      <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>
-        <button className={styles.closeSidebar} onClick={() => setSidebarOpen(false)}>
-          ×
-        </button>
-        <h3>Settings</h3>
-        <ul>
-          <li onClick={handleProfile}>Profile</li>
-          <li onClick={handleHistory}>History</li>
-          <li onClick={handleNewChat}>New Chat</li>
-        </ul>
-      </div>
+    <div><h3>Coming soon</h3></div>
+    // <div className={styles.mainWrapper}>
+    //   {/* Sidebar */}
+    //   <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ""}`}>
+    //     <button className={styles.closeSidebar} onClick={() => setSidebarOpen(false)}>
+    //       ×
+    //     </button>
+    //     <h3>Settings</h3>
+    //     <ul>
+    //       <li onClick={handleProfile}>Profile</li>
+    //       <li onClick={handleHistory}>History</li>
+    //       <li onClick={handleNewChat}>New Chat</li>
+    //     </ul>
+    //   </div>
 
-      {/* Chat Container */}
-      <div className={`${styles.chatContainer} ${sidebarOpen ? styles.shifted : ""}`}>
-        <div className={styles.topBar}>
-          <button className={styles.menuBtn} onClick={() => setSidebarOpen(!sidebarOpen)}>
-            ☰
-          </button>
-          Yoga AI Assistant
-        </div>
+    //   {/* Chat Container */}
+    //   <div className={`${styles.chatContainer} ${sidebarOpen ? styles.shifted : ""}`}>
+    //     <div className={styles.topBar}>
+    //       <button className={styles.menuBtn} onClick={() => setSidebarOpen(!sidebarOpen)}>
+    //         ☰
+    //       </button>
+    //       Yoga AI Assistant
+    //     </div>
 
-        {/* Messages */}
-        <div className={styles.messages} ref={messagesRef}>
-          {messages.map((m) => (
-            <div key={m.id} className={m.from === "user" ? styles.msgUser : styles.msgBot}>
-              <div className={styles.msgBubble}>
-                {m.text}
-                <div className={styles.msgTime}>{m.time}</div>
-              </div>
-            </div>
-          ))}
-          {loading && <div className={styles.typing}>Yoga AI is thinking...</div>}
-        </div>
+    //     {/* Messages */}
+    //     <div className={styles.messages} ref={messagesRef}>
+    //       {messages.map((m) => (
+    //         <div key={m.id} className={m.from === "user" ? styles.msgUser : styles.msgBot}>
+    //           <div className={styles.msgBubble}>
+    //             {m.text}
+    //             <div className={styles.msgTime}>{m.time}</div>
+    //           </div>
+    //         </div>
+    //       ))}
+    //       {loading && <div className={styles.typing}>Yoga AI is thinking...</div>}
+    //     </div>
 
-        {/* Quick Replies */}
-        <div className={styles.quickReplies}>
-          {quickReplies.map((q) => (
-            <button key={q} onClick={() => sendMessage(q)} className={styles.quickReplyBtn}>
-              {q}
-            </button>
-          ))}
-        </div>
+    //     {/* Quick Replies */}
+    //     <div className={styles.quickReplies}>
+    //       {quickReplies.map((q) => (
+    //         <button key={q} onClick={() => sendMessage(q)} className={styles.quickReplyBtn}>
+    //           {q}
+    //         </button>
+    //       ))}
+    //     </div>
 
-        {/* Input */}
-        <form className={styles.chatForm} onSubmit={handleSubmit}>
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Ask about yoga poses or routines..."
-            className={styles.input}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            disabled={loading}
-          />
-          <button type="button" className={styles.micBtn} onClick={startListening}>
-            {listening ? "🎙" : "🎤"}
-          </button>
-          <button type="submit" className={styles.sendBtn} disabled={loading || !input.trim()}>
-            ➤
-          </button>
-        </form>
-      </div>
-    </div>
+    //     {/* Input */}
+    //     <form className={styles.chatForm} onSubmit={handleSubmit}>
+    //       <input
+    //         ref={inputRef}
+    //         type="text"
+    //         placeholder="Ask about yoga poses or routines..."
+    //         className={styles.input}
+    //         value={input}
+    //         onChange={(e) => setInput(e.target.value)}
+    //         disabled={loading}
+    //       />
+    //       <button type="button" className={styles.micBtn} onClick={startListening}>
+    //         {listening ? "🎙" : "🎤"}
+    //       </button>
+    //       <button type="submit" className={styles.sendBtn} disabled={loading || !input.trim()}>
+    //         ➤
+    //       </button>
+    //     </form>
+    //   </div>
+    // </div>
   );
 }

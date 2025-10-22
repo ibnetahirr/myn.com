@@ -20,9 +20,9 @@ export default function HowItWork1() {
 						<p className="fs-5 mb-0" data-aos="fade-zoom-in" data-aos-delay={200}>Meet the talented and passionate team members who drive our <br /> company forward every day.</p>
 					</div>
 				</div>
-				<div className="position-absolute top-0 start-50 translate-middle-x z-0">
+				{/* <div className="position-absolute top-0 start-50 translate-middle-x z-0">
 					<img src="/assets/imgs/howitwork-1/img-bg-line.png" alt="infinia" />
-				</div>
+				</div> */}
 				<div className="container position-relative z-1">
 					<div className="position-relative">
 						<div className="position-lg-absolute top-0 start-0 bottom-0 w-lg-50 d-flex flex-column justify-content-between m-lg-10 pb-lg-0 pb-5 z-1">
@@ -33,8 +33,8 @@ export default function HowItWork1() {
 									</div>
 								</div>
 								<div data-aos="fade-zoom-in" data-aos-delay={100}>
-									<h5 className="text-lg-white text-900">01. Choose A Package</h5>
-									<p className="text-lg-white text-900 opacity-75">A business consultant provides expert <br /> advice and guidance to businesses on <br /> various aspects.</p>
+									<h5 className="text-lg-white text-900">01. Consultation </h5>
+									<p className="text-lg-white text-900 opacity-75">We assess your goals, space, and needs.</p>
 								</div>
 							</div>
 							<div className="d-flex feature-item position-relative z-1">
@@ -44,8 +44,8 @@ export default function HowItWork1() {
 									</div>
 								</div>
 								<div data-aos="fade-zoom-in" data-aos-delay={200}>
-									<h5 className="text-lg-white text-900">02. Make Secure Payment</h5>
-									<p className="text-lg-white text-900 opacity-75">A business consultant provides expert <br /> advice and guidance to businesses on <br /> various aspects.</p>
+									<h5 className="text-lg-white text-900">02. Custom Plan</h5>
+									<p className="text-lg-white text-900 opacity-75">Tailored programs that fit your people and budget.</p>
 								</div>
 							</div>
 							<div className="d-flex feature-item">
@@ -55,12 +55,12 @@ export default function HowItWork1() {
 									</div>
 								</div>
 								<div data-aos="fade-zoom-in" data-aos-delay={300}>
-									<h5 className="text-lg-white text-900">03. Get Instant Access</h5>
-									<p className="text-lg-white text-900 opacity-75">A business consultant provides expert <br /> advice and guidance to businesses on <br /> various aspects.</p>
+									<h5 className="text-lg-white text-900">03. Safe Launch & Support</h5>
+									<p className="text-lg-white text-900 opacity-75">Certified instructors, easy scheduling, and measurable outcomes.</p>
 								</div>
 							</div>
-							<div className="dashed-line-1 d-none d-lg-block" />
-							<div className="dashed-line-2 d-none d-lg-block" />
+							{/* <div className="dashed-line-1 d-none d-lg-block" />
+							<div className="dashed-line-2 d-none d-lg-block" /> */}
 						</div>
 						<div className="position-relative d-inline-block">
 							<img className="rounded-3 w-100 img-fluid" src="/assets/imgs/howitwork-1/img-bg.png" alt="infinia" />
@@ -90,8 +90,8 @@ export default function HowItWork1() {
 						</div>
 					</div>
 				</div>
-				<div className="rotate-center ellipse-rotate-success position-absolute z-0" />
-				<div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
+				{/* <div className="rotate-center ellipse-rotate-success position-absolute z-0" />
+				<div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" /> */}
 			</section>
 		</>
 	)

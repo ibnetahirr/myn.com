@@ -11,6 +11,14 @@ import Services1 from "@/components/sections/Services1"
 import Cta9 from "@/components/sections/Cta9"
 
 import Testimonial1 from "@/components/sections/Testimonial1"
+import HowItWork2 from "@/components/sections/HowItWork2"
+import Features7 from "@/components/sections/Features7"
+import Features8 from "@/components/sections/Features8"
+import Features9 from "@/components/sections/Features9"
+import Features10 from "@/components/sections/Features10"
+import Features6 from "@/components/sections/Features6"
+import Features5 from "@/components/sections/Features5"
+import Features4 from "@/components/sections/Features4"
 export default function Home() {
 
 	return (
@@ -20,12 +28,18 @@ export default function Home() {
 				<Hero1 />
 				<LogoCloud1 />
 				<Features1 />
-				<Cta9/>
+				{/* <Cta9/> */}
 				
+				<HowItWork2 />
+
 				<Features2 />
-				<Features3 />
-				<Services1 />
+				{/* <Features3 /> */}
+				{/* <Services1 /> */}
+
+	
 				
+
+
 				{/* <Pricing1 /> */}
 				<Testimonial1 />
 				<Blog1 />
