@@ -39,7 +39,7 @@ export default function HowItWork2() {
 									</div>
 								</div>
 								<h5 className="my-3">Customized Plan</h5>
-								<p className="mb-6">Choose from flexible session formats—monthly, on-demand events, or luxury wellness retreats.</p>
+								<p className="mb-6">Choose from flexible session formats, including monthly programs, on-demand events, or luxury wellness retreats.</p>
 							</div>
 						</div>
 						<div className="col-lg-4 text-center px-md-10">

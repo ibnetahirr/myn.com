@@ -97,25 +97,25 @@ export default function Footer1() {
                       <div className="d-flex flex-column align-items-start">
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-join-instructor"
+                          href="/join-as-yoga-instructor"
                         >
                           Join as an Instructor
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-Find-Yoga-Therapist"
+                          href="/find-a-yoga-therapist-near-me"
                         >
                           Find a Yoga Therapist
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-blog-2"
+                          href="/blog"
                         >
                           Blogs
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-about"
+                          href="/about-our-team-and-vision"
                         >
                           About Us
                         </Link>
@@ -127,32 +127,32 @@ export default function Footer1() {
                       data-aos-delay={300}
                     >
                       <h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">
-                        Programs
+                        Our Expertise
                       </h3>
                       <div className="d-flex flex-column align-items-start">
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-hotel-resort"
+                          href="/yoga-for-hotels-and-resorts"
                         >
-                          Hotels & Wellness
+                           Hotel & Resort Wellness
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-Work-Place"
+                          href="/corporate-wellness-programs"
                         >
-                          Business Wellness
+                          Workplace Yoga
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-health"
+                          href="/yoga-for-healthcare-providers"
                         >
-                          Healthcare Solutions
+                          Healthcare
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-kids-program"
+                          href="/kids-programs"
                         >
-                          Kid's Yoga
+                          Kid's Programs
                         </Link>
                       </div>
                     </div>
@@ -167,27 +167,27 @@ export default function Footer1() {
                       <div className="d-flex flex-column align-items-start">
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="section-faqs"
+                          href="faqs"
                         >
                           Support Center
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-terms-conditions"
+                          href="/terms-of-service"
                         >
                           Terms of Use
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-privacy-policy"
+                          href="/privacy-policy"
                         >
                           Privacy Policy
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="page-contact-1"
+                          href="/contact-us"
                         >
-                          Contact Us
+                          Contact
                         </Link>
                       </div>
                     </div>

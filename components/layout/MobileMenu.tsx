@@ -55,7 +55,7 @@ export default function MobileMenu({
                 <ul className="mobile-menu font-heading ps-0">
                   {/* About */}
                   <li>
-                    <Link href="/page-about">About</Link>
+                    <Link href="/">Home</Link>
                   </li>
 
                   {/* Solutions Dropdown */}
@@ -70,7 +70,7 @@ export default function MobileMenu({
                     >
                       <i className="arrow-small-down"></i>
                     </span>
-                    <Link href="#">Solutions</Link>
+                    <Link href="#">Our Expertise</Link>
                     <ul
                       className="sub-menu"
                       style={{
@@ -78,18 +78,23 @@ export default function MobileMenu({
                       }}
                     >
                       <li>
-                        <Link href="/page-hotel-resort">Hotel & Resort Wellness</Link>
+                        <Link href="/yoga-for-hotels-and-resorts">Hotel & Resort Wellness</Link>
                       </li>
                       <li>
-                        <Link href="/page-Work-Place">Workplace Yoga</Link>
+                        <Link href="/corporate-wellness-programs">Workplace Yoga</Link>
                       </li>
                       <li>
-                        <Link href="/page-health">Healthcare</Link>
+                        <Link href="/yoga-for-healthcare-providers">Healthcare</Link>
                       </li>
                       <li>
-                        <Link href="/page-kids-program">Kid's Program</Link>
+                        <Link href="/kids-programs">Kid's Programs</Link>
                       </li>
                     </ul>
+                  </li>
+
+                  {/* Yoga AI */}
+                  <li>
+                    <Link href="/ai">AI</Link>
                   </li>
 
                   {/* For Therapists Dropdown */}
@@ -104,7 +109,7 @@ export default function MobileMenu({
                     >
                       <i className="arrow-small-down"></i>
                     </span>
-                    <Link href="#">For Therapists</Link>
+                    <Link href="#">Company</Link>
                     <ul
                       className="sub-menu"
                       style={{
@@ -112,13 +117,18 @@ export default function MobileMenu({
                       }}
                     >
                       <li>
-                        <Link href="/page-join-instructor">
-                          Join as an Instructor
+                        <Link href="/about-our-team-and-vision">
+                          About
                         </Link>
                       </li>
                       <li>
-                        <Link href="/page-Find-Yoga-Therapist">
-                          Find a Yoga Therapist
+                        <Link href="/blog">
+                          Blog
+                        </Link>
+                      </li>
+                       <li>
+                        <Link href="https://community.myyoganetwork.org/" target="_blank">
+                          Discourse
                         </Link>
                       </li>
                     </ul>
@@ -126,12 +136,12 @@ export default function MobileMenu({
 
                   {/* Yoga AI */}
                   <li>
-                    <Link href="/page-yoga-ai">Yoga AI</Link>
+                    <Link href="/ai">AI</Link>
                   </li>
 
                   {/* Contact */}
                   <li>
-                    <Link href="/page-contact-1">Contact</Link>
+                    <Link href="contact-us">Contact</Link>
                   </li>
                 </ul>
               </nav>

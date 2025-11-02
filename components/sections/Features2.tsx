@@ -165,13 +165,12 @@ export default function Features2(): JSX.Element {
   <section id="voice-agent" className="position-relative overflow-hidden text-center py-5">
   <div className="container-fluid position-relative">
     <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 position-relative z-2">
+      
       <h2 className="display-5 fw-bold mb-3">Got questions? Speak with us now.</h2>
 
       <p className="opacity-75 mb-2 fs-5">
         Your AI wellness guide — ready to talk, listen, and assist you on your yoga and wellness journey.
-      </p>
-
-    
+      </p>    
       {/* Voice Button + Waves */}
       <div className="d-flex justify-content-center position-relative overflow-visible">
         <div className="wave-wrap position-relative">

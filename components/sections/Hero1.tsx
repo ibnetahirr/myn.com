@@ -32,10 +32,7 @@ export default function Hero1() {
                   data-aos="fade-zoom-in"
                   data-aos-delay={200}
                 >
-                  We empower schools, hotels, corporations, healthcare
-                  providers, and community groups with safe, certified, and
-                  impactful yoga and wellness programs — now enhanced with AI
-                  innovation.
+                 We empower schools, hotels, corporations, healthcare providers, and community groups with safe, certified, and impactful yoga and wellness programs, now enhanced with AI innovation.
                 </p>
 
                 {/* Scroll Button */}
@@ -125,8 +122,8 @@ export default function Hero1() {
                   for your guests, employees, or students.
                 </p>
                 <Link
-                  href="/contact"
-                  className="shadow-sm d-flex align-items-center bg-white d-inline-flex rounded-pill px-2 py-1 mb-3"
+                  href="https://calendly.com/ram-myyoganetwork/up-to-60min"
+                  target="_blank" className="shadow-sm d-flex align-items-center bg-white d-inline-flex rounded-pill px-2 py-1 mb-3"
                 >
                   <span className="bg-primary fs-9 fw-bold rounded-pill px-2 py-1 text-white">
                     Get
@@ -143,14 +140,14 @@ export default function Hero1() {
                   >
                     <path
                       d="M10.3125 5.5625L14.4375 9.5L10.3125 13.4375"
-                      stroke="#FFB703"
+                      stroke="#0d6efd"
                       strokeWidth="1.125"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M14.25 9.5H3.5625"
-                      stroke="#FFB703"
+                      stroke="#0d6efd"
                       strokeWidth="1.125"
                       strokeLinecap="round"
                       strokeLinejoin="round"

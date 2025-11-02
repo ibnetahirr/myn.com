@@ -18,7 +18,7 @@ export default function Features1() {
                 <img src="/assets/imgs/features-1/dots.png" alt="infinia" />
                 <span className="tag-spacing fs-7 fw-bold text-linear-2 ms-2 text-uppercase">
                   {" "}
-                  Wellness Solutions
+                  Our Expertise
                 </span>
               </div>
               <h2 className="fw-medium mt-4 lh-sm">
