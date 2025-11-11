@@ -620,6 +620,10 @@ img {
   background-color: var(--tc-theme-primary) !important;
 }
 
+.bg-secondary {
+  background-color: var(--tc-theme-secondary) !important;
+}
+
 .bg-success {
   background-color: var(--tc-system-success) !important;
 }

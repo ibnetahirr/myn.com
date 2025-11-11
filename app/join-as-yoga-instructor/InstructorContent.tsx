@@ -2,185 +2,102 @@
 import Link from "next/link";
 
 import { useState } from "react";
-import ModalVideo from "react-modal-video";
-import Marquee from "react-fast-marquee";
-import CountUp from "react-countup";
-import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 
 export default function Hero5() {
-  const [isOpen, setOpen] = useState(false);
-  // Accordion
-  const [activeItem, setActiveItem] = useState(1);
-
-  const handleActiveItem = (index: any) => {
-    setActiveItem(index);
-  };
-
   return (
     <>
-    <section className="section-page-header py-10 fix position-relative">
-        <div className="container position-relative z-1">
-          <div className="text-start">
-            <h3>Join Instructor</h3>
-            <div className="d-flex">
-              <Link href="/">
-                <p className="mb-0 text-900">Home</p>
-              </Link>
-              <svg
-                className="mx-3 mt-1"
-                xmlns="http://www.w3.org/2000/svg"
-                width={8}
-                height={13}
-                viewBox="0 0 8 13"
-                fill="none"
-              >
-                <path
-                  className="stroke-dark"
-                  d="M1 1.5L6.5 6.75L1 12"
-                  stroke="#111827"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <p className="text-primary mb-0">Join  Instructor</p>
-            </div>
-          </div>
-        </div>
-        <img
-          className="position-absolute bottom-0 start-0 end-0 top-0 z-0"
-          src="/assets/imgs/page-header/bg-line.png"
-          alt="my-yoga-network"
-        />
-        <div className="bouncing-blobs-container">
-          <div className="bouncing-blobs-glass" />
-          <div className="bouncing-blobs">
-            <div className="position-absolute top-0 start-0 translate-middle-y bouncing-blob--green" />
-            <div className="position-absolute top-0 end-0 bouncing-blob--primary" />
-          </div>
-        </div>
-      </section>
-      {/*Hero 5*/}
-      <div className="section-hero-5 position-relative">
-        <div
-          className="position-relative py-188 img-pull"
-          style={{ backgroundImage: `url(/assets/imgs/hero-5/img-bg-4.png)` }}
-        >
-          <div className="container position-relative z-2">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="backdrop-filter p-8 position-relative rounded-3">
-                  <div className="bg-white bg-opacity-50 border border-primary-soft d-inline-flex rounded-pill px-4 py-1">
-                    <span className="tag-spacing fs-6 text-primary">
-                      🚀 My Yoga Network
-                    </span>
+      <section className="section-feature-5">
+          <div className="container-fluid position-relative section-padding">
+            <div className="container">
+              <div className="row align-items-center">
+                <div className="col-lg-5">
+                  <div className="photo-description position-relative  rounded-4">
+                    <img
+                      className="rounded-4 border border-2 border-white position-relative z-1"
+                      src="/assets/imgs/hotels/page/hotel.webp"
+                      alt="Hotels"
+                    />
+                    <div className="box-gradient-1 ms-lg-8 position-absolute bottom-0 start-0 bg-linear-1 rounded-4 z-0" />
                   </div>
-                  <h3 className="ds-3 my-3">
-                    Teach Yoga on Your Terms, Earn What You Deserve
-                    <span className="fw-regular">
-                      <br />
-                      with
-                      <img
-                        className="alltuchtopdown img-fluid filter-invert"
-                        src="/assets/imgs/hero-5/icon-1.svg"
-                        alt="Yoga icon"
-                      />
-                      Tailored Wellness Programs
-                    </span>
-                  </h3>
-                  <p className="fs-5 text-900">
-                    We connect you with teaching positions for businesses and
-                    individuals, online or in person.
+                </div>
+                <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-5">
+                  <h4 className="ds-4 fw-regular">
+                   Teach Yoga on Your Terms, Earn What You Deserve
+                   </h4>
+                  <p className="fs-5">
+                   With My Yoga Network, we connect you with teaching positions with businesses and individuals, either online or in person.
                   </p>
-                  <div className="d-flex flex-column flex-md-row align-items-center">
-                    <Link href="page-Find-Yoga-Therapist" className="btn btn-gradient rounded-4">
-                      Apply Now
-                      <svg
-                        className="ms-2"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M17.25 15.25V6.75H8.75"
-                          stroke="white"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M17 7L6.75 17.25"
-                          stroke="white"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <div className="position-absolute top-50 start-0 translate-middle d-none d-md-block z-2">
-                    <div className="tag-home-5 rotate-90 backdrop-filter px-6 py-3 rounded-pill d-inline-flex d-flex align-items-center justify-content-center">
-                      <p className="text-900 mb-0 fs-18px fw-bold">
-                        20+ Years of Experience
-                      </p>
+                  <Link
+                    href="https://calendly.com/ram-myyoganetwork/up-to-60min"
+                    target="_blank"
+                    className="btn btn-outline-secondary hover-up bg-transparent mt-5"
+                    data-aos="fade-zoom-in"
+                    data-aos-delay={200}
+                  >
+                    APPLY NOW
+                    <svg
+                      className="ms-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        className="stroke-dark"
+                        d="M17.25 15.25V6.75H8.75"
+                        stroke="#000"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        className="stroke-dark"
+                        d="M17 7L6.75 17.25"
+                        stroke="#000"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+              <div className="py-90"></div>
+              <div className="row align-items-start pb-5 pt-lg-5 pt-0">
+                <div className="col-lg-5 order-2 order-lg-1 mt-lg-0 mt-10 pt-lg-0 pt-5">
+                  <h4 className="ds-4 fw-regular">
+                    Elevate Your Yoga Career
+                  </h4>
+                  <p className="fs-5">
+                    Are you a passionate yoga teacher looking to expand your reach and work with high-end wellness destinations, corporate clients, and healing centers? At My Yoga Network, we connect certified yoga professionals like you with exciting teaching opportunities at hotels, resorts, wellness retreats, corporates, and healthcare organizations around the world.
+
+Whether you dream of guiding sunrise sessions by the beach, leading stress-relief classes in boardrooms, or supporting patients through therapeutic yoga, we’re here to help you make it happen.
+                  </p>
+                </div>
+                <div className="col-lg-6 offset-lg-1 order-1 order-lg-2 mt-5 text-lg-end text-center">
+                  <div className="photo-description position-relative rounded-4 d-inline-block">
+                    <img
+                      className="rounded-4 border border-2 border-white position-relative z-1"
+                      src="/assets/imgs/hotels/page/hotel-right.webp"
+                      alt="stand out"
+                    />
+                    <div className="position-absolute top-50 start-50 translate-middle z-0">
+                      <div className="box-gradient-2 position-relative bg-linear-1 rounded-4 z-0"></div>
                     </div>
+                    <img
+                      className="position-absolute top-100 start-0 d-none d-md-block translate-middle rounded-4 border border-2 border-white position-relative z-1"
+                      src="/assets/imgs/features-5/img-3.png"
+                      alt="infinia"
+                      data-aos="zoom-in"
+                      data-aos-delay={100}
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="position-absolute top-0 start-0 z-0">
-            <img
-              src="/assets/imgs/hero-5/img-bg-line.png"
-              alt="Decorative line"
-            />
-          </div>
-        </div>
-      </div>
-
-      <ModalVideo
-        channel="youtube"
-        isOpen={isOpen}
-        videoId="Xq2Xj_8tL1o"
-        onClose={() => setOpen(false)}
-      />
-      {/*Cta-6*/}
-      <section className="section-cta-6 position-relative section-padding fix">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 pe-lg-0">
-              <div className="zoom-img rounded-end-lg-0 rounded-4">
-                <img
-                  className="rounded-end-lg-0 rounded-4"
-                  src="/assets/imgs/cta-9/img-1.png"
-                  alt="infinia"
-                />
-              </div>
-            </div>
-            <div className="col-12 col-lg-6 ps-lg-0 align-self-stretch">
-              <div className="bg-white p-md-8 p-5 rounded-start-lg-0 h-100 rounded-4 mt-lg-0 mt-5 border border-start-lg-0 shadow-1">
-                <h1 className="fs-1">Elevate Your Yoga Career</h1>
-                <p className="mb-9">
-                  Are you a passionate yoga teacher looking to expand your reach
-                  and work with high-end wellness destinations, corporate
-                  clients, and healing centers? At My Yoga Network, we connect
-                  certified yoga professionals like you with exciting teaching
-                  opportunities at hotels, resorts, wellness retreats,
-                  corporates, and healthcare organizations around the world.
-                  <br />
-                  <br />
-                  Whether you dream of guiding sunrise sessions by the beach,
-                  leading stress-relief classes in boardrooms, or supporting
-                  patients through therapeutic yoga, we’re here to help you make
-                  it happen.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
       {/*How It Work 2*/}
       <section className="howitwork-2 section-padding position-relative fix">

@@ -11,8 +11,6 @@ export default function Footer1() {
                 {/* Logo + Name + Description */}
                 <div
                   className="col-lg-4 pe-10"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={100}
                 >
                   <Link
                     href="/"
@@ -43,6 +41,7 @@ export default function Footer1() {
                         href="https://www.facebook.com/myyoganetwork/"
                         className="text-white border border-end-0 border-light border-opacity-10 icon-shape icon-md"
                         aria-label="Facebook"
+                        target="_blank"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +60,7 @@ export default function Footer1() {
                         href="https://www.instagram.com/myyoganetwork/?hl=en"
                         className="text-white border border-end-0 border-light border-opacity-10 icon-shape icon-md"
                         aria-label="Instagram"
+                        target="_blank"
                       >
                         <i className="bi bi-instagram" />
                       </Link>
@@ -69,6 +69,7 @@ export default function Footer1() {
                         href="https://www.linkedin.com/company/my-yoga-network/"
                         className="text-white border border-light border-opacity-10 icon-shape icon-md"
                         aria-label="LinkedIn"
+                        target="_blank"
                       >
                         <i className="bi bi-linkedin" />
                       </Link>
@@ -76,6 +77,7 @@ export default function Footer1() {
                         href="https://www.youtube.com/@MyYogaNetwork"
                         className="text-white border border-start-0 border-light border-opacity-10 icon-shape icon-md"
                         aria-label="YouTube"
+                        target="_blank"
                       >
                         <i className="bi bi-youtube" />
                       </Link>
@@ -87,9 +89,7 @@ export default function Footer1() {
                 <div className="col-lg-8">
                   <div className="row">
                     <div
-                      className="col-lg-3 col-md-4 col-6"
-                      data-aos="fade-zoom-in"
-                      data-aos-delay={200}
+                      className="col-lg-4 col-md-4 col-6"
                     >
                       <h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">
                         Company
@@ -109,7 +109,7 @@ export default function Footer1() {
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
-                          href="/blog"
+                          href="/blogs"
                         >
                           Blogs
                         </Link>
@@ -122,12 +122,10 @@ export default function Footer1() {
                       </div>
                     </div>
                     <div
-                      className="col-lg-3 col-md-4 col-6"
-                      data-aos="fade-zoom-in"
-                      data-aos-delay={300}
+                      className="col-lg-4 col-md-4 col-6"
                     >
                       <h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">
-                        Our Expertise
+                        Services
                       </h3>
                       <div className="d-flex flex-column align-items-start">
                         <Link
@@ -157,9 +155,7 @@ export default function Footer1() {
                       </div>
                     </div>
                     <div
-                      className="col-lg-3 col-md-4 col-6"
-                      data-aos="fade-zoom-in"
-                      data-aos-delay={400}
+                      className="col-lg-4 col-md-4 col-6"
                     >
                       <h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">
                         Support
@@ -169,7 +165,7 @@ export default function Footer1() {
                           className="hover-effect text-white mb-2 fw-medium fs-6"
                           href="faqs"
                         >
-                          Support Center
+                          Frequently Asked Questions
                         </Link>
                         <Link
                           className="hover-effect text-white mb-2 fw-medium fs-6"
@@ -191,11 +187,8 @@ export default function Footer1() {
                         </Link>
                       </div>
                     </div>
-                    <div
-                      className="col-lg-3 col-md-4 col-6"
-                      data-aos="fade-zoom-in"
-                      data-aos-delay={500}
-                    >
+                    {/* <div
+                      className="col-lg-3 col-md-4 col-6">
                       <h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">
                         Resources
                       </h3>
@@ -220,7 +213,7 @@ export default function Footer1() {
                           Security
                         </Link>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

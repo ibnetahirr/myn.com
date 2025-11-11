@@ -9,21 +9,10 @@ export default function Features3() {
         <section className="section-padding">
           <div className="container">
             <div className="text-center">
-               <div className="d-flex align-items-center bg-primary-soft border border-2 border-white d-inline-flex rounded-pill px-3 py-1">
-                <img src="/assets/imgs/features-1/dots.png" alt="infinia" />
-                <span className="tag-spacing fs-7 fw-bold text-linear-2 ms-2 text-uppercase">
-                  {" "}
-                  Our Edge in Wellness
-                </span>
-              </div>
-              <h6
-                className="ds-6 my-3"
-                data-aos="fade-zoom-in"
-                data-aos-delay={300}
-              >
+              <h3 className="ds-5 my-3 fw-black">
                 Why Choose My Yoga Network?
-              </h6>
-              <p data-aos="fade-zoom-in" data-aos-delay={100}>
+              </h3>
+              <p className="fs-5 mb-0">
                 Partner with My Yoga Network and benefit from our team of
                 instructors and decades of experience.
               </p>
@@ -32,16 +21,15 @@ export default function Features3() {
               <div className="col-lg-4">
                 <div
                   className="p-2 mt-lg-8 rounded-4 shadow-1 bg-white position-relative z-1 hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={100}
                 >
-                  <div className="card-service bg-white p-6 border rounded-4">
+                  <div className="card-service bg-white p-6 border rounded-4 text-center">
                     <img
-                      src="/assets/imgs/service-1/icon-1.png"
-                      alt="infinia"
+                      src="/assets/imgs/why/1.png"
+                      alt="Industry-Specific Programs"
+                      height={70}
                     />
                     <h6 className="my-3">Industry-Specific Programs</h6>
-                    <p className="mb-6">
+                    <p className="mb-4">
                       Designed for hotels, corporates, schools & healthcare
                       providers.
                     </p>
@@ -51,18 +39,17 @@ export default function Features3() {
               <div className="col-lg-4">
                 <div
                   className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={300}
                 >
-                  <div className="card-service bg-white p-6 border rounded-3">
+                  <div className="card-service bg-white p-6 border rounded-3 text-center">
                     <img
-                      src="/assets/imgs/service-1/icon-2.png"
-                      alt="infinia"
+                      src="/assets/imgs/why/2.png"
+                      alt="Certified & Vetted Yoga Instructors"
+                      height={70}
                     />
                     <h6 className="my-3">
                       Certified & Vetted Yoga Instructors
                     </h6>
-                    <p className="mb-6">
+                    <p className="mb-4">
                       Get reliable, professional, insured yoga instructors.
                     </p>
                   </div>
@@ -71,24 +58,20 @@ export default function Features3() {
               <div className="col-lg-4">
                 <div
                   className="p-2 mt-lg-8 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={200}
                 >
-                  <div className="card-service bg-white p-6 border rounded-3">
+                  <div className="card-service bg-white p-6 border rounded-3 text-center">
                     <img
-                      src="/assets/imgs/service-1/icon-3.png"
-                      alt="infinia"
+                      src="/assets/imgs/why/3.png"
+                      alt="Flexible Offerings"
+                      height={70}
                     />
                     <h6 className="my-3">Flexible Offerings</h6>
-                    <p className="mb-6">
+                    <p className="mb-4">
                       Monthly sessions, on-demand events, luxury retreats, or
                       trial plans.
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className="position-absolute top-50 start-50 translate-middle z-0">
-                <img src="/assets/imgs/service-1/img-bg.png" alt="infinia" />
               </div>
             </div>
           </div>

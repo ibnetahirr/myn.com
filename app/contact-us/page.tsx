@@ -14,17 +14,8 @@ export default function ContactPage() {
       {/* Contact 6 */}
       <section className="section-contact-6 section-padding fix">
         <div className="container">
+          
           <div className="text-center">
-            <div
-              className="d-flex align-items-center justify-content-center bg-primary-soft border border-2 border-white d-inline-flex rounded-pill px-4 py-2"
-              data-aos="zoom-in"
-              data-aos-delay={100}
-            >
-              <img src="/assets/imgs/features-1/dots.png" alt="infinia" />
-              <span className="tag-spacing fs-7 fw-bold text-linear-2 ms-2 text-uppercase">
-                Get in Touch
-              </span>
-            </div>
             <h3 className="ds-3 mt-3 mb-3">Contact Our Team</h3>
             <p className="fs-5">
              Share your details and questions below, and we'll get back to you.
@@ -85,17 +76,6 @@ export default function ContactPage() {
                       </Link>
                     </div>
 
-                    <h6 className="mt-5">Our Office</h6>
-                    <p className="text-500">Visit us and meet our team</p>
-                    <div className="d-flex mb-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20" fill="none">
-                        <path d="M6.13295 3.37527L5.96687 3.54135C4.16028 5.34793 3.95437 8.207 5.48339 10.2538L9.42647 15.3913C9.67756 15.7185 10.1711 15.7171 10.4203 15.3885L14.3248 10.2397C15.8617 8.1851 15.6557 5.31345 13.8414 3.49914L13.7176 3.37527C11.6231 1.28083 8.22739 1.28084 6.13295 3.37527Z" stroke="#6B7280" strokeWidth="1.04167" />
-                        <path d="M9.89583 9.27067C11.0464 9.27067 11.9792 8.33793 11.9792 7.18734C11.9792 6.03674 11.0464 5.104 9.89583 5.104C8.74524 5.104 7.8125 6.03674 7.8125 7.18734C7.8125 8.33793 8.74524 9.27067 9.89583 9.27067Z" stroke="#6B7280" strokeWidth="1.04167" />
-                      </svg>
-                      <Link className="ms-2 text-decoration-underline text-900 fs-7" href="#">
-                       1250 N Bellflower Blvd, Long Beach, CA 90840, United States
-                      </Link>
-                    </div>
                   </div>
                 </div>
                 {/* /RIGHT */}

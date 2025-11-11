@@ -31,7 +31,7 @@ export default function Menu() {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Our Expertise
+              Services
             </Link>
             <div className="dropdown-menu position-absolute start-0 mt-2">
               <ul className="list-unstyled m-0">
@@ -62,23 +62,23 @@ export default function Menu() {
                 <li>
                   <Link
                     className="dropdown-item position-relative z-1"
-                    href="/kids-programs"
+                    href="/after-school-program"
                   >
-                    Kid's Programs
+                    Schools/Kids Yoga
                   </Link>
                 </li>
               </ul>
             </div>
           </li>
        
-          <li className="nav-item ">
+          {/* <li className="nav-item ">
             <Link
               className="nav-link fw-bold d-flex align-items-center"
               href="/ai"
             >
               AI
             </Link>
-          </li>
+          </li> */}
 
              <li className="nav-item dropdown menu-item-has-children">
             <Link
@@ -103,7 +103,7 @@ export default function Menu() {
                 <li>
                   <Link
                     className="dropdown-item position-relative z-1"
-                    href="/blog"
+                    href="/blogs"
                   >
                     Blog
                   </Link>

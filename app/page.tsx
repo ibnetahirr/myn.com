@@ -17,18 +17,12 @@ export default function Home() {
 				<Hero1 />
 				<LogoCloud1 />
 				<Features1 />
-				{/* <Cta9/> */}
-				
 				<HowItWork2 />
-
 				<Features2 />
 				<Features3 />
-				{/* <Services1 /> */}
-				{/* <Pricing1 /> */}
-				<Testimonial1 />
+				{/* <Testimonial1 /> */}
 				<Blog1 />
 				<Newsletter1 />
-
 			</Layout>
 		</>
 	)

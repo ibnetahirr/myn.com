@@ -3,8 +3,7 @@ import Link from "next/link";
 import Layout from "@/components/layout/Layout";
 import { useState } from "react";
 import CountUp from "react-countup";
-export default function Hero5() {
-  const [isOpen, setOpen] = useState(false);
+export default function HotelPage() {
   // Accordion
   const [activeItem, setActiveItem] = useState(1);
 
@@ -33,13 +32,7 @@ export default function Hero5() {
                 <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-5">
                   <h4 className="ds-4 fw-regular">
                     On-Site Yoga & Wellness Programs for{" "}
-                    <span
-                      className="fw-bold"
-                      data-aos="fade-zoom-in"
-                      data-aos-delay={200}
-                    >
-                      Hotels & Resorts.
-                    </span>
+                    <span className="fw-bold">Hotels & Resorts.</span>
                   </h4>
                   <p className="fs-5">
                     Seamlessly integrate professional yoga sessions to enhance
@@ -49,8 +42,6 @@ export default function Hero5() {
                     href="https://calendly.com/ram-myyoganetwork/up-to-60min"
                     target="_blank"
                     className="btn btn-outline-secondary hover-up bg-transparent mt-5"
-                    data-aos="fade-zoom-in"
-                    data-aos-delay={200}
                   >
                     BOOK A CONSULTATION
                     <svg
@@ -87,11 +78,7 @@ export default function Hero5() {
                   <h4 className="ds-4 fw-regular">
                     Make Your Hotel
                     <br />{" "}
-                    <span
-                      className="fw-bold"
-                      data-aos="fade-zoom-in"
-                      data-aos-delay={200}
-                    >
+                    <span className="fw-bold">
                       Stand Out <br />
                     </span>
                     with a Tailored Yoga & Wellness Program
@@ -109,7 +96,7 @@ export default function Hero5() {
                     <img
                       className="rounded-4 border border-2 border-white position-relative z-1"
                       src="/assets/imgs/hotels/page/hotel-right.webp"
-                      alt="stand out"
+                      alt="Make your hotel stand out"
                     />
                     <div className="position-absolute top-50 start-50 translate-middle z-0">
                       <div className="box-gradient-2 position-relative bg-linear-1 rounded-4 z-0"></div>
@@ -117,9 +104,7 @@ export default function Hero5() {
                     <img
                       className="position-absolute top-100 start-0 d-none d-md-block translate-middle rounded-4 border border-2 border-white position-relative z-1"
                       src="/assets/imgs/features-5/img-3.png"
-                      alt="infinia"
-                      data-aos="zoom-in"
-                      data-aos-delay={100}
+                      alt="Make your resort stand out"
                     />
                   </div>
                 </div>
@@ -227,383 +212,80 @@ export default function Hero5() {
 
         {/*Hotel Services */}
         <section className="section-padding">
-          <div className="container">
-            <div className="text-center">
-              <h3
-                className="ds-3 my-3"
-                data-aos="fade-zoom-in"
-                data-aos-delay={300}
-              >
-               Our Services
-              </h3>
-              <p data-aos="fade-zoom-in" data-aos-delay={100}>
-                Unleash the Power of Wellness with Our Customized Yoga Solutions
+          <div className="container position-relative z-1">
+            <div className="text-center mb-8">
+              <h3 className="ds-5 my-3 fw-black"> Our Services</h3>
+              <p className="fs-5 mb-0">
+                Tailored Yoga & Wellness Programs Designed for Hotel Guests.
               </p>
             </div>
+          </div>
+          <div className="container">
             <div className="row mt-6 position-relative">
               <div className="col-lg-4">
-                <div
-                  className="p-2 mt-lg-8 rounded-4 shadow-1 bg-white position-relative z-1 hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={100}
-                >
+                <div className="p-2 mt-lg-8 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                   <div className="card-service bg-white p-6 border rounded-4">
-                    <img
-                      src="/assets/imgs/service-1/icon-1.svg"
-                      alt="infinia"
-                    />
                     <h6 className="my-3">Monthly Program</h6>
                     <p className="mb-6">
                       Consistent monthly yoga and mindfulness sessions,
                       customized for your group, fostering balance, growth, and
                       sustained well-being.
                     </p>
-
-                    <Link
-                      href="#"
-                      className="rounded-pill border icon-shape d-inline-flex gap-3 icon-learn-more"
-                    >
-                      <svg
-                        className="plus"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={16}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_226_5470)">
-                          <path
-                            className="fill-dark"
-                            d="M15.375 7.375H8.625V0.625C8.625 0.279813 8.34519 0 8 0C7.65481 0 7.375 0.279813 7.375 0.625V7.375H0.625C0.279813 7.375 0 7.65481 0 8C0 8.34519 0.279813 8.625 0.625 8.625H7.375V15.375C7.375 15.7202 7.65481 16 8 16C8.34519 16 8.625 15.7202 8.625 15.375V8.625H15.375C15.7202 8.625 16 8.34519 16 8C16 7.65481 15.7202 7.375 15.375 7.375Z"
-                            fill="#111827"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath>
-                            <rect width={16} height={16} fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <svg
-                        className="arrow"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={18}
-                        height={10}
-                        viewBox="0 0 18 10"
-                        fill="none"
-                      >
-                        <path
-                          className="fill-dark"
-                          d="M13.0633 0.0634766L12.2615 0.86529L15.8294 4.43321H0V5.56716H15.8294L12.2615 9.13505L13.0633 9.93686L18 5.00015L13.0633 0.0634766Z"
-                          fill="#111827"
-                        />
-                      </svg>
-                      <span className="fw-bold fs-7 text-900">Learm More</span>
-                    </Link>
                   </div>
                 </div>
-                <div
-                  className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={200}
-                >
+                <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                   <div className="card-service bg-white p-6 border rounded-3">
-                    <img
-                      src="/assets/imgs/service-1/icon-2.svg"
-                      alt="infinia"
-                    />
                     <h6 className="my-3">On-Demand Special Events</h6>
                     <p className="mb-6">
                       Enhance any occasion with wellness retreats, corporate
                       sessions, and themed yoga workshops that inspire,
                       rejuvenate, and unite communities.
                     </p>
-                    <Link
-                      href="#"
-                      className="rounded-pill border icon-shape d-inline-flex gap-3 icon-learn-more"
-                    >
-                      <svg
-                        className="plus"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={16}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_226_5470)">
-                          <path
-                            className="fill-dark"
-                            d="M15.375 7.375H8.625V0.625C8.625 0.279813 8.34519 0 8 0C7.65481 0 7.375 0.279813 7.375 0.625V7.375H0.625C0.279813 7.375 0 7.65481 0 8C0 8.34519 0.279813 8.625 0.625 8.625H7.375V15.375C7.375 15.7202 7.65481 16 8 16C8.34519 16 8.625 15.7202 8.625 15.375V8.625H15.375C15.7202 8.625 16 8.34519 16 8C16 7.65481 15.7202 7.375 15.375 7.375Z"
-                            fill="#111827"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath>
-                            <rect width={16} height={16} fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <svg
-                        className="arrow"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={18}
-                        height={10}
-                        viewBox="0 0 18 10"
-                        fill="none"
-                      >
-                        <path
-                          className="fill-dark"
-                          d="M13.0633 0.0634766L12.2615 0.86529L15.8294 4.43321H0V5.56716H15.8294L12.2615 9.13505L13.0633 9.93686L18 5.00015L13.0633 0.0634766Z"
-                          fill="#111827"
-                        />
-                      </svg>
-                      <span className="fw-bold fs-7 text-900">Learm More</span>
-                    </Link>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4">
-                <div
-                  className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={300}
-                >
+                <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                   <div className="card-service bg-white p-6 border rounded-3">
-                    <img
-                      src="/assets/imgs/service-1/icon-3.svg"
-                      alt="infinia"
-                    />
                     <h6 className="my-3">Luxury Wellness Offerings</h6>
                     <p className="mb-6">
                       Exclusive one-on-one yoga training to complement spa and
                       concierge services, delivering a premium, tailored
                       wellness experience for guests.
                     </p>
-                    <Link
-                      href="#"
-                      className="rounded-pill border icon-shape d-inline-flex gap-3 icon-learn-more"
-                    >
-                      <svg
-                        className="plus"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={16}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_226_5470)">
-                          <path
-                            className="fill-dark"
-                            d="M15.375 7.375H8.625V0.625C8.625 0.279813 8.34519 0 8 0C7.65481 0 7.375 0.279813 7.375 0.625V7.375H0.625C0.279813 7.375 0 7.65481 0 8C0 8.34519 0.279813 8.625 0.625 8.625H7.375V15.375C7.375 15.7202 7.65481 16 8 16C8.34519 16 8.625 15.7202 8.625 15.375V8.625H15.375C15.7202 8.625 16 8.34519 16 8C16 7.65481 15.7202 7.375 15.375 7.375Z"
-                            fill="#111827"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath>
-                            <rect width={16} height={16} fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <svg
-                        className="arrow"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={18}
-                        height={10}
-                        viewBox="0 0 18 10"
-                        fill="none"
-                      >
-                        <path
-                          className="fill-dark"
-                          d="M13.0633 0.0634766L12.2615 0.86529L15.8294 4.43321H0V5.56716H15.8294L12.2615 9.13505L13.0633 9.93686L18 5.00015L13.0633 0.0634766Z"
-                          fill="#111827"
-                        />
-                      </svg>
-                      <span className="fw-bold fs-7 text-900">Learm More</span>
-                    </Link>
                   </div>
                 </div>
-                <div
-                  className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={100}
-                >
+                <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                   <div className="card-service bg-white p-6 border rounded-3">
-                    <img
-                      src="/assets/imgs/service-1/icon-4.svg"
-                      alt="infinia"
-                    />
                     <h6 className="my-3">Corporate Retreat Program</h6>
                     <p className="mb-6">
                       Half- or full-day retreats tailored to boost team
                       building, reduce stress, and promote workplace harmony.
                     </p>
-
-                    <Link
-                      href="#"
-                      className="rounded-pill border icon-shape d-inline-flex gap-3 icon-learn-more"
-                    >
-                      <svg
-                        className="plus"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={16}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_226_5470)">
-                          <path
-                            className="fill-dark"
-                            d="M15.375 7.375H8.625V0.625C8.625 0.279813 8.34519 0 8 0C7.65481 0 7.375 0.279813 7.375 0.625V7.375H0.625C0.279813 7.375 0 7.65481 0 8C0 8.34519 0.279813 8.625 0.625 8.625H7.375V15.375C7.375 15.7202 7.65481 16 8 16C8.34519 16 8.625 15.7202 8.625 15.375V8.625H15.375C15.7202 8.625 16 8.34519 16 8C16 7.65481 15.7202 7.375 15.375 7.375Z"
-                            fill="#111827"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath>
-                            <rect width={16} height={16} fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <svg
-                        className="arrow"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={18}
-                        height={10}
-                        viewBox="0 0 18 10"
-                        fill="none"
-                      >
-                        <path
-                          className="fill-dark"
-                          d="M13.0633 0.0634766L12.2615 0.86529L15.8294 4.43321H0V5.56716H15.8294L12.2615 9.13505L13.0633 9.93686L18 5.00015L13.0633 0.0634766Z"
-                          fill="#111827"
-                        />
-                      </svg>
-                      <span className="fw-bold fs-7 text-900">Learm More</span>
-                    </Link>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4">
-                <div
-                  className="p-2 mt-lg-8 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={200}
-                >
+                <div className="p-2 mt-lg-8 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up">
                   <div className="card-service bg-white p-6 border rounded-3">
-                    <img
-                      src="/assets/imgs/service-1/icon-5.svg"
-                      alt="infinia"
-                    />
                     <h6 className="my-3">Mind & Body Coaching</h6>
                     <p className="mb-6">
                       Tailored yoga, meditation, and lifestyle coaching to
                       enhance mental clarity, resilience, and well-being for
                       your team.
                     </p>
-                    <Link
-                      href="#"
-                      className="rounded-pill border icon-shape d-inline-flex gap-3 icon-learn-more"
-                    >
-                      <svg
-                        className="plus"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={16}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_226_5470)">
-                          <path
-                            className="fill-dark"
-                            d="M15.375 7.375H8.625V0.625C8.625 0.279813 8.34519 0 8 0C7.65481 0 7.375 0.279813 7.375 0.625V7.375H0.625C0.279813 7.375 0 7.65481 0 8C0 8.34519 0.279813 8.625 0.625 8.625H7.375V15.375C7.375 15.7202 7.65481 16 8 16C8.34519 16 8.625 15.7202 8.625 15.375V8.625H15.375C15.7202 8.625 16 8.34519 16 8C16 7.65481 15.7202 7.375 15.375 7.375Z"
-                            fill="#111827"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath>
-                            <rect width={16} height={16} fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <svg
-                        className="arrow"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={18}
-                        height={10}
-                        viewBox="0 0 18 10"
-                        fill="none"
-                      >
-                        <path
-                          className="fill-dark"
-                          d="M13.0633 0.0634766L12.2615 0.86529L15.8294 4.43321H0V5.56716H15.8294L12.2615 9.13505L13.0633 9.93686L18 5.00015L13.0633 0.0634766Z"
-                          fill="#111827"
-                        />
-                      </svg>
-                      <span className="fw-bold fs-7 text-900">Learm More</span>
-                    </Link>
                   </div>
                 </div>
-                <div
-                  className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={300}
-                >
+                <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                   <div className="card-service bg-white p-6 border rounded-3">
-                    <img
-                      src="/assets/imgs/service-1/icon-6.svg"
-                      alt="infinia"
-                    />
                     <h6 className="my-3">Virtual Wellness Hub</h6>
                     <p className="mb-6">
                       Enjoy live and on-demand yoga sessions, wellness guides,
                       and community support, available anytime for your
                       organization.
                     </p>
-                    <Link
-                      href="#"
-                      className="rounded-pill border icon-shape d-inline-flex gap-3 icon-learn-more"
-                    >
-                      <svg
-                        className="plus"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={16}
-                        height={16}
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_226_5470)">
-                          <path
-                            className="fill-dark"
-                            d="M15.375 7.375H8.625V0.625C8.625 0.279813 8.34519 0 8 0C7.65481 0 7.375 0.279813 7.375 0.625V7.375H0.625C0.279813 7.375 0 7.65481 0 8C0 8.34519 0.279813 8.625 0.625 8.625H7.375V15.375C7.375 15.7202 7.65481 16 8 16C8.34519 16 8.625 15.7202 8.625 15.375V8.625H15.375C15.7202 8.625 16 8.34519 16 8C16 7.65481 15.7202 7.375 15.375 7.375Z"
-                            fill="#111827"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath>
-                            <rect width={16} height={16} fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <svg
-                        className="arrow"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={18}
-                        height={10}
-                        viewBox="0 0 18 10"
-                        fill="none"
-                      >
-                        <path
-                          className="fill-dark"
-                          d="M13.0633 0.0634766L12.2615 0.86529L15.8294 4.43321H0V5.56716H15.8294L12.2615 9.13505L13.0633 9.93686L18 5.00015L13.0633 0.0634766Z"
-                          fill="#111827"
-                        />
-                      </svg>
-                      <span className="fw-bold fs-7 text-900">Learm More</span>
-                    </Link>
                   </div>
                 </div>
-              </div>
-              <div className="position-absolute top-50 start-50 translate-middle z-0">
-                <img src="/assets/imgs/service-1/img-bg.png" alt="infinia" />
               </div>
             </div>
           </div>
@@ -745,7 +427,7 @@ export default function Hero5() {
                 <div className="col-lg-4 mb-lg-0 mb-8 pe-lg-8">
                   <ul className="list-unstyled ">
                     <li>
-                      <Link href="#" className="d-flex align-items-start mb-6">
+                      <div className="d-flex align-items-start mb-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width={60}
@@ -771,10 +453,10 @@ export default function Hero5() {
                             space, and schedule.
                           </p>
                         </div>
-                      </Link>
+                      </div>
                     </li>
                     <li>
-                      <Link href="#" className="d-flex align-items-start mb-6">
+                      <div className="d-flex align-items-start mb-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width={60}
@@ -801,125 +483,175 @@ export default function Hero5() {
                             platforms.
                           </p>
                         </div>
-                      </Link>
+                      </div>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="position-absolute bottom-0 start-0 bg-rotate z-0">
-              <img
-                className="rotate-center"
-                src="/assets/imgs/features-8/bg-img-favicon.png"
-                alt="my-yoga-network"
-              />
-            </div>
           </div>
         </section>
 
-        {/* Teachers */}
-        <section className="section-team-1 section-padding position-relative overflow-hidden">
-          <div className="container">
-            <div className="row position-relative z-1">
-              <div className="text-center">
-                <h3
-                  className="ds-3 my-3"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={200}
-                >
-                  Meet Our Teachers
-                </h3>
-                <p
-                  className="fs-5"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={300}
-                >
-                  Our certified instructors deliver tailored, expert-led yoga
-                  sessions with dedication and precision.{" "}
-                </p>
-              </div>
-            </div>
-            <div className="row mt-6">
-              {/* prettier-ignore */}
-              <div className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center" data-aos="fade-zoom-in" data-aos-delay={100}>
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img className="img-fluid w-100" src="/assets/imgs/team-1/teacher-1.jpg" alt="infinia" />
-                </div>
-              </div>
-            </div>
-              <div
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-                data-aos="fade-zoom-in"
-                data-aos-delay={200}
-              >
-                <div className="position-relative d-inline-block z-1">
-                  <div className="zoom-img rounded-3">
-                    <img
-                      className="img-fluid w-100"
-                      src="/assets/imgs/team-1/teacher-2.jpg"
-                      alt="infinia"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-                data-aos="fade-zoom-in"
-                data-aos-delay={300}
-              >
-                <div className="position-relative d-inline-block z-1">
-                  <div className="zoom-img rounded-3">
-                    <img
-                      className="img-fluid w-100"
-                      src="/assets/imgs/team-1/teacher-3.jpg"
-                      alt="infinia"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-                data-aos="fade-zoom-in"
-                data-aos-delay={400}
-              >
-                <div className="position-relative d-inline-block z-1">
-                  <div className="zoom-img rounded-3">
-                    <img
-                      className="img-fluid w-100"
-                      src="/assets/imgs/team-1/teacher-4.jpg"
-                      alt="infinia"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-                data-aos="fade-zoom-in"
-                data-aos-delay={100}
-              ></div>
-              <div
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-                data-aos="fade-zoom-in"
-                data-aos-delay={200}
-              ></div>
-              <div
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-                data-aos="fade-zoom-in"
-                data-aos-delay={300}
-              ></div>
-              <div
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-                data-aos="fade-zoom-in"
-                data-aos-delay={400}
-              ></div>
+        <section className="section-faqs-1 section-padding position-relative">
+          <div className="container position-relative z-1">
+            <div className="text-center mb-8">
+              <h3 className="ds-5 my-3 fw-black">Frequently Asked Questions</h3>
+              <p className="fs-5 mb-0">
+                Find Answers About Bringing Yoga & Wellness to Your Hotel.
+              </p>
             </div>
           </div>
-          <div className="position-absolute top-0 start-50 translate-middle-x z-0">
-            <img src="/assets/imgs/team-1/bg-line.png" alt="infinia" />
+          <div className="container position-relative z-2">
+            <div className="row align-items-center">
+              <div className="col-lg-12 mt-lg-0 mt-8 ">
+                <div className="accordion">
+                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                    <div className="px-0 card-header border-0 bg-gradient-1">
+                      <a
+                        className={` ${activeItem} == 1 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                        onClick={() => handleActiveItem(1)}
+                        data-bs-toggle="collapse"
+                      >
+                        <h6 className="m-0">
+                          What equipment is needed for yoga classes at my hotel?
+                        </h6>
+                        <span className="ms-auto arrow me-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={13}
+                            height={8}
+                            viewBox="0 0 13 8"
+                            fill="none"
+                          >
+                            <path
+                              className="stroke-dark"
+                              d="M11.5 1L6.25 6.5L1 1"
+                              stroke="#111827"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      id="collapse01"
+                      className={
+                        activeItem == 1
+                          ? "accordion-collapse collapse show"
+                          : "accordion-collapse collapse"
+                      }
+                      data-bs-parent=".accordion"
+                    >
+                      <p className="ps-0 card-body">
+                        We recommend providing yoga mats, blocks, straps, and
+                        cushions. Depending on the space, additional items like
+                        blankets or towels may be useful. We can provide the
+                        equipment or help you source it.{" "}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                    <div className="px-0 card-header border-0 bg-gradient-1">
+                      <a
+                        className={` ${activeItem} == 2 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                        onClick={() => handleActiveItem(2)}
+                        data-bs-toggle="collapse"
+                      >
+                        <h6 className="m-0">
+                          Are yoga classes suitable for all levels of guests?
+                        </h6>
+                        <span className="ms-auto arrow me-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={13}
+                            height={8}
+                            viewBox="0 0 13 8"
+                            fill="none"
+                          >
+                            <path
+                              className="stroke-dark"
+                              d="M11.5 1L6.25 6.5L1 1"
+                              stroke="#111827"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      id="collapse02"
+                      className={
+                        activeItem == 2
+                          ? "accordion-collapse collapse show"
+                          : "accordion-collapse collapse"
+                      }
+                      data-bs-parent=".accordion"
+                    >
+                      <p className="ps-0 card-body">
+                        Yes, our yoga programs are designed to accommodate all
+                        levels. Whether your guests are beginners or experienced
+                        practitioners, we tailor the sessions to ensure everyone
+                        has a positive experience.{" "}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                    <div className="px-0 card-header border-0 bg-gradient-1">
+                      <a
+                        className={` ${activeItem} == 3 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                        onClick={() => handleActiveItem(3)}
+                        data-bs-toggle="collapse"
+                      >
+                        <h6 className="m-0">
+                          How do I integrate yoga classes into my existing hotel
+                          offerings?
+                        </h6>
+                        <span className="ms-auto arrow me-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={13}
+                            height={8}
+                            viewBox="0 0 13 8"
+                            fill="none"
+                          >
+                            <path
+                              className="stroke-dark"
+                              d="M11.5 1L6.25 6.5L1 1"
+                              stroke="#111827"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      id="collapse03"
+                      className={
+                        activeItem == 3
+                          ? "accordion-collapse collapse show"
+                          : "accordion-collapse collapse"
+                      }
+                      data-bs-parent=".accordion"
+                    >
+                      <p className="ps-0 card-body">
+                        Integrating yoga into your hotel is simple. We’ll help
+                        you choose the right spaces, set up a schedule, and
+                        create a seamless experience for your guests. We also
+                        offer marketing support to promote your new wellness
+                        offerings.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="rotate-center ellipse-rotate-success position-absolute z-0" />
-          <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
         </section>
       </Layout>
     </>

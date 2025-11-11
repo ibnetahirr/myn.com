@@ -4,48 +4,14 @@ import Link from "next/link";
 import CountUp from "react-countup";
 
 export default function PageAbout() {
-  const swiperOptions = {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    slidesPerGroup: 1,
-    centeredSlides: false,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 3,
-      },
-      992: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-  };
-
+ 
   return (
     <>
       {/* Contact 4 */}
-      <section className="section-contact-4 section-padding">
+      <section className="section-padding">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-8">
               <div className="pe-lg-8 me-lg-auto mb-5 mb-lg-0">
                 <h6 className="text-primary">
                   Delivering Yoga & Wellness Since 2012
@@ -62,16 +28,9 @@ export default function PageAbout() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="rounded-4 border border-5 border-white zoom-img mb-5">
-                <img
-                  className="rounded-4 w-100"
-                  src="/assets/imgs/contact-4/img-4.png"
-                  alt="Contact image"
-                />
-              </div>
-            </div>
-            <div className="col-lg-6">
+          </div>
+          <div className="row mt-3">
+             <div className="col-lg-6">
               <div className="rounded-4 border border-5 border-white zoom-img mb-5 mb-lg-0">
                 <img
                   className="rounded-4 w-100"

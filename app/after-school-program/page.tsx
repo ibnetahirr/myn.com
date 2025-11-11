@@ -1,13 +1,16 @@
+"use client";
 import Layout from "@/components/layout/Layout";
 import Link from "next/link";
-
-export const metadata = {
-  title: "After School Program | My Yoga Network",
-  description:
-    "Discover My Yoga Network's After School Program, designed for Pre-K to 5th grade kids in Long Beach, CA, to transform wiggles into wellness with tailored yoga and mindfulness activities.",
-};
+import { useState } from "react";
 
 export default function AfterSchoolPage() {
+  // Accordion
+  const [activeItem, setActiveItem] = useState(1);
+
+  const handleActiveItem = (index: any) => {
+    setActiveItem(index);
+  };
+
   return (
     <Layout>
       {/* HERO */}
@@ -20,7 +23,7 @@ export default function AfterSchoolPage() {
                   <img
                     className="rounded-4 border border-2 border-white position-relative z-1"
                     src="/assets/imgs/after-school/hero.webp"
-                    alt="Hotels"
+                    alt="Schools / Kids Yoga"
                   />
                   <div className="box-gradient-1 ms-lg-8 position-absolute bottom-0 start-0 bg-linear-1 rounded-4 z-0" />
                 </div>
@@ -40,22 +43,22 @@ export default function AfterSchoolPage() {
                   <div className="compatible-group bg-white p-5 mt-5 rounded-4 d-md-flex justify-content-between">
                     <div className="compatible hover-up">
                       <img
-                        src="/assets/imgs/clients/institutes/california-state-university.png"
-                        alt="California State University"
+                        src="/assets/imgs/clients/institutes/bixby-elementary-school.png"
+                        alt="Bixby Elementary School"
                         height={100}
                       />
                       <p className="text-900 mt-3 mb-0">
-                        California State University
+                        Bixby Elementary School
                       </p>
                     </div>
                     <div className="compatible hover-up">
                       <img
-                        src="/assets/imgs/clients/institutes/sc-health-sciences-university.webp"
-                        alt="South California Health Sciences University"
+                        src="/assets/imgs/clients/institutes/lbu-school.png"
+                        alt="Lonh Beach Unified School District"
                         height={100}
                       />
                       <p className="text-900 mt-3 mb-0">
-                        South California Health Sciences University
+                        Lonh Beach Unified School District
                       </p>
                     </div>
                     <div className="compatible hover-up">
@@ -92,19 +95,19 @@ export default function AfterSchoolPage() {
                   can wind down after school while learning valuable life
                   skills? Our After School Enrichment Program combines the best
                   of yoga, mindfulness, creative arts, social-emotional learning
-                  (SEL), and team-building activities to help kids thrive —
+                  (SEL), and team-building activities to help kids thrive,
                   physically, emotionally, and socially. Whether your little one
                   needs to move, express themselves through art, learn emotional
                   regulation, or just have fun with friends, we’ve got the
-                  perfect blend of activities to support their development. 🎯
-                  Now enrolling for the new season!
+                  perfect blend of activities to support their development. Now
+                  enrolling for the new season!
                 </p>
               </div>
               <div className="col-lg-6 offset-lg-1 order-1 order-lg-2 mt-5 text-lg-end text-center">
                 <div className="photo-description position-relative rounded-4 d-inline-block">
                   <img
                     className="rounded-4 border border-2 border-white position-relative z-1"
-                    src="/assets/imgs/hotels/page/hotel-right.webp"
+                    src="/assets/imgs/kids/hero.webp"
                     alt="stand out"
                   />
                   <div className="position-absolute top-50 start-50 translate-middle z-0">
@@ -112,11 +115,9 @@ export default function AfterSchoolPage() {
                   </div>
                   <img
                     className="position-absolute top-100 start-0 d-none d-md-block translate-middle rounded-4 border border-2 border-white position-relative z-1"
-                    src="/assets/imgs/features-5/img-3.png"
-                    alt="infinia"
-                    data-aos="zoom-in"
-                    data-aos-delay={100}
-                  />
+                    src="/assets/imgs/kids/kids-at-studio.webp"
+                    height={150}
+                   />
                 </div>
               </div>
             </div>
@@ -125,35 +126,25 @@ export default function AfterSchoolPage() {
       </section>
 
       {/*Blog-3*/}
-      <section className="section-blog-3 position-relative @@classList section-padding fix">
+      <section className="section-blog-3 position-relative section-padding fix">
         <div className="container position-relative z-1">
-          <div
-            className="d-flex align-items-center justify-content-center bg-primary-soft border border-2 border-white d-inline-flex rounded-pill px-4 py-2"
-            data-aos="zoom-in"
-            data-aos-delay={100}
-          >
-            <img src="/assets/imgs/features-1/dots.png" alt="infinia" />
-            <span className="tag-spacing fs-7 fw-bold text-linear-2 ms-2 text-uppercase">
-              FOR HOSPITALITY
-            </span>
+          <div className="text-center mb-8">
+            <h3 className="ds-5 my-3 fw-black">
+              Our Programs: Supporting ELO-P Priorities
+            </h3>
+            <p className="fs-5 mb-0">
+              Our diverse program offerings are designed to align with the
+              Expanded Learning Opportunities Program (ELO-P) goals of
+              developing the academic, social, emotional, and physical needs of
+              students through hands-on learning experiences. We complement, but
+              do not replicate, learning activities in the regular school day.
+            </p>
           </div>
-          <h3
-            className="ds-3 my-3"
-            data-aos="fade-zoom-in"
-            data-aos-delay={300}
-          >
-            Transforming Stays Through Wellness
-          </h3>
-          <p data-aos="fade-zoom-in" data-aos-delay={100}>
-            Curated yoga and mindfulness programs that elevate guest experience
-            and enrich every property.
-          </p>
+        </div>
+        <div className="container position-relative z-1">
           <div className="row">
             <div className="col-lg-6 pe-lg-8">
-              <Link
-                href="#"
-                className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up"
-              >
+              <div className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up">
                 <img
                   className="rounded-3 w-100 w-md-auto"
                   src="/assets/imgs/blog-3/img-1.png"
@@ -166,11 +157,8 @@ export default function AfterSchoolPage() {
                     strength, and body awareness.
                   </p>
                 </span>
-              </Link>
-              <Link
-                href="#"
-                className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up"
-              >
+              </div>
+              <div className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up">
                 <img
                   className="rounded-3 w-100 w-md-auto"
                   src="/assets/imgs/blog-3/img-2.png"
@@ -183,13 +171,10 @@ export default function AfterSchoolPage() {
                     stress management, and emotional well-being.
                   </p>
                 </span>
-              </Link>
+              </div>
             </div>
             <div className="col-lg-6 pe-lg-8">
-              <Link
-                href="#"
-                className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up"
-              >
+              <div className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up">
                 <img
                   className="rounded-3 w-100 w-md-auto"
                   src="/assets/imgs/blog-3/img-3.png"
@@ -202,11 +187,8 @@ export default function AfterSchoolPage() {
                     foster emotional release and self-discovery.
                   </p>
                 </span>
-              </Link>
-              <Link
-                href="#"
-                className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up"
-              >
+              </div>
+              <div className="d-flex flex-md-row flex-column align-items-center mb-4 hover-up">
                 <img
                   className="rounded-3 w-100 w-md-auto"
                   src="/assets/imgs/blog-3/img-4.png"
@@ -219,7 +201,7 @@ export default function AfterSchoolPage() {
                     and leadership skills.
                   </p>
                 </span>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -237,40 +219,27 @@ export default function AfterSchoolPage() {
           </div>
         </div>
       </section>
-      {/*Services-2*/}
 
-      <section className="section-team-1 position-relative fix section-padding">
-        <div className="container position-relative z-2">
-          <div className="text-center">
-            <div
-              className="d-flex align-items-center justify-content-center bg-primary-soft border border-2 border-white d-inline-flex rounded-pill px-4 py-2"
-              data-aos="zoom-in"
-              data-aos-delay={100}
-            >
-              <img
-                src="/assets/imgs/features-1/dots.png"
-                alt="My Yoga Network"
-              />
-              <span className="tag-spacing fs-7 fw-bold text-linear-2 ms-2 text-uppercase">
-                Other Program Combinations with Local Partners
-              </span>
-            </div>
-            <p className="fs-5 text-900 mb-0">
+      {/*Services-2*/}
+      <section className="position-relative fix section-padding">
+        <div className="container position-relative z-1">
+          <div className="text-center mb-8">
+            <h3 className="ds-5 my-3 fw-black">
+              Other Program Combinations with Local Partners
+            </h3>
+            <p className="fs-5 mb-0">
               We collaborate with trusted local educators and creatives to
               design engaging, age-appropriate wellness experiences. Explore our
               flexible pairings:
             </p>
           </div>
+        </div>
+        <div className="container position-relative z-2">
           <div className="row mt-6 position-relative">
             {/* prettier-ignore */}
             <div className="col-lg-4 col-md-6">
         <div className="p-2 rounded-4 shadow-1 bg-white position-relative z-1 hover-up mb-4">
           <div className="card-service bg-white p-6 border rounded-4 text-center">
-            <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 me-5">
-              <div className="icon">
-                <img src="/assets/imgs/service-2/icon-1.svg" alt="My Yoga Network" />
-              </div>
-            </div>
             <h5 className="my-3">Yoga +  Art / Mindfulness Crafts</h5>
             <ul className="mb-6 text-start">
               <li>45 min yoga + breathwork</li>
@@ -280,33 +249,12 @@ export default function AfterSchoolPage() {
             <p className="mb-6">Why it works: 
                 <br/>
                   Combines physical, emotional, and creative development. Easy to adapt by age.</p>
-            <Link href="#" className="text-primary fs-7 fw-bold">
-              
-              <svg className=" ms-2 " xmlns="http://www.w3.org/2000/svg" width={19} height={18} viewBox="0 0 19 18" fill="none">
-                <g clipPath="url(#clip0_399_9647)">
-                  <path d="M13.5633 4.06348L12.7615 4.86529L16.3294 8.43321H0.5V9.56716H16.3294L12.7615 13.135L13.5633 13.9369L18.5 9.00015L13.5633 4.06348Z" fill="#111827" />
-                </g>
-                <defs>
-                  <clipPath>
-                    <rect width={18} height={18} fill="white" transform="translate(0.5)" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </Link>
           </div>
         </div>
       </div>
             <div className="col-lg-4 col-md-6">
               <div className="p-2 rounded-4 shadow-1 bg-white position-relative z-1 hover-up mb-4">
                 <div className="card-service bg-white p-6 border rounded-4 text-center">
-                  <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 me-5">
-                    <div className="icon">
-                      <img
-                        src="/assets/imgs/service-2/icon-2.svg"
-                        alt="My Yoga Network"
-                      />
-                    </div>
-                  </div>
                   <h5 className="my-3">Yoga + SEL & Character Development</h5>
                   <ul className="mb-6 text-start">
                     <li>
@@ -323,47 +271,12 @@ export default function AfterSchoolPage() {
                     Meets goals around leadership, emotional regulation, and
                     personal growth.
                   </p>
-                  <Link href="#" className="text-primary fs-7 fw-bold">
-                    <svg
-                      className=" ms-2 "
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={19}
-                      height={18}
-                      viewBox="0 0 19 18"
-                      fill="none"
-                    >
-                      <g clipPath="url(#clip0_399_9647)">
-                        <path
-                          d="M13.5633 4.06348L12.7615 4.86529L16.3294 8.43321H0.5V9.56716H16.3294L12.7615 13.135L13.5633 13.9369L18.5 9.00015L13.5633 4.06348Z"
-                          fill="#111827"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath>
-                          <rect
-                            width={18}
-                            height={18}
-                            fill="white"
-                            transform="translate(0.5)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
                 </div>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="p-2 rounded-4 shadow-1 bg-white position-relative z-1 hover-up mb-4">
                 <div className="card-service bg-white p-6 border rounded-4 text-center">
-                  <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 me-5">
-                    <div className="icon">
-                      <img
-                        src="/assets/imgs/service-2/icon-3.svg"
-                        alt="My Yoga Network"
-                      />
-                    </div>
-                  </div>
                   <h5 className="my-3">Yoga + Music & Movement</h5>
                   <ul className="mb-6 text-start">
                     <li>45 min yoga</li>
@@ -379,47 +292,12 @@ export default function AfterSchoolPage() {
                     Perfect for TK–6. Encourages full-body expression and
                     cultural integration.
                   </p>
-                  <Link href="#" className="text-primary fs-7 fw-bold">
-                    <svg
-                      className=" ms-2 "
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={19}
-                      height={18}
-                      viewBox="0 0 19 18"
-                      fill="none"
-                    >
-                      <g clipPath="url(#clip0_399_9647)">
-                        <path
-                          d="M13.5633 4.06348L12.7615 4.86529L16.3294 8.43321H0.5V9.56716H16.3294L12.7615 13.135L13.5633 13.9369L18.5 9.00015L13.5633 4.06348Z"
-                          fill="#111827"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath>
-                          <rect
-                            width={18}
-                            height={18}
-                            fill="white"
-                            transform="translate(0.5)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
                 </div>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="p-2 rounded-4 shadow-1 bg-white position-relative z-1 hover-up mb-4">
                 <div className="card-service bg-white p-6 border rounded-4 text-center">
-                  <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 me-5">
-                    <div className="icon">
-                      <img
-                        src="/assets/imgs/service-2/icon-4.svg"
-                        alt="My Yoga Network"
-                      />
-                    </div>
-                  </div>
                   <h5 className="my-3">
                     Yoga + Nature / Mindful Movement Games
                   </h5>
@@ -435,47 +313,12 @@ export default function AfterSchoolPage() {
                     <br />
                     Encourages calm energy and supports active learning goals.
                   </p>
-                  <Link href="#" className="text-primary fs-7 fw-bold">
-                    <svg
-                      className=" ms-2 "
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={19}
-                      height={18}
-                      viewBox="0 0 19 18"
-                      fill="none"
-                    >
-                      <g clipPath="url(#clip0_399_9647)">
-                        <path
-                          d="M13.5633 4.06348L12.7615 4.86529L16.3294 8.43321H0.5V9.56716H16.3294L12.7615 13.135L13.5633 13.9369L18.5 9.00015L13.5633 4.06348Z"
-                          fill="#111827"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath>
-                          <rect
-                            width={18}
-                            height={18}
-                            fill="white"
-                            transform="translate(0.5)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
                 </div>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="p-2 rounded-4 shadow-1 bg-white position-relative z-1 hover-up mb-4">
                 <div className="card-service bg-white p-6 border rounded-4 text-center">
-                  <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 me-5">
-                    <div className="icon">
-                      <img
-                        src="/assets/imgs/service-2/icon-5.svg"
-                        alt="My Yoga Network"
-                      />
-                    </div>
-                  </div>
                   <h5 className="my-3">Yoga + Healthy Cooking or Nutrition</h5>
                   <ul className="mb-6 text-start">
                     <li>45 min yoga with digestive breathwork</li>
@@ -489,47 +332,12 @@ export default function AfterSchoolPage() {
                     <br /> Matches ELO-P interest areas like cooking and healthy
                     choices. Kids love it!
                   </p>
-                  <Link href="#" className="text-primary fs-7 fw-bold">
-                    <svg
-                      className=" ms-2 "
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={19}
-                      height={18}
-                      viewBox="0 0 19 18"
-                      fill="none"
-                    >
-                      <g clipPath="url(#clip0_399_9647)">
-                        <path
-                          d="M13.5633 4.06348L12.7615 4.86529L16.3294 8.43321H0.5V9.56716H16.3294L12.7615 13.135L13.5633 13.9369L18.5 9.00015L13.5633 4.06348Z"
-                          fill="#111827"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath>
-                          <rect
-                            width={18}
-                            height={18}
-                            fill="white"
-                            transform="translate(0.5)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
                 </div>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="p-2 rounded-4 shadow-1 bg-white position-relative z-1 hover-up mb-4">
                 <div className="card-service bg-white p-6 border rounded-4 text-center">
-                  <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 me-5">
-                    <div className="icon">
-                      <img
-                        src="/assets/imgs/service-2/icon-6.svg"
-                        alt="My Yoga Network"
-                      />
-                    </div>
-                  </div>
                   <h5 className="my-3">
                     Yoga + Meditation or Storytime (TK–3)
                   </h5>
@@ -546,69 +354,27 @@ export default function AfterSchoolPage() {
                     Promotes rest, recovery, and imagination. Ideal for younger
                     students.
                   </p>
-                  <Link href="#" className="text-primary fs-7 fw-bold">
-                    <svg
-                      className=" ms-2 "
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={19}
-                      height={18}
-                      viewBox="0 0 19 18"
-                      fill="none"
-                    >
-                      <g clipPath="url(#clip0_399_9647)">
-                        <path
-                          d="M13.5633 4.06348L12.7615 4.86529L16.3294 8.43321H0.5V9.56716H16.3294L12.7615 13.135L13.5633 13.9369L18.5 9.00015L13.5633 4.06348Z"
-                          fill="#111827"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath>
-                          <rect
-                            width={18}
-                            height={18}
-                            fill="white"
-                            transform="translate(0.5)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
                 </div>
               </div>
             </div>
-            <svg
-              className="position-absolute top-50 start-50 translate-middle z-0"
-              xmlns="http://www.w3.org/2000/svg"
-              width={828}
-              height={699}
-              viewBox="0 0 828 699"
-              fill="none"
-            >
-              <path
-                className="fill-primary-soft"
-                d="M0 130.481C0 110.236 15.1267 93.1822 35.2276 90.7667L783.228 0.880261C807.04 -1.98124 828 16.611 828 40.5945V533.155C828 552.691 813.888 569.369 794.622 572.603L46.6224 698.173C22.2271 702.269 0 683.462 0 658.725V130.481Z"
-                fill="#F5EEFF"
-              />
-            </svg>
           </div>
         </div>
-        <div className="position-absolute top-0 start-50 translate-middle-x z-0">
-          <img src="/assets/imgs/service-2/bg-line.png" alt="My Yoga Network" />
-        </div>
-        <div className="rotate-center ellipse-rotate-success position-absolute z-1" />
-        <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-1" />
       </section>
 
       {/* feature-12 */}
       <section className="section-feature-12 border-bottom pb-120 pt-110">
-        <div className="container">
-          <div className="text-center">
-            <h5 className="ds-5">12-Week Program (2 Hours per Week)</h5>
-            <p className="fs-5 pb-4">
+        <div className="container position-relative z-1">
+          <div className="text-center mb-8">
+            <h3 className="ds-5 my-3 fw-black">
+              12-Week Program (2 Hours per Week)
+            </h3>
+            <p className="fs-5 mb-0">
               A structured program combining yoga and mindfulness art to support
               kids’ development.
             </p>
           </div>
+        </div>
+        <div className="container">
           <div className="row">
             <div className="col-lg-6">
               <div className="feature-item mb-5 bg-neutral-100 p-7 rounded-4 hover-up">
@@ -692,101 +458,256 @@ export default function AfterSchoolPage() {
         </div>
       </section>
 
-      {/*Team-1*/}
-      <section className="section-team-1 section-padding position-relative overflow-hidden">
-        <div className="container">
-          <div className="row position-relative z-1">
-            <div className="text-center">
-              <h6
-                className="ds-4 my-3"
-                data-aos="fade-zoom-in"
-                data-aos-delay={200}
-              >
-                Peek Into Our After School Kids Wellness Program
-              </h6>
-            </div>
-          </div>
-          <div className="row mt-6">
-            {/* prettier-ignore */}
-            <div className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center" data-aos="fade-zoom-in" data-aos-delay={100}>
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img className="img-fluid w-100" src="/assets/imgs/team-1/img-1.jpg" alt="my-yoga-network" />
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={200}
-            >
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img
-                    className="img-fluid w-100"
-                    src="/assets/imgs/team-1/img-2.jpg"
-                    alt="my-yoga-network"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={300}
-            >
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img
-                    className="img-fluid w-100"
-                    src="/assets/imgs/team-1/img-3.jpg"
-                    alt="my-yoga-network"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={400}
-            >
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img
-                    className="img-fluid w-100"
-                    src="/assets/imgs/team-1/img-4.jpg"
-                    alt="my-yoga-network"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
-            ></div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={200}
-            ></div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={300}
-            ></div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={400}
-            ></div>
+      <section className="section-faqs-1 section-padding position-relative">
+        <div className="container position-relative z-1">
+          <div className="text-center mb-8">
+            <h3 className="ds-5 my-3 fw-black">Frequently Asked Questions</h3>
+            <p className="fs-5 mb-0">
+              Find Answers About Bringing Yoga & Mindfulness to Schools.
+            </p>
           </div>
         </div>
-        <div className="position-absolute top-0 start-50 translate-middle-x z-0">
-          <img src="/assets/imgs/team-1/bg-line.png" alt="my-yoga-network" />
+        <div className="container position-relative z-2">
+          <div className="row align-items-center">
+            <div className="col-lg-12 mt-lg-0 mt-8 ">
+              <div className="accordion">
+                <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                  <div className="px-0 card-header border-0 bg-gradient-1">
+                    <a
+                      className={` ${activeItem} == 1 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                      onClick={() => handleActiveItem(1)}
+                      data-bs-toggle="collapse"
+                    >
+                      <h6 className="m-0">
+                        Is this suitable for children with ADHD or anxiety?
+                      </h6>
+                      <span className="ms-auto arrow me-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={13}
+                          height={8}
+                          viewBox="0 0 13 8"
+                          fill="none"
+                        >
+                          <path
+                            className="stroke-dark"
+                            d="M11.5 1L6.25 6.5L1 1"
+                            stroke="#111827"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    id="collapse01"
+                    className={
+                      activeItem == 1
+                        ? "accordion-collapse collapse show"
+                        : "accordion-collapse collapse"
+                    }
+                    data-bs-parent=".accordion"
+                  >
+                    <p className="ps-0 card-body">
+                      Yes! Our instructors are trained in trauma-informed,
+                      inclusive teaching methods. Yoga helps kids regulate
+                      emotions and manage stress.
+                    </p>
+                  </div>
+                </div>
+                <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                  <div className="px-0 card-header border-0 bg-gradient-1">
+                    <a
+                      className={` ${activeItem} == 2 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                      onClick={() => handleActiveItem(2)}
+                      data-bs-toggle="collapse"
+                    >
+                      <h6 className="m-0">
+                        Do kids need experience with yoga?
+                      </h6>
+                      <span className="ms-auto arrow me-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={13}
+                          height={8}
+                          viewBox="0 0 13 8"
+                          fill="none"
+                        >
+                          <path
+                            className="stroke-dark"
+                            d="M11.5 1L6.25 6.5L1 1"
+                            stroke="#111827"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    id="collapse02"
+                    className={
+                      activeItem == 2
+                        ? "accordion-collapse collapse show"
+                        : "accordion-collapse collapse"
+                    }
+                    data-bs-parent=".accordion"
+                  >
+                    <p className="ps-0 card-body">
+                      Nope! Our classes are beginner-friendly, fun, and
+                      age-appropriate.
+                    </p>
+                  </div>
+                </div>
+                <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                  <div className="px-0 card-header border-0 bg-gradient-1">
+                    <a
+                      className={` ${activeItem} == 3 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                      onClick={() => handleActiveItem(3)}
+                      data-bs-toggle="collapse"
+                    >
+                      <h6 className="m-0">
+                        What are the safety and liability considerations for the
+                        program?
+                      </h6>
+                      <span className="ms-auto arrow me-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={13}
+                          height={8}
+                          viewBox="0 0 13 8"
+                          fill="none"
+                        >
+                          <path
+                            className="stroke-dark"
+                            d="M11.5 1L6.25 6.5L1 1"
+                            stroke="#111827"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    id="collapse03"
+                    className={
+                      activeItem == 3
+                        ? "accordion-collapse collapse show"
+                        : "accordion-collapse collapse"
+                    }
+                    data-bs-parent=".accordion"
+                  >
+                    <p className="ps-0 card-body">
+                      Our instructors are certified in kids yoga and trained in
+                      child safety practices. We also carry liability insurance
+                      to cover the program, so your school can rest easy knowing
+                      everything is taken care of.
+                    </p>
+                  </div>
+                </div>
+                <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                  <div className="px-0 card-header border-0 bg-gradient-1">
+                    <a
+                      className={` ${activeItem} == 4 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                      onClick={() => handleActiveItem(4)}
+                      data-bs-toggle="collapse"
+                    >
+                      <h6 className="m-0">
+                        How do we enroll students in the program?
+                      </h6>
+                      <span className="ms-auto arrow me-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={13}
+                          height={8}
+                          viewBox="0 0 13 8"
+                          fill="none"
+                        >
+                          <path
+                            className="stroke-dark"
+                            d="M11.5 1L6.25 6.5L1 1"
+                            stroke="#111827"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    id="collapse04"
+                    className={
+                      activeItem == 4
+                        ? "accordion-collapse collapse show"
+                        : "accordion-collapse collapse"
+                    }
+                    data-bs-parent=".accordion"
+                  >
+                    <p className="ps-0 card-body">
+                      We’ll provide you with a simple enrollment form that can
+                      be shared with parents, or we can handle sign-ups
+                      directly. We offer an easy online registration system for
+                      parents to sign up their children.
+                    </p>
+                  </div>
+                </div>
+                <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
+                  <div className="px-0 card-header border-0 bg-gradient-1">
+                    <a
+                      className={` ${activeItem} == 5 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
+                      onClick={() => handleActiveItem(5)}
+                      data-bs-toggle="collapse"
+                    >
+                      <h6 className="m-0">
+                        Is the program flexible in terms of scheduling?
+                      </h6>
+                      <span className="ms-auto arrow me-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={13}
+                          height={8}
+                          viewBox="0 0 13 8"
+                          fill="none"
+                        >
+                          <path
+                            className="stroke-dark"
+                            d="M11.5 1L6.25 6.5L1 1"
+                            stroke="#111827"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    id="collapse05"
+                    className={
+                      activeItem == 5
+                        ? "accordion-collapse collapse show"
+                        : "accordion-collapse collapse"
+                    }
+                    data-bs-parent=".accordion"
+                  >
+                    <p className="ps-0 card-body">
+                      Absolutely! We offer flexible scheduling options to meet
+                      your school’s needs, whether that’s once or twice a week
+                      after school hours. We can adjust class lengths to fit
+                      within your school’s timeframe.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="rotate-center ellipse-rotate-success position-absolute z-0" />
-        <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
       </section>
     </Layout>
   );

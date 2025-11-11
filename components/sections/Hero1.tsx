@@ -21,16 +21,12 @@ export default function Hero1() {
               <div className="pe-2">
                 <h1
                   className="ds-3 mb-5"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={0}
                 >
                   Professional Wellness Solutions for Organizations and
                   Communities
                 </h1>
                 <p
                   className="pe-10 mb-5"
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={200}
                 >
                  We empower schools, hotels, corporations, healthcare providers, and community groups with safe, certified, and impactful yoga and wellness programs, now enhanced with AI innovation.
                 </p>
@@ -39,8 +35,6 @@ export default function Hero1() {
                 <button
                   className="btn btn-gradient d-inline-flex align-items-center"
                   onClick={scrollToVoiceAgent}
-                  data-aos="fade-zoom-in"
-                  data-aos-delay={300}
                 >
                   Experience Our AI Voice Agent
                 <svg
@@ -84,8 +78,6 @@ export default function Hero1() {
                   className="rightToLeft"
                   src="/assets/imgs/hero-1/shape-1.png"
                   alt="shape"
-                  data-aos="zoom-in"
-                  data-aos-delay={500}
                 />
               </div>
 
@@ -93,8 +85,6 @@ export default function Hero1() {
                 <img
                   src="/assets/imgs/hero-1/shape-2.png"
                   alt="shape"
-                  data-aos="zoom-in"
-                  data-aos-delay={200}
                 />
               </div>
 
@@ -102,8 +92,6 @@ export default function Hero1() {
                 <img
                   src="/assets/imgs/hero-1/shape-3.png"
                   alt="shape"
-                  data-aos="zoom-in"
-                  data-aos-delay={300}
                 />
               </div>
 
@@ -125,9 +113,6 @@ export default function Hero1() {
                   href="https://calendly.com/ram-myyoganetwork/up-to-60min"
                   target="_blank" className="shadow-sm d-flex align-items-center bg-white d-inline-flex rounded-pill px-2 py-1 mb-3"
                 >
-                  <span className="bg-primary fs-9 fw-bold rounded-pill px-2 py-1 text-white">
-                    Get
-                  </span>
                   <span className="fs-7 fw-medium text-primary mx-2">
                     Free Consultation
                   </span>

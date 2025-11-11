@@ -70,7 +70,7 @@ export default function MobileMenu({
                     >
                       <i className="arrow-small-down"></i>
                     </span>
-                    <Link href="#">Our Expertise</Link>
+                    <Link href="#">Services</Link>
                     <ul
                       className="sub-menu"
                       style={{
@@ -87,7 +87,7 @@ export default function MobileMenu({
                         <Link href="/yoga-for-healthcare-providers">Healthcare</Link>
                       </li>
                       <li>
-                        <Link href="/kids-programs">Kid's Programs</Link>
+                        <Link href="/after-school-program">Schools/Kids Yoga</Link>
                       </li>
                     </ul>
                   </li>
@@ -122,7 +122,7 @@ export default function MobileMenu({
                         </Link>
                       </li>
                       <li>
-                        <Link href="/blog">
+                        <Link href="/blogs">
                           Blog
                         </Link>
                       </li>
@@ -135,9 +135,9 @@ export default function MobileMenu({
                   </li>
 
                   {/* Yoga AI */}
-                  <li>
+                  {/* <li>
                     <Link href="/ai">AI</Link>
-                  </li>
+                  </li> */}
 
                   {/* Contact */}
                   <li>

@@ -92,10 +92,10 @@ export default function Header1({
 
             {/* Login */}
             <Link
-              href="https://myn-org-gold.vercel.app/auth/login" target="_blank"
+              href="https://calendly.com/ram-myyoganetwork/up-to-60min" target="_blank"
               className="btn btn-gradient d-none d-md-block"
             >
-              Dashboard
+              Book a Call
             </Link>
 
             {/* Mobile Menu Burger */}
