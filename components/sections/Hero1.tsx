@@ -99,7 +99,7 @@ export default function Hero1() {
               <div className="alltuchtopdown card-hero backdrop-filter rounded-3 text-center d-inline-block p-3 position-absolute">
                 <Image
                   className="rounded-3"
-                  src="/assets/imgs/team-2/ram-bhakt.jpg"
+                  src="/assets/imgs/team/ram-bhakt.jpg"
                   alt="discovery-call"
                   width={150}
                   height={150}

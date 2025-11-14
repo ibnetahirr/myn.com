@@ -23,7 +23,7 @@ export default function HotelPage() {
                   <div className="photo-description position-relative  rounded-4">
                     <img
                       className="rounded-4 border border-2 border-white position-relative z-1"
-                      src="/assets/imgs/hotels/page/hotel.webp"
+                      src="/assets/imgs/hotels/hotel.webp"
                       alt="Hotels"
                     />
                     <div className="box-gradient-1 ms-lg-8 position-absolute bottom-0 start-0 bg-linear-1 rounded-4 z-0" />
@@ -95,7 +95,7 @@ export default function HotelPage() {
                   <div className="photo-description position-relative rounded-4 d-inline-block">
                     <img
                       className="rounded-4 border border-2 border-white position-relative z-1"
-                      src="/assets/imgs/hotels/page/hotel-right.webp"
+                      src="/assets/imgs/hotels/hotel-right.webp"
                       alt="Make your hotel stand out"
                     />
                     <div className="position-absolute top-50 start-50 translate-middle z-0">

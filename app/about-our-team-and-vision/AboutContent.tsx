@@ -34,7 +34,7 @@ export default function PageAbout() {
               <div className="rounded-4 border border-5 border-white zoom-img mb-5 mb-lg-0">
                 <img
                   className="rounded-4 w-100"
-                  src="/assets/imgs/contact-4/img-5.png"
+                  src="/assets/imgs/about/hero-group-1.webp"
                   alt="Team image"
                 />
               </div>
@@ -43,7 +43,7 @@ export default function PageAbout() {
               <div className="rounded-4 border border-5 border-white zoom-img mt-5 mt-lg-0">
                 <img
                   className="rounded-4 w-100"
-                  src="/assets/imgs/contact-4/img-6.png"
+                  src="/assets/imgs/about/hero-group-2.webp"
                   alt="Additional image"
                 />
               </div>
@@ -270,21 +270,18 @@ export default function PageAbout() {
           </div>
         </div>
         <div className="position-absolute top-0 start-50 translate-middle-x z-0">
-          <img src="/assets/imgs/team-1/bg-line.png" alt="infinia" />
+          <img src="/assets/imgs/template/bg-line.png" alt="Team Background" />
         </div>
         <div className="rotate-center ellipse-rotate-success position-absolute z-0" />
         <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
       </section>
 
-      {/*Team 1*/}
       <section className="section-padding position-relative overflow-hidden">
         <div className="container">
           <div className="row position-relative z-1">
             <div className="text-center">
               <h3
                 className="ds-3 my-3"
-                data-aos="fade-zoom-in"
-                data-aos-delay={200}
               >
                 Meet Our Teachers
               </h3>
@@ -298,15 +295,13 @@ export default function PageAbout() {
           <div className="row mt-6">
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
-                    className="img-fluid w-100"
-                    src="/assets/imgs/team-1/teacher-1.jpg"
-                    alt="infinia"
+                    className="img-fluid w-100 h-100"
+                    src="/assets/imgs/team/teachers/teacher-1.webp"
+                    alt="Teachers"
                   />
                 </div>
               </div>
@@ -314,15 +309,13 @@ export default function PageAbout() {
 
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={200}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
                     className="img-fluid w-100"
-                    src="/assets/imgs/team-1/teacher-2.jpg"
-                    alt="infinia"
+                    src="/assets/imgs/team/teachers/teacher-2.webp"
+                    alt="Teachers"
                   />
                 </div>
               </div>
@@ -330,15 +323,13 @@ export default function PageAbout() {
 
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={300}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
                     className="img-fluid w-100"
-                    src="/assets/imgs/team-1/teacher-3.jpg"
-                    alt="infinia"
+                    src="/assets/imgs/team/teachers/teacher-3.webp"
+                    alt="Teachers"
                   />
                 </div>
               </div>
@@ -346,40 +337,17 @@ export default function PageAbout() {
 
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={400}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
                     className="img-fluid w-100"
-                    src="/assets/imgs/team-1/teacher-4.jpg"
-                    alt="infinia"
+                    src="/assets/imgs/team/teachers/teacher-4.webp"
+                    alt="Teachers"
                   />
                 </div>
               </div>
             </div>
-
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
-            ></div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={200}
-            ></div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={300}
-            ></div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={400}
-            ></div>
           </div>
         </div>
       </section>

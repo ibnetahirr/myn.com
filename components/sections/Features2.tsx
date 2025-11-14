@@ -292,7 +292,7 @@ export default function Features2(): JSX.Element {
 
 
    <div className="position-absolute top-0 start-50 translate-middle-x z-0">
-            <img src="/assets/imgs/team-1/bg-line.png" alt="infinia" />
+            <img src="/assets/imgs/template/bg-line.png" alt="infinia" />
           </div>
           <div className="rotate-center ellipse-rotate-success position-absolute z-0" />
           <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />

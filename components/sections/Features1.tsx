@@ -32,35 +32,49 @@ export default function Features1() {
                 >
                    <img
                     className="rounded-3 border border-3 border-white"
-                    src="/assets/imgs/features-1/img-2.png"
-                    alt="my-yoga-network"
-                    height={150}
+                    src="/assets/imgs/home/small.webp"
+                    alt="School Yoga"
+                    height={120}
                   />
                 </div>
-              
+
                 <div
                   className="pe-md-3 pb-3 pb-md-0 position-relative z-1"
                 >
-                  <img
+                   <img
                     className="rounded-3 border border-3 border-white"
-                    src="/assets/imgs/home/1.jpeg"
-                    alt="my-yoga-network"
-                    height={300}
+                    src="/assets/imgs/home/middle.webp"
+                    alt="Yoga Group"
+                    height={180}
                   />
                 </div>
+              
+               
+               <div
+                  className="pe-md-3 pb-3 pb-md-0 position-relative z-1"
+                >
+                   <img
+                    className="rounded-3 border border-3 border-white"
+                    src="/assets/imgs/home/bigger.webp"
+                    alt="Hotel Group"
+                    height={280}
+                  />
+                </div>
+
+
                 <img
                   className="position-absolute top-50 start-0 translate-middle-y z-0"
-                  src="/assets/imgs/features-1/bg-ellipse.png"
+                  src="/assets/imgs/template/bg-ellipse.png"
                   alt="my-yoga-network"
                 />
                 <img
                   className="position-absolute z-2 star-lg"
-                  src="/assets/imgs/features-1/star-lg.png"
+                  src="/assets/imgs/template/star-lg.png"
                   alt="my-yoga-network"
                 />
                 <img
                   className="position-absolute z-2 star-md"
-                  src="/assets/imgs/features-1/star-md.png"
+                  src="/assets/imgs/template/star-md.png"
                   alt="my-yoga-network"
                 />
               </div>
