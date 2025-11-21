@@ -3,8 +3,8 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 
-//const API_BASE = "https://mynapi.onrender.com/voice-agent";
-const API_BASE = "http://127.0.0.1:8000/voice-agent";
+ const API_BASE = "https://mynapi.onrender.com/voice-agent";
+//const API_BASE = "http://127.0.0.1:8000/voice-agent";
 
 export default function Features2(): JSX.Element {
   const [status, setStatus] = useState<
@@ -16,28 +16,66 @@ export default function Features2(): JSX.Element {
   const remoteAudioRef = useRef<HTMLAudioElement | null>(null);
   const micStreamRef = useRef<MediaStream | null>(null);
 
+  // Our app-level session id (UUID from backend)
+  const sessionIdRef = useRef<string | null>(null);
+
   const start = async (): Promise<void> => {
     try {
+      console.log("[VoiceAgent] Starting session…");
       setStatus("connecting");
+
       micStreamRef.current = await navigator.mediaDevices.getUserMedia({
         audio: true,
       });
+      console.log("[VoiceAgent] Got user media (mic)");
 
       const pc = new RTCPeerConnection();
       pcRef.current = pc;
+
       micStreamRef.current
         .getTracks()
         .forEach((t) => pc.addTrack(t, micStreamRef.current!));
 
       pc.ontrack = (ev) => {
+        console.log("[VoiceAgent] Received remote audio track", ev.streams);
         if (remoteAudioRef.current) {
           remoteAudioRef.current.srcObject = ev.streams[0];
-          remoteAudioRef.current.play().catch(() => {});
+          remoteAudioRef.current
+            .play()
+            .then(() => {
+              console.log("[VoiceAgent] Remote audio playing");
+            })
+            .catch((err) => {
+              console.warn("[VoiceAgent] Error playing remote audio:", err);
+            });
         }
+      };
+
+      pc.onconnectionstatechange = () => {
+        console.log("[VoiceAgent] PeerConnection state:", pc.connectionState);
+      };
+
+      pc.oniceconnectionstatechange = () => {
+        console.log(
+          "[VoiceAgent] ICE connection state:",
+          pc.iceConnectionState
+        );
       };
 
       const dc = pc.createDataChannel("oai-events");
       dcRef.current = dc;
+
+      dc.onopen = () => {
+        console.log("[VoiceAgent] DataChannel opened");
+      };
+
+      dc.onclose = () => {
+        console.log("[VoiceAgent] DataChannel closed");
+      };
+
+      dc.onerror = (err) => {
+        console.error("[VoiceAgent] DataChannel error:", err);
+      };
 
       const pendingCalls = new Map<
         string,
@@ -49,10 +87,13 @@ export default function Features2(): JSX.Element {
         try {
           msg = JSON.parse(e.data);
         } catch {
-          console.warn("Non-JSON DC message:", e.data);
+          console.warn("[VoiceAgent] Non-JSON DC message:", e.data);
           return;
         }
 
+        console.log("[VoiceAgent] DC message parsed:", msg.type, msg);
+
+        // 1) Track when a function_call is created
         if (
           msg.type === "response.output_item.added" &&
           msg.item?.type === "function_call"
@@ -60,61 +101,130 @@ export default function Features2(): JSX.Element {
           const responseId: string = msg.response_id;
           const callId: string = msg.item?.id || msg.item?.call_id || "";
           const name: string = msg.item?.name;
+
+          console.log("[VoiceAgent] Function call added:", {
+            responseId,
+            callId,
+            name,
+          });
+
           if (!responseId || !callId) return;
           pendingCalls.set(responseId, { callId, name, argsText: "" });
         }
 
+        // 2) Accumulate function_call arguments
         if (msg.type === "response.function_call_arguments.delta") {
           const responseId: string = msg.response_id;
           const delta: string = msg.delta || "";
           const entry = pendingCalls.get(responseId);
+
+          console.log(
+            "[VoiceAgent] Function args delta:",
+            responseId,
+            "delta:",
+            delta
+          );
+
           if (entry) entry.argsText += delta;
         }
 
+        // 3) When the response is done, we have full args and can call our backend
         if (msg.type === "response.done") {
           const responseId: string =
             msg.response?.id || msg.response_id || msg.id;
           const entry = pendingCalls.get(responseId);
+
+          console.log("[VoiceAgent] response.done for:", responseId, entry);
+
           if (!entry) return;
 
           let args: Record<string, any> = {};
           try {
             args = entry.argsText ? JSON.parse(entry.argsText) : {};
           } catch {
-            console.warn("Could not parse function args JSON:", entry.argsText);
+            console.warn(
+              "[VoiceAgent] Could not parse function args JSON:",
+              entry.argsText
+            );
           }
 
+          console.log("[VoiceAgent] Parsed function args:", args);
+
+          // --- Our tool: search_knowledge ---
           if (entry.name === "search_knowledge") {
             const query = args.query || "";
             const top_k = args.top_k || 5;
-            const ragRes = await fetch(`${API_BASE}/search_knowledge`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ query, top_k }),
-            }).then((r) => r.json());
 
-            const context = ragRes?.context_snippet || "No results found.";
+            console.log("[VoiceAgent] Calling /search_knowledge with:", {
+              query,
+              top_k,
+              session_id: sessionIdRef.current,
+            });
 
-            dc.send(
-              JSON.stringify({
-                type: "conversation.item.create",
-                item: {
-                  type: "function_call_output",
-                  call_id: entry.callId,
-                  output: context,
-                },
-              })
-            );
+            try {
+              const ragRes = await fetch(`${API_BASE}/search_knowledge`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  query,
+                  top_k,
+                  session_id: sessionIdRef.current, // tie to this chat
+                }),
+              }).then((r) => r.json());
 
-            dc.send(
-              JSON.stringify({
-                type: "response.create",
-                response: {
-                  modalities: ["audio", "text"],
-                  instructions: `Answer ONLY using this context:\n${context}\nIf nothing relevant, say "I couldn't find anything about that."`,
-                },
-              })
-            );
+              console.log("[VoiceAgent] /search_knowledge response:", ragRes);
+
+              const context =
+                ragRes?.context_snippet || "No results found.";
+              const results = ragRes?.results || [];
+
+              console.log(
+                "[VoiceAgent] Context snippet length:",
+                context.length
+              );
+              console.log(
+                "[VoiceAgent] Number of Qdrant results:",
+                Array.isArray(results) ? results.length : "N/A"
+              );
+
+              if (Array.isArray(results)) {
+                results.slice(0, 3).forEach((r: any, idx: number) => {
+                  console.log(
+                    `[VoiceAgent] Result #${idx + 1}: score=`,
+                    r.score,
+                    "payloadKeys=",
+                    r.payload ? Object.keys(r.payload) : []
+                  );
+                });
+              }
+
+              // Send tool output back into the realtime session
+              dc.send(
+                JSON.stringify({
+                  type: "conversation.item.create",
+                  item: {
+                    type: "function_call_output",
+                    call_id: entry.callId,
+                    output: context,
+                  },
+                })
+              );
+
+              dc.send(
+                JSON.stringify({
+                  type: "response.create",
+                  response: {
+                    modalities: ["audio", "text"],
+                    instructions: `Answer ONLY using this context:\n${context}\nIf nothing relevant, say "I couldn't find anything about that."`,
+                  },
+                })
+              );
+            } catch (err) {
+              console.error(
+                "[VoiceAgent] Error calling /search_knowledge:",
+                err
+              );
+            }
           }
 
           pendingCalls.delete(responseId);
@@ -123,17 +233,46 @@ export default function Features2(): JSX.Element {
 
       const offer = await pc.createOffer();
       await pc.setLocalDescription(offer);
+      console.log("[VoiceAgent] Created local offer");
 
+      console.log("[VoiceAgent] Requesting /session…");
       const sess = await fetch(`${API_BASE}/session`, { method: "POST" }).then(
         (r) => r.json()
       );
+      console.log("[VoiceAgent] /session response:", sess);
+
+      // Grab our app-level session id from backend
+      const appSessionId: string | undefined = sess.app_session_id;
+      if (appSessionId) {
+        console.log("[VoiceAgent] Using app_session_id:", appSessionId);
+        sessionIdRef.current = appSessionId;
+      } else {
+        // Fallback: generate client-side id if backend not updated yet
+        const fallbackId =
+          typeof crypto !== "undefined" && "randomUUID" in crypto
+            ? crypto.randomUUID()
+            : `client-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        sessionIdRef.current = fallbackId;
+        console.warn(
+          "[VoiceAgent] No app_session_id from server, using client-generated id:",
+          sessionIdRef.current
+        );
+      }
+
       const token: string =
         sess?.client_secret?.value || sess?.client_secret || sess?.id;
       const model = sess?.model || "gpt-4o-realtime-preview-2025-06-03";
+
       if (!token) {
+        console.error("[VoiceAgent] No token from /session");
         setStatus("error");
         return;
       }
+
+      console.log(
+        "[VoiceAgent] Connecting to OpenAI Realtime with model:",
+        model
+      );
 
       const answerSDP = await fetch(
         `https://api.openai.com/v1/realtime?model=${model}`,
@@ -147,33 +286,43 @@ export default function Features2(): JSX.Element {
         }
       ).then((r) => r.text());
 
+      console.log("[VoiceAgent] Received SDP answer from OpenAI");
+
       await pc.setRemoteDescription({ type: "answer", sdp: answerSDP });
+      console.log("[VoiceAgent] Set remote description, WebRTC connected");
+
       setStatus("connected"); // active state; waves will remain visible
-    } catch {
+    } catch (err) {
+      console.error("[VoiceAgent] Error in start():", err);
       setStatus("error");
       stop();
     }
   };
 
   const stop = (): void => {
+    console.log("[VoiceAgent] Stopping session");
     setStatus("idle");
     try {
       dcRef.current?.close();
       pcRef.current?.getSenders()?.forEach((s) => s.track?.stop());
       micStreamRef.current?.getTracks()?.forEach((t) => t.stop());
       pcRef.current?.close();
-    } catch {}
+    } catch (err) {
+      console.warn("[VoiceAgent] Error while stopping:", err);
+    }
     dcRef.current = null;
     pcRef.current = null;
     micStreamRef.current = null;
+    sessionIdRef.current = null;
   };
 
   const toggleVoice = (): void => {
     if (status === "idle" || status === "error") {
-      // show listening immediately for UX, then switch to connected
-      setStatus("listening");
+      console.log("[VoiceAgent] Toggle: starting (status was", status, ")");
+      setStatus("listening"); // for UX
       void start();
     } else {
+      console.log("[VoiceAgent] Toggle: stopping (status was", status, ")");
       stop();
     }
   };
