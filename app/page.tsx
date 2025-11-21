@@ -5,10 +5,9 @@ import Features2 from "@/components/sections/Features2"
 import Features3 from "@/components/sections/Features3"
 import Hero1 from "@/components/sections/Hero1"
 import LogoCloud1 from "@/components/sections/LogoCloud1"
-import Newsletter1 from "@/components/sections/Newsletter1"
-import Newsletter2 from "@/components/sections/Newsletter2"
-import Testimonial1 from "@/components/sections/Testimonial1"
 import HowItWork2 from "@/components/sections/HowItWork2"
+import Contact1 from "@/components/sections/Contact1";
+
 export default function Home() {
 
 	return (
@@ -21,9 +20,8 @@ export default function Home() {
 				<HowItWork2 />
 				<Features2 />
 				<Features3 />
-				{/* <Testimonial1 /> */}
 				<Blog1 />
-				<Newsletter2 />
+				<Contact1 />
 			</Layout>
 		</>
 	)

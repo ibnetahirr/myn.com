@@ -5,6 +5,14 @@ import OffCanvas from "../OffCanvas";
 import ThemeSwitch from "@/components/elements/ThemeSwitch";
 import Menu from "../Menu";
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (opts: { url: string }) => void;
+    };
+  }
+}
+
 interface HeaderProps {
   scroll: boolean;
   isMobileMenu: boolean;
@@ -24,6 +32,18 @@ export default function Header1({
   isOffCanvas,
   handleOffCanvas,
 }: HeaderProps) {
+
+   const handleClick = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/ram-myyoganetwork/new-meeting",
+      });
+    } else {
+      console.warn("Calendly script not loaded yet");
+    }
+  };
+
+
   return (
     <header>
       <nav
@@ -61,7 +81,7 @@ export default function Header1({
           {/* Right Controls */}
           <div className="d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
             {/* Search Button */}
-            <button
+            {/* <button
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target=".offcanvasTop"
@@ -85,18 +105,18 @@ export default function Header1({
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </button> */}
 
             {/* Theme Switch */}
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
 
             {/* Login */}
-            <Link
-              href="https://calendly.com/ram-myyoganetwork/up-to-60min" target="_blank"
+            <button
+              onClick={handleClick}
               className="btn btn-gradient d-none d-md-block"
             >
               Book a Call
-            </Link>
+            </button>
 
             {/* Mobile Menu Burger */}
             <button

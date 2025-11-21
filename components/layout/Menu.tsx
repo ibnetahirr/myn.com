@@ -113,7 +113,7 @@ export default function Menu() {
                     className="dropdown-item position-relative z-1"
                     href="https://community.myyoganetwork.org/" target="_blank"
                   >
-                    Discourse
+                    Community
                   </Link>
                 </li>
               </ul>

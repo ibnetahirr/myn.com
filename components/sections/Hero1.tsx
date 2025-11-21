@@ -22,14 +22,14 @@ export default function Hero1() {
                 <h1
                   className="ds-3 mb-5"
                 >
-                  Professional Wellness Solutions for Organizations and
-                  Communities
+                Elevating Wellness With Tailored Yoga Programs for Every Environment
+
                 </h1>
                 <p
                   className="pe-10 mb-5"
                 >
-                 We empower schools, hotels, corporations, healthcare providers, and community groups with safe, certified, and impactful yoga and wellness programs, now enhanced with AI innovation.
-                </p>
+               Procurement-ready wellness solutions for hotels, workplaces, schools, and healthcare organizations.
+               </p>
 
                 {/* Scroll Button */}
                 <button
@@ -65,81 +65,13 @@ export default function Hero1() {
               </div>
             </div>
 
-            {/* Right Image + Discovery Card */}
+            {/* Right Image */}
             <div className="col-lg-6 position-relative justify-content-center">
               <img
                 className="hero-img"
-                src="/assets/imgs/hero-1/background.png"
+                src="/assets/imgs/home/hero.webp"
                 alt="My Yoga Network"
               />
-
-              <div className="shape-1 position-absolute">
-                <img
-                  className="rightToLeft"
-                  src="/assets/imgs/hero-1/shape-1.png"
-                  alt="shape"
-                />
-              </div>
-
-              <div className="shape-2 position-absolute d-none d-md-block">
-                <img
-                  src="/assets/imgs/hero-1/shape-2.png"
-                  alt="shape"
-                />
-              </div>
-
-              <div className="shape-3 position-absolute d-none d-md-block">
-                <img
-                  src="/assets/imgs/hero-1/shape-3.png"
-                  alt="shape"
-                />
-              </div>
-
-              {/* Discovery Call Card */}
-              <div className="alltuchtopdown card-hero backdrop-filter rounded-3 text-center d-inline-block p-3 position-absolute">
-                <Image
-                  className="rounded-3"
-                  src="/assets/imgs/team/ram-bhakt.jpg"
-                  alt="discovery-call"
-                  width={150}
-                  height={150}
-                />
-                <h6 className="mt-3">Book a Discovery Call</h6>
-                <p className="fs-7 text-700 mb-3">
-                  Discover how AI can personalize wellness <br />
-                  for your guests, employees, or students.
-                </p>
-                <Link
-                  href="https://calendly.com/ram-myyoganetwork/up-to-60min"
-                  target="_blank" className="shadow-sm d-flex align-items-center bg-white d-inline-flex rounded-pill px-2 py-1 mb-3"
-                >
-                  <span className="fs-7 fw-medium text-primary mx-2">
-                    Free Consultation
-                  </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={18}
-                    height={19}
-                    viewBox="0 0 18 19"
-                    fill="none"
-                  >
-                    <path
-                      d="M10.3125 5.5625L14.4375 9.5L10.3125 13.4375"
-                      stroke="#0d6efd"
-                      strokeWidth="1.125"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M14.25 9.5H3.5625"
-                      stroke="#0d6efd"
-                      strokeWidth="1.125"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
-              </div>
             </div>
           </div>
         </div>

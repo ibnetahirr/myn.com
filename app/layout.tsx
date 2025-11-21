@@ -12,20 +12,36 @@ import "/public/assets/css/main.css"
 import "@/node_modules/react-modal-video/css/modal-video.css"
 
 import type { Metadata } from "next"
+import Script from "next/script"
 
 export const metadata: Metadata = {
-    title: "My Yoga Network: Yoga Teachers for Hotels, Resorts, and Healthcare",
-    description: "Wellness programs: hotels, workplace, healthcare and kids",
+  title: "My Yoga Network: Yoga Teachers for Hotels, Resorts, and Healthcare",
+  description: "Wellness programs: hotels, workplace, healthcare and kids",
 }
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode
+  children: React.ReactNode
 }>) {
-    return (
-        <html lang="en">
-            <body>{children}</body>
-        </html>
-    )
+  return (
+    <html lang="en">
+      <head>
+        {/* Calendly CSS */}
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        {children}
+
+        {/* Calendly JS */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
+      </body>
+    </html>
+  )
 }

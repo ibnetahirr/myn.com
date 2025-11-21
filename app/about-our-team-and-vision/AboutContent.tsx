@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import CountUp from "react-countup";
+import Contact1 from "@/components/sections/Contact1";
+
 
 export default function PageAbout() {
  
   return (
     <>
-      {/* Contact 4 */}
+      {/* Hero */}
       <section className="section-padding">
         <div className="container">
           <div className="row">
@@ -52,19 +54,17 @@ export default function PageAbout() {
         </div>
       </section>
 
-      {/*Team 1*/}
+      {/*Team */}
       <section className="section-team-1 section-padding position-relative overflow-hidden">
         <div className="container">
           <div className="row position-relative z-1">
             <div className="text-center">
               <h3
-                className="ds-3 my-3"
-                data-aos="fade-zoom-in"
-                data-aos-delay={200}
+                className="my-3"
               >
                 Meet Our Team
               </h3>
-              <p className="fs-5" data-aos="fade-zoom-in" data-aos-delay={300}>
+              <p className="fs-5">
                 Meet the talented and passionate team members who drive our
                 company forward every day. <br className="d-none d-lg-block" />{" "}
                 company forward every day.
@@ -74,8 +74,6 @@ export default function PageAbout() {
           <div className="row mt-6">
             <div
               className="col-lg-12 col-md-12 mb-lg-12 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
@@ -93,27 +91,13 @@ export default function PageAbout() {
                   <h6>Ram Bhakt</h6>
                   <div className="d-flex">
                     <span className="fs-6 text-600 me-auto">Founder & CEO</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={14}
-                      viewBox="0 0 24 14"
-                      fill="#007BFF"
-                    >
-                      <path
-                        className="fill-white"
-                        d="M17.4177 0.417969L16.3487 1.48705L21.1059 6.24429H0V7.75621H21.1059L16.3487 12.5134L17.4177 13.5825L24 7.0002L17.4177 0.417969Z"
-                        fill="white"
-                      />
-                    </svg>
+                    <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
             </div>
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
@@ -133,27 +117,13 @@ export default function PageAbout() {
                     <span className="fs-6 text-600 me-auto">
                       Advisory Board
                     </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={14}
-                      viewBox="0 0 24 14"
-                      fill="#007BFF"
-                    >
-                      <path
-                        className="fill-white"
-                        d="M17.4177 0.417969L16.3487 1.48705L21.1059 6.24429H0V7.75621H21.1059L16.3487 12.5134L17.4177 13.5825L24 7.0002L17.4177 0.417969Z"
-                        fill="white"
-                      />
-                    </svg>
+                     <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
             </div>
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
@@ -172,27 +142,13 @@ export default function PageAbout() {
                     <span className="fs-6 text-600 me-auto">
                       Advisory Board
                     </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={14}
-                      viewBox="0 0 24 14"
-                      fill="#007BFF"
-                    >
-                      <path
-                        className="fill-white"
-                        d="M17.4177 0.417969L16.3487 1.48705L21.1059 6.24429H0V7.75621H21.1059L16.3487 12.5134L17.4177 13.5825L24 7.0002L17.4177 0.417969Z"
-                        fill="white"
-                      />
-                    </svg>
+                    <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
             </div>
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
@@ -211,27 +167,13 @@ export default function PageAbout() {
                     <span className="fs-6 text-600 me-auto">
                       Advisory Board
                     </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={14}
-                      viewBox="0 0 24 14"
-                      fill="#007BFF"
-                    >
-                      <path
-                        className="fill-white"
-                        d="M17.4177 0.417969L16.3487 1.48705L21.1059 6.24429H0V7.75621H21.1059L16.3487 12.5134L17.4177 13.5825L24 7.0002L17.4177 0.417969Z"
-                        fill="white"
-                      />
-                    </svg>
+                   <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
             </div>
             <div
               className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-              data-aos="fade-zoom-in"
-              data-aos-delay={100}
             >
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
@@ -250,19 +192,7 @@ export default function PageAbout() {
                     <span className="fs-6 text-600 me-auto">
                       Advisory Board
                     </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={14}
-                      viewBox="0 0 24 14"
-                      fill="#007BFF"
-                    >
-                      <path
-                        className="fill-white"
-                        d="M17.4177 0.417969L16.3487 1.48705L21.1059 6.24429H0V7.75621H21.1059L16.3487 12.5134L17.4177 13.5825L24 7.0002L17.4177 0.417969Z"
-                        fill="white"
-                      />
-                    </svg>
+                     <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
@@ -281,11 +211,11 @@ export default function PageAbout() {
           <div className="row position-relative z-1">
             <div className="text-center">
               <h3
-                className="ds-3 my-3"
+                className="my-3"
               >
                 Meet Our Teachers
               </h3>
-              <p className="fs-5" data-aos="fade-zoom-in" data-aos-delay={300}>
+              <p className="fs-5">
                 Our certified instructors deliver tailored, expert-led yoga
                 sessions with dedication and precision.{" "}
               </p>
@@ -367,8 +297,7 @@ export default function PageAbout() {
                   <div className="content text-center mx-auto">
                     <span className="h1 count fw-black text-primary my-0">
                       <span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={469} />
-                      <span>k</span>
+                      <CountUp enableScrollSpy={true} end={2728} />
                     </span>
                     <p>Wellness Sessions</p>
                   </div>
@@ -379,7 +308,7 @@ export default function PageAbout() {
                   <div className="content text-center mx-auto">
                     <span className="h1 count fw-black text-primary my-0">
                       +<span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={92} />
+                      <CountUp enableScrollSpy={true} end={28} />
                     </span>
                     <p>Partners Served</p>
                   </div>
@@ -390,7 +319,7 @@ export default function PageAbout() {
                   <div className="content text-center mx-auto">
                     <span className="h1 count fw-black text-primary my-0">
                       +<span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={756} />
+                      <CountUp enableScrollSpy={true} end={369} />
                     </span>
                     <p>Certified Instructors</p>
                   </div>
@@ -401,10 +330,10 @@ export default function PageAbout() {
                   <div className="content text-center mx-auto">
                     <span className="h1 count fw-black text-primary my-0">
                       +<span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={25} />
+                      <CountUp enableScrollSpy={true} end={27} />
                       <span>k</span>
                     </span>
-                    <p>Community Members</p>
+                    <p>Our Network Size</p>
                   </div>
                 </div>
               </div>
@@ -425,13 +354,11 @@ export default function PageAbout() {
         <div className="row text-center d-none d-md-block">
           <div className="text-center">
             <h3
-              className="ds-3 my-3"
-              data-aos="fade-zoom-in"
-              data-aos-delay={200}
+              className="my-3"
             >
               Our Clients
             </h3>
-            <p className="fs-5" data-aos="fade-zoom-in" data-aos-delay={300}>
+            <p className="fs-5">
               Delivering Exceptional Yoga & Wellness Services since 2012.
             </p>
           </div>
@@ -680,6 +607,9 @@ export default function PageAbout() {
           </div>
         </div>
       </section>
+
+      <Contact1 />
+
     </>
   );
 }

@@ -11,110 +11,44 @@ export default function Features1() {
   return (
     <>
       <section id="solutions" className="features-1 section-padding">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
-              <h2 className="fw-medium mt-4 lh-sm">
-                Elevating
-                <span className="fw-black"> Wellness Journeys</span> with
-                <span
-                  className="text-primary fst-italic"
-                >
-                  {" "}
-                  Tailored Yoga Programs.
-                </span>
-              </h2>
-            </div>
-            <div className="col-lg-8">
-              <div className="d-flex flex-md-row flex-column align-items-center position-relative ps-lg-8 pt-lg-0 pt-10">
-                <div
-                  className="pe-md-3 pb-3 pb-md-0 position-relative z-1"
-                >
-                   <img
-                    className="rounded-3 border border-3 border-white"
-                    src="/assets/imgs/home/small.webp"
-                    alt="School Yoga"
-                    height={120}
-                  />
-                </div>
-
-                <div
-                  className="pe-md-3 pb-3 pb-md-0 position-relative z-1"
-                >
-                   <img
-                    className="rounded-3 border border-3 border-white"
-                    src="/assets/imgs/home/middle.webp"
-                    alt="Yoga Group"
-                    height={180}
-                  />
-                </div>
-              
-               
-               <div
-                  className="pe-md-3 pb-3 pb-md-0 position-relative z-1"
-                >
-                   <img
-                    className="rounded-3 border border-3 border-white"
-                    src="/assets/imgs/home/bigger.webp"
-                    alt="Hotel Group"
-                    height={280}
-                  />
-                </div>
-
-
-                <img
-                  className="position-absolute top-50 start-0 translate-middle-y z-0"
-                  src="/assets/imgs/template/bg-ellipse.png"
-                  alt="my-yoga-network"
-                />
-                <img
-                  className="position-absolute z-2 star-lg"
-                  src="/assets/imgs/template/star-lg.png"
-                  alt="my-yoga-network"
-                />
-                <img
-                  className="position-absolute z-2 star-md"
-                  src="/assets/imgs/template/star-md.png"
-                  alt="my-yoga-network"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+       <div className="container position-relative z-1">
+					<div className="text-center mb-8">
+						<h3 className="my-3 fw-black">Wellness Where You Need It</h3>
+					</div>
+				</div>
+				
         <div className="container">
           <div className="row mt-10">
             {/* prettier-ignore */}
             <div className="col-lg-3 col-md-6">
 							<div className="feature-item mb-5 mb-lg-0">
-								<div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
+								<div className="icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
 									<div className="icon">
 										<img src="/assets/imgs/icons/hotel.svg" alt="Hotels & Resorts" width={80} height={80} />
 									</div>
 								</div>
 								<h6>Hotels & Resorts</h6>
-								<p>Boost guest satisfaction and elevate your property’s appeal with expertly designed yoga, meditation, and wellness retreats.</p>
+								<p>Transform wellness into a revenue and guest-experience advantage. From sunrise flows to signature retreats, we help properties boost satisfaction scores, increase engagement, and elevate brand appeal with certified instructors and turnkey, procurement-compliant programming.</p>
 							</div>
 						</div>
             <div className="col-lg-3 col-md-6">
               <div className="feature-item mb-5 mb-lg-0">
-                <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
+                <div className="icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
                   <div className="icon">
                     <img
                       src="/assets/imgs/icons/corporate.svg"
-                      alt="Corporate Clients" width={80} height={80}
+                      alt="Corporate Wellness" width={80} height={80}
                     />
                   </div>
                 </div>
-                <h6>Corporate Clients</h6>
+                <h6>Corporate Wellness</h6>
                 <p>
-                  Enhance employee productivity, reduce stress, and promote
-                  well-being with tailored yoga and wellness programs.
-                </p>
+              Improve team performance and retention by reducing burnout and supporting mental resilience. We deliver scalable on-site and virtual yoga, meditation, and stress-regulation programs that integrate seamlessly into your workplace culture.  </p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
               <div className="feature-item mb-5 mb-lg-0">
-                <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
+                <div className="icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
                   <div className="icon">
                     <img
                       src="/assets/imgs/icons/school.svg"
@@ -122,27 +56,25 @@ export default function Features1() {
                     />
                   </div>
                 </div>
-                <h6>Schools/Kids Yoga</h6>
+                <h6>Schools & Kids Yoga</h6>
                 <p>
-                  Offer Kids Yoga at your school or our studio to build focus,
-                  flexibility, and emotional resilience in students.
+              Bring developmentally appropriate, trauma-informed yoga into classrooms and after-school programming. Students build emotional regulation, confidence, and physical literacy—available at your school, district, or our Long Beach studio.
                 </p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
               <div className="feature-item mb-5 mb-lg-0">
-                <div className="bg-primary-soft icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
+                <div className="icon-flip position-relative icon-shape icon-xxl rounded-3 mb-4">
                   <div className="icon">
                     <img
                       src="/assets/imgs/icons/health.svg"
-                      alt="Healthcare Providers" width={80} height={80}
+                      alt="Healthcare & Rehabilitation" width={80} height={80}
                     />
                   </div>
                 </div>
-                <h6>Healthcare Providers</h6>
+                <h6>Healthcare & Rehabilitation</h6>
                 <p>
-                  Enhance your healthcare services with therapeutic yoga and
-                  wellness sessions for patients, staff, and caregivers.
+                Integrate therapeutic mind-body programming into patient care. Our clinical-aligned yoga supports pain modulation, mobility, anxiety reduction, and overall quality of life across hospitals, behavioral health, rehab, and outpatient settings.
                 </p>
               </div>
             </div>

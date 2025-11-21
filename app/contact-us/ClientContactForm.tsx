@@ -5,7 +5,6 @@ import { useState } from "react";
 export default function ClientContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
   const [status, setStatus] =
@@ -14,7 +13,7 @@ export default function ClientContactForm() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !message) {
       setStatus("error");
       setFeedback("Please fill in all fields.");
       return;
@@ -27,7 +26,7 @@ export default function ClientContactForm() {
       const res = await fetch("https://mynapi.onrender.com/contact/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, email, message }),
       });
 
       if (res.ok) {
@@ -35,7 +34,6 @@ export default function ClientContactForm() {
         setFeedback("✅ Thanks! Your message has been received. We’ll get back to you soon.");
         setName("");
         setEmail("");
-        setSubject("");
         setMessage("");
       } else if (res.status === 409) {
         setStatus("exists");
@@ -53,8 +51,6 @@ export default function ClientContactForm() {
 
   return (
     <div className="border rounded-4 shadow-1 p-5">
-      <h4>Leave a message</h4>
-
       <form onSubmit={onSubmit} className="mt-5" noValidate>
         <div className="row">
           {/* Name */}
@@ -101,27 +97,6 @@ export default function ClientContactForm() {
             </div>
           </div>
 
-          {/* Subject */}
-          <div className="col-md-12 mt-4">
-            <div className="input-group d-flex align-items-center">
-              <div className="icon-input border border-end-0 rounded-2 rounded-end-0 ps-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
-                  <path d="M6.75 19.25H17.25C18.3546 19.25 19.25 18.3546 19.25 17.25V9.75001L12 4.75L4.75 9.75001V17.25C4.75 18.3546 5.64544 19.25 6.75 19.25Z" stroke="black" strokeWidth="1.5" />
-                  <path d="M9.75 15.749C9.75 14.6444 10.6455 13.749 11.75 13.749H12.25C13.3546 13.749 14.25 14.6444 14.25 15.749V19.249H9.75V15.749Z" stroke="black" strokeWidth="1.5" />
-                </svg>
-              </div>
-              <input
-                type="text"
-                className="form-control ms-0 border rounded-2 rounded-start-0 border-start-0"
-                name="subject"
-                placeholder="Subject *"
-                aria-label="Subject"
-                required
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-              />
-            </div>
-          </div>
 
           {/* Message */}
           <div className="col-12 mt-4">
@@ -135,7 +110,7 @@ export default function ClientContactForm() {
               <textarea
                 className="form-control border border-start-0 ms-0 rounded-start-0 rounded-1 pb-10"
                 name="message"
-                placeholder="Describe your project in short *"
+                placeholder="Your Message *"
                 aria-label="Message"
                 required
                 rows={5}

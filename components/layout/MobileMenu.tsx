@@ -128,7 +128,7 @@ export default function MobileMenu({
                       </li>
                        <li>
                         <Link href="https://community.myyoganetwork.org/" target="_blank">
-                          Discourse
+                          Community
                         </Link>
                       </li>
                     </ul>

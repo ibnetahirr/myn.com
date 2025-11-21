@@ -165,6 +165,11 @@ main {
   overflow: hidden;
 }
 
+.roca
+{
+  font-family: Roca-Regular;
+}
+
 /**
    * Correct the font size and margin on `h1` elements within `section` and
    * `article` contexts in Chrome, Firefox, and Safari.
@@ -12900,8 +12905,8 @@ strong {
   }
 }
 .section-feature-5 .photo-description .box-gradient-1 {
-  width: 509px;
-  height: 446px;
+  width: 400px;
+  height: 380px;
   transform: rotate(-2.178deg);
   transition: 0.3s ease-in-out;
 }
@@ -13409,7 +13414,7 @@ a:hover {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 70px 0;
 }
 
 .py-188 {
@@ -14569,3 +14574,4 @@ svg .stroke-white {
 .cursor-pointer{
   cursor: pointer;
 }
+

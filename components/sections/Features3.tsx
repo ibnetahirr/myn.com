@@ -1,6 +1,4 @@
 "use client";
-import Link from "next/link";
-import CountUp from "react-countup";
 
 export default function Features3() {
   return (
@@ -9,13 +7,9 @@ export default function Features3() {
         <section className="section-padding">
           <div className="container">
             <div className="text-center">
-              <h3 className="ds-5 my-3 fw-black">
-                Why Choose My Yoga Network?
+              <h3 className="my-3 fw-black">
+               What Sets Us Apart
               </h3>
-              <p className="fs-5 mb-0">
-                Partner with My Yoga Network and benefit from our team of
-                instructors and decades of experience.
-              </p>
             </div>
             <div className="row mt-6 position-relative">
               <div className="col-lg-4">
@@ -28,11 +22,9 @@ export default function Features3() {
                       alt="Industry-Specific Programs"
                       height={70}
                     />
-                    <h6 className="my-3">Industry-Specific Programs</h6>
+                    <h6 className="my-3">Industry-Specific Programming</h6>
                     <p className="mb-4">
-                      Designed for hotels, corporates, schools & healthcare
-                      providers.
-                    </p>
+                   Purpose-built for hospitality, corporate workforces, K–12 and higher education, and healthcare systems.</p>
                   </div>
                 </div>
               </div>
@@ -50,7 +42,7 @@ export default function Features3() {
                       Certified & Vetted Yoga Instructors
                     </h6>
                     <p className="mb-4">
-                      Get reliable, professional, insured yoga instructors.
+                      All instructors are certified, insured, and trained in trauma-informed, inclusive and adaptive yoga practices.
                     </p>
                   </div>
                 </div>
@@ -65,11 +57,9 @@ export default function Features3() {
                       alt="Flexible Offerings"
                       height={70}
                     />
-                    <h6 className="my-3">Flexible Offerings</h6>
+                    <h6 className="my-3">Flexible Delivery Models</h6>
                     <p className="mb-4">
-                      Monthly sessions, on-demand events, luxury retreats, or
-                      trial plans.
-                    </p>
+Weekly sessions, on-demand events, luxury wellness activations, kids programs, therapeutic yoga, and multi-location scalability.                    </p>
                   </div>
                 </div>
               </div>
