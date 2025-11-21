@@ -1,10 +1,9 @@
-// app/(site)/PageBlog2.tsx (server component)
+// app/(site)/blogs/page.tsx  (server component)
 import Layout from "@/components/layout/Layout";
 import Link from "next/link";
 
 const API_BASE = "https://mynapi.onrender.com";
 
-type Category = { id: number; title: string };
 type Blog = {
   id: number;
   title: string;
@@ -12,11 +11,11 @@ type Blog = {
   meta_description?: string;
   thumbnail_url?: string;
   alt?: string;
-  category?: Category;
+  category?: string;      // simple column now
   created_at?: string;
 };
 
-async function getBlogs(limit = 12, offset = 0): Promise<Blog[]> {
+async function getBlogs(limit = 6, offset = 0): Promise<Blog[]> {
   const res = await fetch(
     `${API_BASE}/api/blogs?limit=${limit}&offset=${offset}`,
     {
@@ -68,9 +67,20 @@ function Thumb({ src, alt }: { src?: string; alt: string }) {
   );
 }
 
-export default async function PageBlog2() {
-  const blogs = await getBlogs(12, 0);
-  const recent = blogs.slice(0, 6);
+type PageProps = {
+  searchParams?: {
+    page?: string;
+  };
+};
+
+export default async function PageBlog2({ searchParams }: PageProps) {
+  const page = Math.max(Number(searchParams?.page || "1"), 1);
+  const limit = 6;
+  const offset = (page - 1) * limit;
+
+  const blogs = await getBlogs(limit, offset);
+  const hasNextPage = blogs.length === limit;
+  const hasPrevPage = page > 1;
 
   return (
     <Layout>
@@ -88,7 +98,7 @@ export default async function PageBlog2() {
 
           <div className="row">
             <div className="col-lg-10 mx-lg-auto mt-8">
-              {recent.map((b, i) => (
+              {blogs.map((b, i) => (
                 <div
                   key={b.id}
                   className="border-top py-5 position-relative d-flex flex-column flex-md-row align-items-center"
@@ -100,16 +110,6 @@ export default async function PageBlog2() {
 
                   {/* Text content */}
                   <div className="ms-0 ms-md-4 w-100 w-lg-50 me-auto">
-                    <Link
-                      href={`/blog?category=${encodeURIComponent(
-                        b.category?.title ?? "General"
-                      )}`}
-                      className="bg-primary-soft position-relative z-1 d-inline-flex rounded-pill px-3 py-2 mt-3"
-                    >
-                      <span className="tag-spacing fs-7 fw-bold text-linear-2 text-uppercase">
-                        {b.category?.title ?? "General"}
-                      </span>
-                    </Link>
                     <h6 className="my-3">
                       <Link href={`/blog/${b.slug}`} className="text-reset">
                         {b.title}
@@ -138,6 +138,31 @@ export default async function PageBlog2() {
                   </div>
                 </div>
               ))}
+
+              {/* Pagination */}
+              <div className="d-flex justify-content-center align-items-center gap-3 mt-5">
+                <Link
+                  href={`/blogs${hasPrevPage ? `?page=${page - 1}` : ""}`}
+                  aria-disabled={!hasPrevPage}
+                  className={`btn btn-outline-secondary rounded-pill px-4 ${
+                    !hasPrevPage ? "disabled" : ""
+                  }`}
+                >
+                  Previous
+                </Link>
+
+                <span className="fw-medium">Page {page}</span>
+
+                <Link
+                  href={`/blogs${hasNextPage ? `?page=${page + 1}` : ""}`}
+                  aria-disabled={!hasNextPage}
+                  className={`btn btn-outline-secondary rounded-pill px-4 ${
+                    !hasNextPage ? "disabled" : ""
+                  }`}
+                >
+                  Next
+                </Link>
+              </div>
             </div>
           </div>
         </div>

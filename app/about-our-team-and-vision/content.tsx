@@ -1,12 +1,41 @@
 "use client";
 
+import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import Link from "next/link";
 import CountUp from "react-countup";
 import Contact1 from "@/components/sections/Contact1";
 
-
 export default function PageAbout() {
- 
+  const swiperOptions = {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    slidesPerGroup: 1,
+    centeredSlides: false,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      576: {
+        slidesPerView: 1,
+      },
+      0: {
+        slidesPerView: 1,
+      },
+    },
+  };
+
   return (
     <>
       {/* Hero */}
@@ -32,7 +61,7 @@ export default function PageAbout() {
             </div>
           </div>
           <div className="row mt-3">
-             <div className="col-lg-6">
+            <div className="col-lg-6">
               <div className="rounded-4 border border-5 border-white zoom-img mb-5 mb-lg-0">
                 <img
                   className="rounded-4 w-100"
@@ -59,11 +88,7 @@ export default function PageAbout() {
         <div className="container">
           <div className="row position-relative z-1">
             <div className="text-center">
-              <h3
-                className="my-3"
-              >
-                Meet Our Team
-              </h3>
+              <h3 className="my-3">Meet Our Team</h3>
               <p className="fs-5">
                 Meet the talented and passionate team members who drive our
                 company forward every day. <br className="d-none d-lg-block" />{" "}
@@ -72,9 +97,7 @@ export default function PageAbout() {
             </div>
           </div>
           <div className="row mt-6">
-            <div
-              className="col-lg-12 col-md-12 mb-lg-12 mb-7 text-center"
-            >
+            <div className="col-lg-12 col-md-12 mb-lg-12 mb-7 text-center">
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
@@ -96,9 +119,7 @@ export default function PageAbout() {
                 </Link>
               </div>
             </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-            >
+            <div className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center">
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
@@ -117,14 +138,12 @@ export default function PageAbout() {
                     <span className="fs-6 text-600 me-auto">
                       Advisory Board
                     </span>
-                     <i className="bi bi-linkedin" />
+                    <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
             </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-            >
+            <div className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center">
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
@@ -147,9 +166,7 @@ export default function PageAbout() {
                 </Link>
               </div>
             </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-            >
+            <div className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center">
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
@@ -167,14 +184,12 @@ export default function PageAbout() {
                     <span className="fs-6 text-600 me-auto">
                       Advisory Board
                     </span>
-                   <i className="bi bi-linkedin" />
+                    <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
             </div>
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-            >
+            <div className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center">
               <div className="position-relative d-inline-block z-1">
                 <div className="zoom-img rounded-3">
                   <img
@@ -192,7 +207,7 @@ export default function PageAbout() {
                     <span className="fs-6 text-600 me-auto">
                       Advisory Board
                     </span>
-                     <i className="bi bi-linkedin" />
+                    <i className="bi bi-linkedin" />
                   </div>
                 </Link>
               </div>
@@ -206,78 +221,129 @@ export default function PageAbout() {
         <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
       </section>
 
-      <section className="section-padding position-relative overflow-hidden">
+   
+      <section className="section-project-2 pt-120 pb-8">
         <div className="container">
           <div className="row position-relative z-1">
             <div className="text-center">
-              <h3
-                className="my-3"
-              >
-                Meet Our Teachers
-              </h3>
+              <h3 className="my-3">Meet Our Teachers</h3>
               <p className="fs-5">
                 Our certified instructors deliver tailored, expert-led yoga
-                sessions with dedication and precision.{" "}
+                sessions with dedication and precision.
               </p>
             </div>
           </div>
 
           <div className="row mt-6">
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
+            <Swiper
+              {...swiperOptions}
+              className="swiper slider-1 pt-2 pb-8"
+              modules={[Keyboard, Autoplay]}
             >
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img
-                    className="img-fluid w-100 h-100"
-                    src="/assets/imgs/team/teachers/teacher-1.webp"
-                    alt="Teachers"
-                  />
-                </div>
-              </div>
-            </div>
+              <div className="swiper-wrapper">
+          
+                <SwiperSlide className="swiper-slide">
+										<div className="text-center">
+											<div className="zoom-img position-relative d-inline-block z-1">
+												<div className="rounded-3 fix">
+													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/1.webp" alt="Teacher" />
+												</div>
+												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+													<h6>Teacher</h6>
+													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
+												</Link>
+											</div>
+										</div>
+									</SwiperSlide>
 
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-            >
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img
-                    className="img-fluid w-100"
-                    src="/assets/imgs/team/teachers/teacher-2.webp"
-                    alt="Teachers"
-                  />
-                </div>
-              </div>
-            </div>
+                  <SwiperSlide className="swiper-slide">
+										<div className="text-center">
+											<div className="zoom-img position-relative d-inline-block z-1">
+												<div className="rounded-3 fix">
+													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/2.webp" alt="Teacher" />
+												</div>
+												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+													<h6>Teacher</h6>
+													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
+												</Link>
+											</div>
+										</div>
+									</SwiperSlide>
 
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-            >
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img
-                    className="img-fluid w-100"
-                    src="/assets/imgs/team/teachers/teacher-3.webp"
-                    alt="Teachers"
-                  />
-                </div>
-              </div>
-            </div>
+                  <SwiperSlide className="swiper-slide">
+										<div className="text-center">
+											<div className="zoom-img position-relative d-inline-block z-1">
+												<div className="rounded-3 fix">
+													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/3.webp" alt="Teacher" />
+												</div>
+												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+													<h6>Teacher</h6>
+													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
+												</Link>
+											</div>
+										</div>
+									</SwiperSlide>
 
-            <div
-              className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
-            >
-              <div className="position-relative d-inline-block z-1">
-                <div className="zoom-img rounded-3">
-                  <img
-                    className="img-fluid w-100"
-                    src="/assets/imgs/team/teachers/teacher-4.webp"
-                    alt="Teachers"
-                  />
-                </div>
+                  <SwiperSlide className="swiper-slide">
+										<div className="text-center">
+											<div className="zoom-img position-relative d-inline-block z-1">
+												<div className="rounded-3 fix">
+													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/4.webp" alt="Teacher" />
+												</div>
+												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+													<h6>Teacher</h6>
+													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
+												</Link>
+											</div>
+										</div>
+									</SwiperSlide>
+
+                  <SwiperSlide className="swiper-slide">
+										<div className="text-center">
+											<div className="zoom-img position-relative d-inline-block z-1">
+												<div className="rounded-3 fix">
+													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/5.webp" alt="Teacher" />
+												</div>
+												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+													<h6>Teacher</h6>
+													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
+												</Link>
+											</div>
+										</div>
+									</SwiperSlide>
+
+                  <SwiperSlide className="swiper-slide">
+										<div className="text-center">
+											<div className="zoom-img position-relative d-inline-block z-1">
+												<div className="rounded-3 fix">
+													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/6.webp" alt="Teacher" />
+												</div>
+												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+													<h6>Teacher</h6>
+													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
+												</Link>
+											</div>
+										</div>
+									</SwiperSlide>
+
+
+                  <SwiperSlide className="swiper-slide">
+										<div className="text-center">
+											<div className="zoom-img position-relative d-inline-block z-1">
+												<div className="rounded-3 fix">
+													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/7.webp" alt="Teacher" />
+												</div>
+												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+													<h6>Teacher</h6>
+													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
+												</Link>
+											</div>
+										</div>
+									</SwiperSlide>
+               
+
               </div>
-            </div>
+            </Swiper>
           </div>
         </div>
       </section>
@@ -353,11 +419,7 @@ export default function PageAbout() {
       <section className="section-padding position-relative overflow-hidden">
         <div className="row text-center d-none d-md-block">
           <div className="text-center">
-            <h3
-              className="my-3"
-            >
-              Our Clients
-            </h3>
+            <h3 className="my-3">Our Clients</h3>
             <p className="fs-5">
               Delivering Exceptional Yoga & Wellness Services since 2012.
             </p>
@@ -377,7 +439,7 @@ export default function PageAbout() {
                   </div>
                 </div>
 
-                  <div className="col-12 col-sm-6 col-lg-3">
+                <div className="col-12 col-sm-6 col-lg-3">
                   <div className="compatible hover-up text-center">
                     <img
                       src="/assets/imgs/clients/hotels/dagny.png"
@@ -387,7 +449,6 @@ export default function PageAbout() {
                     <p className="text-900 mt-3 mb-0">The Dagny</p>
                   </div>
                 </div>
-
 
                 <div className="col-12 col-sm-6 col-lg-3">
                   <div className="compatible hover-up text-center">
@@ -609,7 +670,6 @@ export default function PageAbout() {
       </section>
 
       <Contact1 />
-
     </>
   );
 }
