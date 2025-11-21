@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function ClientContactForm() {
+export default function Content() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

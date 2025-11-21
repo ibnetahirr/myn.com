@@ -1,10 +1,10 @@
 import Layout from "@/components/layout/Layout";
-import ClientContactForm from "./ClientContactForm";
+import Content from "./Content";
 
 export const metadata = {
-  title: "Contact Us | My Yoga Network",
+  title: "Contact | My Yoga Network",
   description:
-    "Get in touch with My Yoga Network for customized yoga and wellness programs. Contact us at +1 888-960-9240 or team@myyoganetwork.com for consultations, support, or partnerships in Long Beach, CA.",
+    "My Yoga Network provides certified yoga teachers for hotels, resorts, healthcare facilities, and private practices, promoting wellness for all. Contact today!",
 };
 
 export default function ContactPage() {
@@ -23,7 +23,7 @@ export default function ContactPage() {
 
           <div className="row mt-8">
             <div className="col-lg-10 mx-lg-auto">
-              <ClientContactForm />
+              <Content />
             </div>
           </div>
         </div>

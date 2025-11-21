@@ -1,16 +1,16 @@
 import Layout from "@/components/layout/Layout";
-import LoginContent from "./InstructorContent";
+import Content from "./content";
 
 export const metadata = {
-  title: "Join as Instructor | My Yoga Network",
+  title: "Join as Yoga Instructor at My Yoga Network",
   description:
-    "Become a yoga instructor with My Yoga Network and connect with clients across the U.S. Enjoy professional growth, fair compensation, and a supportive community.",
+    "Join My Yoga Network as a Yoga Instructor and expand your reach. Connect with clients seeking personalized yoga therapy. Sign up today to grow your practice.",
 };
 
 export default function PageLogin() {
   return (
     <Layout>
-      <LoginContent />
+      <Content />
     </Layout>
   );
 }

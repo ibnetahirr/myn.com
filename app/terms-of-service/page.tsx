@@ -1,16 +1,16 @@
 import Layout from "@/components/layout/Layout";
-import PageTermsConditions from "./TermsContent";
+import Content from "./content";
 
 export const metadata = {
-  title: "Terms and Conditions | My Yoga Network",
+  title: "Terms of Service | My Yoga Network",
   description:
-    "Read the Terms and Conditions for using My Yoga Network's services. Learn about eligibility, account registration, intellectual property, payment, and more. Contact us at (888) 960-9240 or team@myyoganetwork.com.",
+    "On My Yoga Network, we prioritize the privacy and security of our users. Here's how we collect, use, protect, and share information gathered through our platform.",
 };
 
 export default function TermsConditionPage() {
   return (
     <Layout>
-      <PageTermsConditions />
+      <Content />
     </Layout>
   );
 }

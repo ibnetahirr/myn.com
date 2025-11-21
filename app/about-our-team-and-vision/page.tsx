@@ -1,10 +1,10 @@
 import Layout from "@/components/layout/Layout";
-import AboutContent from "./AboutContent"; 
+import AboutContent from "./content"; 
 
 export const metadata = {
-  title: "About Us | My Yoga Network",
+  title: "About My Yoga Network: Find Best Yoga Therapy Programs",
   description:
-    "Learn more about My Yoga Network, our mission, team, and wellness programs for individuals and organizations.",
+    "My Yoga Network offers the best yoga therapy programs to help you enhance your practice and deepen your expertise. Find the perfect program to meet your needs. Contact today!",
 };
 
 export default function AboutPage() {

@@ -1,16 +1,16 @@
 import Layout from "@/components/layout/Layout";
-import PageAbout from "./YogaTherapistContent"; 
+import Content from "./content"; 
 
 export const metadata = {
-  title: "Find a Yoga Therapist | My Yoga Network",
+  title: "Find A Certified Yoga Therapist Near Me | My Yoga Network",
   description:
-    "Connect with certified yoga therapists at My Yoga Network. Contact us at (888) 960-9240 or contact@myyoganetwork.com to find tailored wellness solutions in Long Beach, CA, or apply to teach.",
+    "Looking for a certified yoga therapist near you? Connect with MY Yoga Network, where we make it easy to find highly qualified yoga therapists in your area. Explore our network today!",
 };
 
 export default function FindYogaTherapistPage() {
   return (
     <Layout>
-      <PageAbout />
+      <Content />
     </Layout>
   );
 }
