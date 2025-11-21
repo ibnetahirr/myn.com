@@ -10,13 +10,15 @@ import "/public/assets/fonts/satoshi/satoshi.css"
 import "/public/assets/css/main.css"
 
 import "@/node_modules/react-modal-video/css/modal-video.css"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 import type { Metadata } from "next"
 import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "My Yoga Network: Yoga Teachers for Hotels, Resorts, and Healthcare",
-  description: "Wellness programs: hotels, workplace, healthcare and kids",
+  description: "My Yoga Network provides certified yoga teachers for hotels, resorts, healthcare facilities, and private practices, promoting wellness for all. Contact today!",
 }
 
 export default function RootLayout({
@@ -41,6 +43,7 @@ export default function RootLayout({
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="afterInteractive"
         />
+         <SpeedInsights />
       </body>
     </html>
   )

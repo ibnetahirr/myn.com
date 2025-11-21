@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import Content from "./content";
 
+
 export const metadata = {
   title: "Join as Yoga Instructor at My Yoga Network",
   description:
