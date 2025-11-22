@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 
- const API_BASE = "https://mynapi.onrender.com/voice-agent";
+const API_BASE = "https://mynapi.onrender.com/voice-agent";
 //const API_BASE = "http://127.0.0.1:8000/voice-agent";
 
 export default function Features2(): JSX.Element {
@@ -174,8 +174,7 @@ export default function Features2(): JSX.Element {
 
               console.log("[VoiceAgent] /search_knowledge response:", ragRes);
 
-              const context =
-                ragRes?.context_snippet || "No results found.";
+              const context = ragRes?.context_snippet || "No results found.";
               const results = ragRes?.results || [];
 
               console.log(
@@ -365,18 +364,36 @@ export default function Features2(): JSX.Element {
                 style={{
                   width: "160px",
                   height: "160px",
-                  backgroundColor: "#ffffff",
-                  color: "#000000",
+                  backgroundColor:
+                    status !== "idle" && status !== "error"
+                      ? "#0d6efd" // BLUE when talking
+                      : "#ffffff", // WHITE when idle
+                  color:
+                    status !== "idle" && status !== "error"
+                      ? "#ffffff" // white text on blue
+                      : "#000000", // black on white
                   fontSize: "1.05rem",
                   zIndex: 3,
-                  transition: "transform .25s ease",
+                  transition: "transform .25s ease, background-color .25s ease",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.06)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "scale(1)")
-                }
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.06)";
+                  if (status !== "idle" && status !== "error") {
+                    e.currentTarget.style.backgroundColor = "#dc3545"; // RED on hover while talking
+                    e.currentTarget.style.color = "#ffffff";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.backgroundColor =
+                    status !== "idle" && status !== "error"
+                      ? "#0d6efd" // back to BLUE
+                      : "#ffffff"; // idle = WHITE
+                  e.currentTarget.style.color =
+                    status !== "idle" && status !== "error"
+                      ? "#ffffff"
+                      : "#000000";
+                }}
               >
                 {status === "idle" ? "Start Talking" : "Stop"}
               </button>

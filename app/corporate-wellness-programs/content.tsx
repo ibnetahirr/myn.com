@@ -21,7 +21,6 @@ export default function Content() {
     }
   };
 
- 
   return (
     <>
       {/* HERO */}
@@ -172,7 +171,7 @@ export default function Content() {
               than ever.
               <br />
               Employees expect employers to support wellbeing, and organizations
-              that do see measurable gains in:
+              that do see measurable gains in
             </p>
           </div>
         </div>
@@ -181,11 +180,49 @@ export default function Content() {
             <div className="col-lg-4">
               <div className="p-2 mt-lg-8 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                 <div className="card-service bg-white p-6 border rounded-4">
-                  <h6 className="my-3">Guest Experience Upgrade</h6>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={60}
+                    height={60}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    {/* Main big star */}
+                    <path
+                      d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Left small star */}
+                    <path
+                      d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
+                      fill="#F5C542"
+                      stroke="#DAA520"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Right small star */}
+                    <path
+                      d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
+                      fill="#F5C542"
+                      stroke="#DAA520"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <h6 className="my-3">Productivity & Performance Boost</h6>
                   <p className="mb-6">
-                    Bespoke wellness offerings turn great stays into
-                    unforgettable stories—boosting reviews, repeat bookings, and
-                    word-of-mouth.
+                    Corporate wellness strengthens employee focus, mental
+                    clarity, and emotional balance. Teams perform better, stay
+                    more engaged, and collaborate more effectively when their
+                    wellbeing is supported.
                   </p>
                 </div>
               </div>
@@ -193,11 +230,49 @@ export default function Content() {
             <div className="col-lg-4">
               <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                 <div className="card-service bg-white p-6 border rounded-3">
-                  <h6 className="my-3">Revenue Diversification</h6>
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={60}
+                    height={60}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    {/* Main big star */}
+                    <path
+                      d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Left small star */}
+                    <path
+                      d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
+                      fill="#F5C542"
+                      stroke="#DAA520"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Right small star */}
+                    <path
+                      d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
+                      fill="#F5C542"
+                      stroke="#DAA520"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <h6 className="my-3">Attendance & Retention Gains</h6>
                   <p className="mb-6">
-                    Wellness classes, themed retreats, wellness-focused room
-                    packages, and partner activations create additional income
-                    channels.
+                    Organizations that invest in wellbeing see improved
+                    attendance, reduced stress-related absences, and stronger
+                    employee loyalty. This translates into lower turnover and a
+                    more stable workforce.
                   </p>
                 </div>
               </div>
@@ -205,10 +280,49 @@ export default function Content() {
             <div className="col-lg-4">
               <div className="p-2 mt-lg-8 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up">
                 <div className="card-service bg-white p-6 border rounded-3">
-                  <h6 className="my-3">Operational Advantage</h6>
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={60}
+                    height={60}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    {/* Main big star */}
+                    <path
+                      d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Left small star */}
+                    <path
+                      d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
+                      fill="#F5C542"
+                      stroke="#DAA520"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Right small star */}
+                    <path
+                      d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
+                      fill="#F5C542"
+                      stroke="#DAA520"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <h6 className="my-3">Culture & Team Morale Upgrade</h6>
                   <p className="mb-6">
-                    A calmer, healthier team supports improved service delivery
-                    and reduces staffing challenges tied to stress and burnout.
+                    Wellness programs build a calmer, more connected
+                    environment. Employees feel valued, team morale increases,
+                    and your employer brand becomes stronger—helping you attract
+                    and keep top talent.
                   </p>
                 </div>
               </div>

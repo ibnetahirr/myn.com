@@ -248,10 +248,10 @@ export default function PageAbout() {
 												<div className="rounded-3 fix">
 													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/1.webp" alt="Teacher" />
 												</div>
-												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
 													<h6>Teacher</h6>
-													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
-												</Link>
+													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
+												</Link> */}
 											</div>
 										</div>
 									</SwiperSlide>
@@ -262,10 +262,10 @@ export default function PageAbout() {
 												<div className="rounded-3 fix">
 													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/2.webp" alt="Teacher" />
 												</div>
-												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
 													<h6>Teacher</h6>
-													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
-												</Link>
+													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
+												</Link> */}
 											</div>
 										</div>
 									</SwiperSlide>
@@ -276,10 +276,10 @@ export default function PageAbout() {
 												<div className="rounded-3 fix">
 													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/3.webp" alt="Teacher" />
 												</div>
-												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
 													<h6>Teacher</h6>
-													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
-												</Link>
+													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
+												</Link> */}
 											</div>
 										</div>
 									</SwiperSlide>
@@ -290,10 +290,10 @@ export default function PageAbout() {
 												<div className="rounded-3 fix">
 													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/4.webp" alt="Teacher" />
 												</div>
-												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
 													<h6>Teacher</h6>
-													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
-												</Link>
+													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
+												</Link> */}
 											</div>
 										</div>
 									</SwiperSlide>
@@ -304,10 +304,10 @@ export default function PageAbout() {
 												<div className="rounded-3 fix">
 													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/5.webp" alt="Teacher" />
 												</div>
-												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
 													<h6>Teacher</h6>
-													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
-												</Link>
+													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
+												</Link> */}
 											</div>
 										</div>
 									</SwiperSlide>
@@ -318,10 +318,10 @@ export default function PageAbout() {
 												<div className="rounded-3 fix">
 													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/6.webp" alt="Teacher" />
 												</div>
-												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
 													<h6>Teacher</h6>
-													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
-												</Link>
+													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
+												</Link> */}
 											</div>
 										</div>
 									</SwiperSlide>
@@ -333,10 +333,10 @@ export default function PageAbout() {
 												<div className="rounded-3 fix">
 													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/7.webp" alt="Teacher" />
 												</div>
-												<Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
+												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
 													<h6>Teacher</h6>
-													{/* <p className="text-900">Streamlining operations and growth strategies for market enhancement.</p> */}
-												</Link>
+													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
+												</Link> */}
 											</div>
 										</div>
 									</SwiperSlide>
