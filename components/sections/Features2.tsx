@@ -18,36 +18,71 @@ export default function Features2(): JSX.Element {
   // Our app-level session id (UUID from backend)
   const sessionIdRef = useRef<string | null>(null);
 
-  // Map to accumulate assistant text per response_id
-  const responseTextRef = useRef<Map<string, string>>(new Map());
+  // Response IDs we've already saved (to avoid duplicate assistant messages)
+  const savedResponseIdsRef = useRef<Set<string>>(new Set());
 
-  // --- Helper: save messages to backend (Supabase via /messages)
-  const saveMessage = async (
-    role: "user" | "assistant",
-    message: string,
-    metadata: any = null
-  ) => {
-    const sessionId = sessionIdRef.current;
-    if (!sessionId || !message.trim()) {
-      return;
-    }
+  // ----------------- HELPERS -----------------
 
+  const getSessionId = (): string | null => sessionIdRef.current;
+
+  // Generic save helper
+  const postMessage = async (body: any) => {
     try {
-      console.log("[VoiceAgent] Saving message:", { role, message, sessionId });
-      await fetch(`${API_BASE}/messages`, {
+      const res = await fetch(`${API_BASE}/messages`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          session_id: sessionId,
-          role,
-          message,
-          metadata,
-        }),
+        body: JSON.stringify(body),
       });
+      const text = await res.text();
+      if (!res.ok) {
+        console.error(
+          "[VoiceAgent] /messages error:",
+          res.status,
+          res.statusText,
+          text
+        );
+      } else {
+        console.log("[VoiceAgent] /messages ok:", text);
+      }
     } catch (err) {
-      console.warn("[VoiceAgent] Failed to save message:", err);
+      console.warn("[VoiceAgent] Failed to call /messages:", err);
     }
   };
+
+  // Recursively collect all text-like strings from an event or sub-object
+  const extractTextFromEvent = (msg: any): string => {
+    const texts: string[] = [];
+    const visited = new Set<any>();
+
+    const walk = (node: any) => {
+      if (!node || typeof node !== "object") return;
+      if (visited.has(node)) return;
+      visited.add(node);
+
+      if (typeof (node as any).text === "string") {
+        texts.push((node as any).text);
+      }
+      if (typeof (node as any).transcript === "string") {
+        texts.push((node as any).transcript);
+      }
+      if (typeof (node as any).output_text === "string") {
+        texts.push((node as any).output_text);
+      }
+
+      if (Array.isArray(node)) {
+        for (const v of node) walk(v);
+      } else {
+        for (const v of Object.values(node)) {
+          if (v && typeof v === "object") walk(v);
+        }
+      }
+    };
+
+    walk(msg);
+    return texts.join(" ").replace(/\s+/g, " ").trim();
+  };
+
+  // ----------------- START / STOP -----------------
 
   const start = async (): Promise<void> => {
     try {
@@ -116,60 +151,70 @@ export default function Features2(): JSX.Element {
           return;
         }
 
-        console.log("[VoiceAgent] DC message parsed:", msg.type, msg);
+        const type: string = msg.type || "";
+        console.log("[VoiceAgent] DC message parsed:", type, msg);
 
-        // --- Capture USER speech recognized by Whisper
-        // OpenAI Realtime typically emits something like:
-        // { type: "input_audio_buffer.speech_recognized", text: "..." }
-        if (msg.type === "input_audio_buffer.speech_recognized") {
-          const text: string = msg.text || msg.transcript || "";
-          if (text) {
-            console.log("[VoiceAgent] User speech recognized:", text);
-            await saveMessage("user", text, msg);
+        const sessionId = getSessionId();
+        if (!sessionId) return;
+
+        // ---------- USER SIDE ----------
+        // When Whisper finishes transcribing the user's input
+        if (type === "conversation.item.input_audio_transcription.completed") {
+          const transcript: string =
+            typeof msg.transcript === "string"
+              ? msg.transcript
+              : extractTextFromEvent(msg);
+
+          console.log("[VoiceAgent] User transcription completed:", transcript);
+
+          if (transcript && transcript.trim()) {
+            await postMessage({
+              session_id: sessionId,
+              role: "user",
+              query: transcript.trim(),
+              answer: null,
+              metadata: { type },
+            });
           }
+          return;
         }
 
-        // --- Capture ASSISTANT text output
-        // Realtime emits text deltas and "done" events. We accumulate text per response_id.
-        if (msg.type === "response.output_text.delta") {
-          const responseId: string = msg.response_id || msg.response?.id;
-          const delta: string = msg.delta || "";
-          if (!responseId || !delta) return;
+        // ---------- ASSISTANT SIDE ----------
+        if (type === "response.done" || type === "response.completed") {
+          const responseId: string =
+            msg.response?.id || msg.id || msg.response_id || "";
 
-          const map = responseTextRef.current;
-          const prev = map.get(responseId) || "";
-          map.set(responseId, prev + delta);
-          console.log(
-            "[VoiceAgent] Assistant text delta:",
-            responseId,
-            "delta:",
-            delta
-          );
-        }
-
-        // Finalize assistant text when done
-        if (msg.type === "response.output_text.done") {
-          const responseId: string = msg.response_id || msg.response?.id;
-          if (!responseId) return;
-
-          const map = responseTextRef.current;
-          const fullText = map.get(responseId) || "";
-          console.log(
-            "[VoiceAgent] Assistant text done:",
-            responseId,
-            "fullText:",
-            fullText
-          );
-
-          if (fullText.trim()) {
-            await saveMessage("assistant", fullText, msg);
+          if (responseId) {
+            if (savedResponseIdsRef.current.has(responseId)) {
+              console.log(
+                "[VoiceAgent] Skipping duplicate response id:",
+                responseId
+              );
+              return;
+            }
+            savedResponseIdsRef.current.add(responseId);
           }
 
-          map.delete(responseId);
+          const base = msg.response || msg;
+          const assistantText = extractTextFromEvent(base);
+          console.log(
+            "[VoiceAgent] Assistant text extracted for save:",
+            assistantText
+          );
+
+          if (assistantText && assistantText.trim()) {
+            await postMessage({
+              session_id: sessionId,
+              role: "assistant",
+              query: null,
+              answer: assistantText.trim(),
+              metadata: { type },
+            });
+          }
+          return;
         }
 
-        // (Optional) If your Realtime config only sends a single "response.completed"
-        // you could also hook there, but with output_text.delta/done above, this is enough.
+        // Ignore other events
       };
 
       const offer = await pc.createOffer();
@@ -177,9 +222,9 @@ export default function Features2(): JSX.Element {
       console.log("[VoiceAgent] Created local offer");
 
       console.log("[VoiceAgent] Requesting /session…");
-      const sess = await fetch(`${API_BASE}/session`, { method: "POST" }).then(
-        (r) => r.json()
-      );
+      const sess = await fetch(`${API_BASE}/session`, {
+        method: "POST",
+      }).then((r) => r.json());
       console.log("[VoiceAgent] /session response:", sess);
 
       // Grab our app-level session id from backend
@@ -188,11 +233,12 @@ export default function Features2(): JSX.Element {
         console.log("[VoiceAgent] Using app_session_id:", appSessionId);
         sessionIdRef.current = appSessionId;
       } else {
-        // Fallback: generate client-side id if backend not updated yet
         const fallbackId =
           typeof crypto !== "undefined" && "randomUUID" in crypto
             ? crypto.randomUUID()
-            : `client-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+            : `client-${Date.now()}-${Math.random()
+                .toString(36)
+                .slice(2)}`;
         sessionIdRef.current = fallbackId;
         console.warn(
           "[VoiceAgent] No app_session_id from server, using client-generated id:",
@@ -201,8 +247,11 @@ export default function Features2(): JSX.Element {
       }
 
       const token: string =
-        sess?.client_secret?.value || sess?.client_secret || sess?.id;
-      const model = sess?.model || "gpt-4o-realtime-preview-2025-06-03";
+        sess?.client_secret?.value ||
+        sess?.client_secret ||
+        sess?.id;
+      const model =
+        sess?.model || "gpt-4o-realtime-preview-2025-06-03";
 
       if (!token) {
         console.error("[VoiceAgent] No token from /session");
@@ -232,7 +281,7 @@ export default function Features2(): JSX.Element {
       await pc.setRemoteDescription({ type: "answer", sdp: answerSDP });
       console.log("[VoiceAgent] Set remote description, WebRTC connected");
 
-      setStatus("connected"); // active state; waves will remain visible
+      setStatus("connected");
     } catch (err) {
       console.error("[VoiceAgent] Error in start():", err);
       setStatus("error");
@@ -255,19 +304,21 @@ export default function Features2(): JSX.Element {
     pcRef.current = null;
     micStreamRef.current = null;
     sessionIdRef.current = null;
-    responseTextRef.current.clear();
+    savedResponseIdsRef.current.clear();
   };
 
   const toggleVoice = (): void => {
     if (status === "idle" || status === "error") {
       console.log("[VoiceAgent] Toggle: starting (status was", status, ")");
-      setStatus("listening"); // for UX
+      setStatus("listening");
       void start();
     } else {
       console.log("[VoiceAgent] Toggle: stopping (status was", status, ")");
       stop();
     }
   };
+
+  // ----------------- UI (unchanged) -----------------
 
   return (
     <section
@@ -291,7 +342,6 @@ export default function Features2(): JSX.Element {
           {/* Voice Button + Waves */}
           <div className="d-flex justify-content-center position-relative overflow-visible">
             <div className="wave-wrap position-relative">
-              {/* Waves visible during active states */}
               {status !== "idle" && status !== "error" && (
                 <>
                   <span className="wave ring ring1" />
@@ -309,12 +359,12 @@ export default function Features2(): JSX.Element {
                   height: "160px",
                   backgroundColor:
                     status !== "idle" && status !== "error"
-                      ? "#0d6efd" // BLUE when talking
-                      : "#ffffff", // WHITE when idle
+                      ? "#0d6efd"
+                      : "#ffffff",
                   color:
                     status !== "idle" && status !== "error"
-                      ? "#ffffff" // white text on blue
-                      : "#000000", // black on white
+                      ? "#ffffff"
+                      : "#000000",
                   fontSize: "1.05rem",
                   zIndex: 3,
                   transition: "transform .25s ease, background-color .25s ease",
@@ -322,7 +372,7 @@ export default function Features2(): JSX.Element {
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "scale(1.06)";
                   if (status !== "idle" && status !== "error") {
-                    e.currentTarget.style.backgroundColor = "#dc3545"; // RED on hover while talking
+                    e.currentTarget.style.backgroundColor = "#dc3545";
                     e.currentTarget.style.color = "#ffffff";
                   }
                 }}
@@ -330,8 +380,8 @@ export default function Features2(): JSX.Element {
                   e.currentTarget.style.transform = "scale(1)";
                   e.currentTarget.style.backgroundColor =
                     status !== "idle" && status !== "error"
-                      ? "#0d6efd" // back to BLUE
-                      : "#ffffff"; // idle = WHITE
+                      ? "#0d6efd"
+                      : "#ffffff";
                   e.currentTarget.style.color =
                     status !== "idle" && status !== "error"
                       ? "#ffffff"
