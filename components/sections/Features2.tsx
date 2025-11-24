@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import Link from "next/link";
 
 const API_BASE = "https://mynapi.onrender.com/voice-agent";
-//const API_BASE = "http://127.0.0.1:8000/voice-agent";
+// const API_BASE = "http://127.0.0.1:8000/voice-agent";
 
 export default function Features2(): JSX.Element {
   const [status, setStatus] = useState<
@@ -18,6 +17,37 @@ export default function Features2(): JSX.Element {
 
   // Our app-level session id (UUID from backend)
   const sessionIdRef = useRef<string | null>(null);
+
+  // Map to accumulate assistant text per response_id
+  const responseTextRef = useRef<Map<string, string>>(new Map());
+
+  // --- Helper: save messages to backend (Supabase via /messages)
+  const saveMessage = async (
+    role: "user" | "assistant",
+    message: string,
+    metadata: any = null
+  ) => {
+    const sessionId = sessionIdRef.current;
+    if (!sessionId || !message.trim()) {
+      return;
+    }
+
+    try {
+      console.log("[VoiceAgent] Saving message:", { role, message, sessionId });
+      await fetch(`${API_BASE}/messages`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          session_id: sessionId,
+          role,
+          message,
+          metadata,
+        }),
+      });
+    } catch (err) {
+      console.warn("[VoiceAgent] Failed to save message:", err);
+    }
+  };
 
   const start = async (): Promise<void> => {
     try {
@@ -77,11 +107,6 @@ export default function Features2(): JSX.Element {
         console.error("[VoiceAgent] DataChannel error:", err);
       };
 
-      const pendingCalls = new Map<
-        string,
-        { callId: string; name: string; argsText: string }
-      >();
-
       dc.onmessage = async (e) => {
         let msg: any;
         try {
@@ -93,141 +118,58 @@ export default function Features2(): JSX.Element {
 
         console.log("[VoiceAgent] DC message parsed:", msg.type, msg);
 
-        // 1) Track when a function_call is created
-        if (
-          msg.type === "response.output_item.added" &&
-          msg.item?.type === "function_call"
-        ) {
-          const responseId: string = msg.response_id;
-          const callId: string = msg.item?.id || msg.item?.call_id || "";
-          const name: string = msg.item?.name;
-
-          console.log("[VoiceAgent] Function call added:", {
-            responseId,
-            callId,
-            name,
-          });
-
-          if (!responseId || !callId) return;
-          pendingCalls.set(responseId, { callId, name, argsText: "" });
+        // --- Capture USER speech recognized by Whisper
+        // OpenAI Realtime typically emits something like:
+        // { type: "input_audio_buffer.speech_recognized", text: "..." }
+        if (msg.type === "input_audio_buffer.speech_recognized") {
+          const text: string = msg.text || msg.transcript || "";
+          if (text) {
+            console.log("[VoiceAgent] User speech recognized:", text);
+            await saveMessage("user", text, msg);
+          }
         }
 
-        // 2) Accumulate function_call arguments
-        if (msg.type === "response.function_call_arguments.delta") {
-          const responseId: string = msg.response_id;
+        // --- Capture ASSISTANT text output
+        // Realtime emits text deltas and "done" events. We accumulate text per response_id.
+        if (msg.type === "response.output_text.delta") {
+          const responseId: string = msg.response_id || msg.response?.id;
           const delta: string = msg.delta || "";
-          const entry = pendingCalls.get(responseId);
+          if (!responseId || !delta) return;
 
+          const map = responseTextRef.current;
+          const prev = map.get(responseId) || "";
+          map.set(responseId, prev + delta);
           console.log(
-            "[VoiceAgent] Function args delta:",
+            "[VoiceAgent] Assistant text delta:",
             responseId,
             "delta:",
             delta
           );
-
-          if (entry) entry.argsText += delta;
         }
 
-        // 3) When the response is done, we have full args and can call our backend
-        if (msg.type === "response.done") {
-          const responseId: string =
-            msg.response?.id || msg.response_id || msg.id;
-          const entry = pendingCalls.get(responseId);
+        // Finalize assistant text when done
+        if (msg.type === "response.output_text.done") {
+          const responseId: string = msg.response_id || msg.response?.id;
+          if (!responseId) return;
 
-          console.log("[VoiceAgent] response.done for:", responseId, entry);
+          const map = responseTextRef.current;
+          const fullText = map.get(responseId) || "";
+          console.log(
+            "[VoiceAgent] Assistant text done:",
+            responseId,
+            "fullText:",
+            fullText
+          );
 
-          if (!entry) return;
-
-          let args: Record<string, any> = {};
-          try {
-            args = entry.argsText ? JSON.parse(entry.argsText) : {};
-          } catch {
-            console.warn(
-              "[VoiceAgent] Could not parse function args JSON:",
-              entry.argsText
-            );
+          if (fullText.trim()) {
+            await saveMessage("assistant", fullText, msg);
           }
 
-          console.log("[VoiceAgent] Parsed function args:", args);
-
-          // --- Our tool: search_knowledge ---
-          if (entry.name === "search_knowledge") {
-            const query = args.query || "";
-            const top_k = args.top_k || 5;
-
-            console.log("[VoiceAgent] Calling /search_knowledge with:", {
-              query,
-              top_k,
-              session_id: sessionIdRef.current,
-            });
-
-            try {
-              const ragRes = await fetch(`${API_BASE}/search_knowledge`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  query,
-                  top_k,
-                  session_id: sessionIdRef.current, // tie to this chat
-                }),
-              }).then((r) => r.json());
-
-              console.log("[VoiceAgent] /search_knowledge response:", ragRes);
-
-              const context = ragRes?.context_snippet || "No results found.";
-              const results = ragRes?.results || [];
-
-              console.log(
-                "[VoiceAgent] Context snippet length:",
-                context.length
-              );
-              console.log(
-                "[VoiceAgent] Number of Qdrant results:",
-                Array.isArray(results) ? results.length : "N/A"
-              );
-
-              if (Array.isArray(results)) {
-                results.slice(0, 3).forEach((r: any, idx: number) => {
-                  console.log(
-                    `[VoiceAgent] Result #${idx + 1}: score=`,
-                    r.score,
-                    "payloadKeys=",
-                    r.payload ? Object.keys(r.payload) : []
-                  );
-                });
-              }
-
-              // Send tool output back into the realtime session
-              dc.send(
-                JSON.stringify({
-                  type: "conversation.item.create",
-                  item: {
-                    type: "function_call_output",
-                    call_id: entry.callId,
-                    output: context,
-                  },
-                })
-              );
-
-              dc.send(
-                JSON.stringify({
-                  type: "response.create",
-                  response: {
-                    modalities: ["audio", "text"],
-                    instructions: `Answer ONLY using this context:\n${context}\nIf nothing relevant, say "I couldn't find anything about that."`,
-                  },
-                })
-              );
-            } catch (err) {
-              console.error(
-                "[VoiceAgent] Error calling /search_knowledge:",
-                err
-              );
-            }
-          }
-
-          pendingCalls.delete(responseId);
+          map.delete(responseId);
         }
+
+        // (Optional) If your Realtime config only sends a single "response.completed"
+        // you could also hook there, but with output_text.delta/done above, this is enough.
       };
 
       const offer = await pc.createOffer();
@@ -313,6 +255,7 @@ export default function Features2(): JSX.Element {
     pcRef.current = null;
     micStreamRef.current = null;
     sessionIdRef.current = null;
+    responseTextRef.current.clear();
   };
 
   const toggleVoice = (): void => {
@@ -419,7 +362,7 @@ export default function Features2(): JSX.Element {
           width: 400px;
           height: 400px;
           overflow: visible;
-          margin-top: 0.5rem; /* slight space under status */
+          margin-top: 0.5rem;
         }
 
         .wave {
