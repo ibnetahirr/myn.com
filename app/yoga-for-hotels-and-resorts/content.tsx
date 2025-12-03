@@ -41,44 +41,19 @@ export default function Content() {
                 </div>
                 <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-5">
                   <h4 className="ds-4 fw-regular">
-                    On-Site Yoga & Wellness for{" "}
+                    On-Site Yoga & Wellness Programs for{" "}
                     <span className="fw-bold">Hotels & Resorts.</span>
                   </h4>
                   <p className="fs-5">
-                    Create a wellness-forward guest experience with curated
-                    yoga, mindfulness, and rejuvenation offerings for guests of
-                    all ages.
+                    Create a wellness-focused stay with curated yoga,
+                    mindfulness, and rejuvenation activities for guests of all
+                    ages.
                   </p>
                   <button
                     onClick={handleClick}
-                    className="btn btn-outline-secondary hover-up bg-transparent mt-5"
+                    className="btn btn-gradient mt-5"
                   >
                     BOOK A CONSULTATION
-                    <svg
-                      className="ms-2"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        className="stroke-dark"
-                        d="M17.25 15.25V6.75H8.75"
-                        stroke="#000"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        className="stroke-dark"
-                        d="M17 7L6.75 17.25"
-                        stroke="#000"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
                   </button>
                 </div>
                 <div className="row pt-lg-150 pt-8 text-center d-none d-md-block">
@@ -166,11 +141,11 @@ export default function Content() {
                 Why Wellness Matters for Your Hotel or Resort
               </h3>
               <p className="fs-5 mb-0">
-                Wellness is no longer a perk, it’s a competitive differentiator.
-                Today’s travelers seek meaningful experiences, deeper
-                relaxation, and amenities that support their physical and
-                emotional wellbeing. Hotels that integrate wellness see
-                measurable results:
+                In today’s competitive hospitality landscape, wellness is more
+                than a nice-to-have, it’s a differentiator. Guests expect
+                memorable experiences, thoughtful amenities and genuine
+                wellbeing. By offering on-site yoga and mindfulness programmes,
+                hotels create powerful value:
               </p>
             </div>
           </div>
@@ -190,7 +165,7 @@ export default function Content() {
                       <path
                         d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
                         fill="#F5C542" /* GOLD */
-                        stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -199,8 +174,8 @@ export default function Content() {
                       {/* Left small star */}
                       <path
                         d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
-                        fill="#F5C542"
-                        stroke="#DAA520"
+                        fill="#F5C542" /* GOLD */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -209,8 +184,8 @@ export default function Content() {
                       {/* Right small star */}
                       <path
                         d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
-                        fill="#F5C542"
-                        stroke="#DAA520"
+                        fill="#F5C542" /* GOLD */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -218,9 +193,8 @@ export default function Content() {
                     </svg>
                     <h6 className="my-3">Guest Experience Upgrade</h6>
                     <p className="mb-6">
-                      Bespoke wellness offerings turn great stays into
-                      unforgettable stories—boosting reviews, repeat bookings,
-                      and word-of-mouth.
+                      Bespoke wellness offerings turn stays into storied stays,
+                      increasing reviews, repeat bookings and word-of-mouth.
                     </p>
                   </div>
                 </div>
@@ -239,7 +213,7 @@ export default function Content() {
                       <path
                         d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
                         fill="#F5C542" /* GOLD */
-                        stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -248,8 +222,8 @@ export default function Content() {
                       {/* Left small star */}
                       <path
                         d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
-                        fill="#F5C542"
-                        stroke="#DAA520"
+                        fill="#F5C542" /* GOLD */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -258,18 +232,17 @@ export default function Content() {
                       {/* Right small star */}
                       <path
                         d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
-                        fill="#F5C542"
-                        stroke="#DAA520"
+                        fill="#F5C542" /* GOLD */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <h6 className="my-3">Revenue Diversification</h6>
+                    <h6 className="my-3">Operational advantage</h6>
                     <p className="mb-6">
-                      Wellness classes, themed retreats, wellness-focused room
-                      packages, and partner activations create additional income
-                      channels.
+                      A calmer, healthier team means improved service delivery
+                      and fewer stress-related issues among staff.
                     </p>
                   </div>
                 </div>
@@ -288,7 +261,7 @@ export default function Content() {
                       <path
                         d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
                         fill="#F5C542" /* GOLD */
-                        stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -297,8 +270,8 @@ export default function Content() {
                       {/* Left small star */}
                       <path
                         d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
-                        fill="#F5C542"
-                        stroke="#DAA520"
+                        fill="#F5C542" /* GOLD */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -307,18 +280,17 @@ export default function Content() {
                       {/* Right small star */}
                       <path
                         d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
-                        fill="#F5C542"
-                        stroke="#DAA520"
+                        fill="#F5C542" /* GOLD */
+                        stroke="#F5C542" /* DARKER GOLD OUTLINE */
                         strokeWidth="1.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <h6 className="my-3">Operational Advantage</h6>
+                    <h6 className="my-3">Revenue diversification</h6>
                     <p className="mb-6">
-                      A calmer, healthier team supports improved service
-                      delivery and reduces staffing challenges tied to stress
-                      and burnout.
+                      Wellness classes, themed retreats, yoga-branded packages
+                      and partner events open up additional income streams.
                     </p>
                   </div>
                 </div>
@@ -355,7 +327,8 @@ export default function Content() {
                     <h4 className="fw-bold">
                       Regular Yoga & Wellness Offerings
                     </h4>
-                    <p>Ideal for enhancing daily guest experience.</p>
+                    <p>Perfect for enhancing the guest experience with consistent, high-quality wellness touchpoints.
+</p>
                   </div>
                   <ul className="fs-5 ps-3">
                     <li>Yoga, Pilates & Gentle Flow</li>

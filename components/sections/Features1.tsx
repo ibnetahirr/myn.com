@@ -1,22 +1,18 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
-
-
 
 export default function Features1() {
-  const [isOpen, setOpen] = useState(false);
- 
   return (
     <>
       <section id="solutions" className="features-1 section-padding">
-       <div className="container position-relative z-1">
-					<div className="text-center mb-8">
-						<h3 className="my-3 fw-black">Wellness Where You Need It</h3>
-					</div>
-				</div>
-				
+        <div className="container position-relative z-1">
+          <div className="text-center mb-8">
+            <h3 className="my-3 fw-black">
+              Tailored Yoga Programs for Every Environment
+            </h3>
+          </div>
+        </div>
+
         <div className="container">
           <div className="row mt-10">
             {/* prettier-ignore */}
@@ -27,8 +23,10 @@ export default function Features1() {
 										<img src="/assets/imgs/icons/hotel.svg" alt="Hotels & Resorts" width={80} height={80} />
 									</div>
 								</div>
-								<h6>Hotels & Resorts</h6>
-								<p>Transform wellness into a revenue and guest-experience advantage. From sunrise flows to signature retreats, we help properties boost satisfaction scores, increase engagement, and elevate brand appeal with certified instructors and turnkey, procurement-compliant programming.</p>
+                <h6><Link href="/yoga-for-hotels-and-resorts">
+								Hotels & Resorts</Link></h6>
+                
+								<p>From sunrise flows to wellness retreats, we help hotels boost guest satisfaction, increase engagement, and elevate brand appeal—all with procurement-ready solutions and certified instructors.</p>
 							</div>
 						</div>
             <div className="col-lg-3 col-md-6">
@@ -37,13 +35,18 @@ export default function Features1() {
                   <div className="icon">
                     <img
                       src="/assets/imgs/icons/corporate.svg"
-                      alt="Corporate Wellness" width={80} height={80}
+                      alt="Corporate Wellness"
+                      width={80}
+                      height={80}
                     />
                   </div>
                 </div>
-                <h6>Corporate Wellness</h6>
+                <h6><Link href="/corporate-wellness-programs">Corporations</Link></h6>
                 <p>
-              Improve team performance and retention by reducing burnout and supporting mental resilience. We deliver scalable on-site and virtual yoga, meditation, and stress-regulation programs that integrate seamlessly into your workplace culture.  </p>
+                  We deliver scalable on-site or virtual wellness experiences
+                  that integrate easily into your work culture, helping teams
+                  stay focused, energized, and resilient.{" "}
+                </p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
@@ -52,13 +55,17 @@ export default function Features1() {
                   <div className="icon">
                     <img
                       src="/assets/imgs/icons/school.svg"
-                      alt="Schools/Kids Yoga" width={80} height={80}
+                      alt="Schools/Kids Yoga"
+                      width={80}
+                      height={80}
                     />
                   </div>
                 </div>
-                <h6>Schools & Kids Yoga</h6>
+                <h6><Link href="/after-school-program">Schools Districts</Link></h6>
                 <p>
-              Bring developmentally appropriate, trauma-informed yoga into classrooms and after-school programming. Students build emotional regulation, confidence, and physical literacy—available at your school, district, or our Long Beach studio.
+                  Our after-school and in-class yoga offerings help children
+                  regulate emotions, build confidence, and stay active in a
+                  safe, nurturing environment.
                 </p>
               </div>
             </div>
@@ -68,13 +75,20 @@ export default function Features1() {
                   <div className="icon">
                     <img
                       src="/assets/imgs/icons/health.svg"
-                      alt="Healthcare & Rehabilitation" width={80} height={80}
+                      alt="Healthcare & Rehabilitation"
+                      width={80}
+                      height={80}
                     />
                   </div>
                 </div>
-                <h6>Healthcare & Rehabilitation</h6>
+                <h6><Link href="/yoga-for-healthcare-providers">
+                  Healthcare Providers
+                </Link></h6>
                 <p>
-                Integrate therapeutic mind-body programming into patient care. Our clinical-aligned yoga supports pain modulation, mobility, anxiety reduction, and overall quality of life across hospitals, behavioral health, rehab, and outpatient settings.
+                  Our wellness programs are designed for hospitals, clinics,
+                  rehab centers, and behavioral health environments, enhancing
+                  physical rehabilitation, reducing stress, and improving
+                  quality of life.
                 </p>
               </div>
             </div>

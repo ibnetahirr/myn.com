@@ -50,36 +50,8 @@ export default function Content() {
                   partners with organizations to reduce stress, improve team
                   morale, and strengthen overall performance.
                 </p>
-                <button
-                  onClick={handleClick}
-                  className="btn btn-outline-secondary hover-up bg-transparent mt-5"
-                >
+                <button onClick={handleClick} className="btn btn-gradient mt-5">
                   BOOK A CONSULTATION
-                  <svg
-                    className="ms-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      className="stroke-dark"
-                      d="M17.25 15.25V6.75H8.75"
-                      stroke="#000"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      className="stroke-dark"
-                      d="M17 7L6.75 17.25"
-                      stroke="#000"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
                 </button>
               </div>
               <div className="row pt-lg-150 pt-8 text-center d-none d-md-block">
@@ -191,7 +163,7 @@ export default function Content() {
                     <path
                       d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
                       fill="#F5C542" /* GOLD */
-                      stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -200,8 +172,8 @@ export default function Content() {
                     {/* Left small star */}
                     <path
                       d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
-                      fill="#F5C542"
-                      stroke="#DAA520"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -210,8 +182,8 @@ export default function Content() {
                     {/* Right small star */}
                     <path
                       d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
-                      fill="#F5C542"
-                      stroke="#DAA520"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -230,7 +202,7 @@ export default function Content() {
             <div className="col-lg-4">
               <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                 <div className="card-service bg-white p-6 border rounded-3">
-                    <svg
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={60}
                     height={60}
@@ -241,7 +213,7 @@ export default function Content() {
                     <path
                       d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
                       fill="#F5C542" /* GOLD */
-                      stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -250,8 +222,8 @@ export default function Content() {
                     {/* Left small star */}
                     <path
                       d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
-                      fill="#F5C542"
-                      stroke="#DAA520"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -260,8 +232,8 @@ export default function Content() {
                     {/* Right small star */}
                     <path
                       d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
-                      fill="#F5C542"
-                      stroke="#DAA520"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -280,7 +252,7 @@ export default function Content() {
             <div className="col-lg-4">
               <div className="p-2 mt-lg-8 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up">
                 <div className="card-service bg-white p-6 border rounded-3">
-                    <svg
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={60}
                     height={60}
@@ -291,7 +263,7 @@ export default function Content() {
                     <path
                       d="M12 3L13.8 8H19L14.8 11L16.3 16L12 13L7.7 16L9.2 11L5 8H10.2L12 3Z"
                       fill="#F5C542" /* GOLD */
-                      stroke="#DAA520" /* DARKER GOLD OUTLINE */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -300,8 +272,8 @@ export default function Content() {
                     {/* Left small star */}
                     <path
                       d="M4.5 10.5L5.2 12.5H7L5.6 13.6L6.2 15.5L4.5 14.3L2.8 15.5L3.4 13.6L2 12.5H3.8L4.5 10.5Z"
-                      fill="#F5C542"
-                      stroke="#DAA520"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -310,8 +282,8 @@ export default function Content() {
                     {/* Right small star */}
                     <path
                       d="M19.5 10.5L20.2 12.5H22L20.6 13.6L21.2 15.5L19.5 14.3L17.8 15.5L18.4 13.6L17 12.5H18.8L19.5 10.5Z"
-                      fill="#F5C542"
-                      stroke="#DAA520"
+                      fill="#F5C542" /* GOLD */
+                      stroke="#F5C542" /* DARKER GOLD OUTLINE */
                       strokeWidth="1.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"

@@ -51,11 +51,15 @@ export default function PageAbout() {
                   We believe Yoga is for everyone and everywhere.
                 </h3>
                 <p className="fs-5">
-                  We provide customized yoga and wellness programs for hotels &
-                  resorts, corporates, schools, and healthcare facilities. Our
-                  certified instructors seamlessly integrate into your
-                  environment, delivering premium wellness experiences that
-                  enhance relaxation, productivity, and overall well-being.
+                  Since 2012, My Yoga Network has pioneered on‑site and virtual
+                  wellness programs that integrate yoga and mindfulness into
+                  workplaces, schools, resorts, and healthcare institutions. Our
+                  certified instructors tailor every session to your environment
+                  and goals—whether you’re looking to boost employee focus,
+                  enhance guest satisfaction, or support patient recovery. By
+                  partnering with us, you bring a culture of holistic wellbeing
+                  into your organization, improving productivity, morale, and
+                  long‑term health outcomes.
                 </p>
               </div>
             </div>
@@ -90,9 +94,13 @@ export default function PageAbout() {
             <div className="text-center">
               <h3 className="my-3">Meet Our Team</h3>
               <p className="fs-5">
-                Meet the talented and passionate team members who drive our
-                company forward every day. <br className="d-none d-lg-block" />{" "}
-                company forward every day.
+                Behind every successful program is a diverse team of wellness
+                strategists, physicians, and industry advisors. Our leadership
+                blends decades of clinical experience, hospitality expertise,
+                and behavioral science to design evidence‑based programs that
+                deliver measurable results. Get to know the people who drive our
+                innovation and are committed to transforming the way
+                organizations approach health and wellbeing.
               </p>
             </div>
           </div>
@@ -221,15 +229,17 @@ export default function PageAbout() {
         <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
       </section>
 
-   
       <section className="section-project-2 pt-120 pb-8">
         <div className="container">
           <div className="row position-relative z-1">
             <div className="text-center">
               <h3 className="my-3">Meet Our Teachers</h3>
               <p className="fs-5">
-                Our certified instructors deliver tailored, expert-led yoga
-                sessions with dedication and precision.
+                Our network of experienced wellness practitioners brings both
+                technical expertise and compassionate guidance to every session.
+                They are trained to adapt poses, breathing techniques, and
+                mindfulness practices to diverse populations, ensuring
+                inclusivity and maximizing health benefits.
               </p>
             </div>
           </div>
@@ -241,107 +251,103 @@ export default function PageAbout() {
               modules={[Keyboard, Autoplay]}
             >
               <div className="swiper-wrapper">
-          
                 <SwiperSlide className="swiper-slide">
-										<div className="text-center">
-											<div className="zoom-img position-relative d-inline-block z-1">
-												<div className="rounded-3 fix">
-													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/1.webp" alt="Teacher" />
-												</div>
-												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
-													<h6>Teacher</h6>
-													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
-												</Link> */}
-											</div>
-										</div>
-									</SwiperSlide>
+                  <div className="text-center">
+                    <div className="zoom-img position-relative d-inline-block z-1">
+                      <div className="rounded-3 fix">
+                        <img
+                          className="img-fluid w-100"
+                          src="/assets/imgs/team/teachers/1.webp"
+                          alt="Teacher"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
 
-                  <SwiperSlide className="swiper-slide">
-										<div className="text-center">
-											<div className="zoom-img position-relative d-inline-block z-1">
-												<div className="rounded-3 fix">
-													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/2.webp" alt="Teacher" />
-												</div>
-												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
-													<h6>Teacher</h6>
-													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
-												</Link> */}
-											</div>
-										</div>
-									</SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <div className="text-center">
+                    <div className="zoom-img position-relative d-inline-block z-1">
+                      <div className="rounded-3 fix">
+                        <img
+                          className="img-fluid w-100"
+                          src="/assets/imgs/team/teachers/2.webp"
+                          alt="Teacher"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
 
-                  <SwiperSlide className="swiper-slide">
-										<div className="text-center">
-											<div className="zoom-img position-relative d-inline-block z-1">
-												<div className="rounded-3 fix">
-													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/3.webp" alt="Teacher" />
-												</div>
-												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
-													<h6>Teacher</h6>
-													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
-												</Link> */}
-											</div>
-										</div>
-									</SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <div className="text-center">
+                    <div className="zoom-img position-relative d-inline-block z-1">
+                      <div className="rounded-3 fix">
+                        <img
+                          className="img-fluid w-100"
+                          src="/assets/imgs/team/teachers/3.webp"
+                          alt="Teacher"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
 
-                  <SwiperSlide className="swiper-slide">
-										<div className="text-center">
-											<div className="zoom-img position-relative d-inline-block z-1">
-												<div className="rounded-3 fix">
-													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/4.webp" alt="Teacher" />
-												</div>
-												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
-													<h6>Teacher</h6>
-													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
-												</Link> */}
-											</div>
-										</div>
-									</SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <div className="text-center">
+                    <div className="zoom-img position-relative d-inline-block z-1">
+                      <div className="rounded-3 fix">
+                        <img
+                          className="img-fluid w-100"
+                          src="/assets/imgs/team/teachers/4.webp"
+                          alt="Teacher"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
 
-                  <SwiperSlide className="swiper-slide">
-										<div className="text-center">
-											<div className="zoom-img position-relative d-inline-block z-1">
-												<div className="rounded-3 fix">
-													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/5.webp" alt="Teacher" />
-												</div>
-												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
-													<h6>Teacher</h6>
-													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
-												</Link> */}
-											</div>
-										</div>
-									</SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <div className="text-center">
+                    <div className="zoom-img position-relative d-inline-block z-1">
+                      <div className="rounded-3 fix">
+                        <img
+                          className="img-fluid w-100"
+                          src="/assets/imgs/team/teachers/5.webp"
+                          alt="Teacher"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
 
-                  <SwiperSlide className="swiper-slide">
-										<div className="text-center">
-											<div className="zoom-img position-relative d-inline-block z-1">
-												<div className="rounded-3 fix">
-													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/6.webp" alt="Teacher" />
-												</div>
-												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
-													<h6>Teacher</h6>
-													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
-												</Link> */}
-											</div>
-										</div>
-									</SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <div className="text-center">
+                    <div className="zoom-img position-relative d-inline-block z-1">
+                      <div className="rounded-3 fix">
+                        <img
+                          className="img-fluid w-100"
+                          src="/assets/imgs/team/teachers/6.webp"
+                          alt="Teacher"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
 
-
-                  <SwiperSlide className="swiper-slide">
-										<div className="text-center">
-											<div className="zoom-img position-relative d-inline-block z-1">
-												<div className="rounded-3 fix">
-													<img className="img-fluid w-100" src="/assets/imgs/team/teachers/7.webp" alt="Teacher" />
-												</div>
-												{/* <Link href="#" className="card-team text-start rounded-3 position-absolute bottom-0 start-0 end-0 z-1 backdrop-filter w-auto p-4 m-4 hover-up">
-													<h6>Teacher</h6>
-													<p className="text-900">Streamlining operations and growth strategies for market enhancement.</p>
-												</Link> */}
-											</div>
-										</div>
-									</SwiperSlide>
-               
-
+                <SwiperSlide className="swiper-slide">
+                  <div className="text-center">
+                    <div className="zoom-img position-relative d-inline-block z-1">
+                      <div className="rounded-3 fix">
+                        <img
+                          className="img-fluid w-100"
+                          src="/assets/imgs/team/teachers/7.webp"
+                          alt="Teacher"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
               </div>
             </Swiper>
           </div>
@@ -349,7 +355,7 @@ export default function PageAbout() {
       </section>
 
       {/*Static 2*/}
-      <section className="section-static-1 position-relative fix z-0 py-8">
+      {/* <section className="section-static-1 position-relative fix z-0 py-8">
         <div className="container">
           <div className="inner">
             <div className="row align-items-center justify-content-between">
@@ -414,253 +420,272 @@ export default function PageAbout() {
             <div className="bouncing-blob bouncing-blob--infor bouncing-blob--infor-2" />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="section-padding position-relative overflow-hidden">
-        <div className="row text-center d-none d-md-block">
-          <div className="text-center">
-            <h3 className="my-3">Our Clients</h3>
-            <p className="fs-5">
-              Delivering Exceptional Yoga & Wellness Services since 2012.
-            </p>
-          </div>
+        <div className="container">
+          <div className="row text-center d-none d-md-block">
+            <div className="text-center">
+              <h3 className="my-3">Our Clients</h3>
+              <p className="fs-5">
+                From Fortune 500 hospitality brands to school districts,
+                universities. and hospitals, we’ve partnered with organizations
+                that value tangible wellbeing outcomes. Our solutions are
+                trusted by Westin Hotels, California State University, and the
+                County of Los Angeles because we consistently deliver measurable
+                improvements in engagement, satisfaction, and resilience.
+                Explore our client roster and see how we can bring the same
+                results to your organization.
+              </p>
+            </div>
 
-          <div className="col-lg-10 col mx-lg-auto">
-            <div className="compatible-group bg-white p-5 mt-5 rounded-4 d-md-flex justify-content-between">
-              <div className="row g-4">
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/hotels/westin.png"
-                      alt="Westin Hotels"
-                      height={50}
-                    />
-                    <p className="text-900 mt-3 mb-0">Westin Hotels</p>
+            <div className="col mx-lg-auto">
+              <div className="compatible-group bg-white p-5 mt-5 rounded-4 d-md-flex justify-content-between">
+                <div className="row g-4">
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/westin.png"
+                        alt="Westin Hotels"
+                        height={50}
+                      />
+                      <p className="text-900 mt-3 mb-0">Westin Hotels</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/hotels/dagny.png"
-                      alt="The Dagny"
-                      height={50}
-                    />
-                    <p className="text-900 mt-3 mb-0">The Dagny</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/dagny.png"
+                        alt="The Dagny"
+                        height={50}
+                      />
+                      <p className="text-900 mt-3 mb-0">The Dagny</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/hotels/highgate.webp"
-                      alt="Highgate Hotel"
-                      height={50}
-                    />
-                    <p className="text-900 mt-3 mb-0">Highgate Hotel</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/highgate.webp"
+                        alt="Highgate Hotel"
+                        height={50}
+                      />
+                      <p className="text-900 mt-3 mb-0">Highgate Hotel</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/hotels/hyatt.png"
-                      alt="Hyatt Hotels"
-                      height={50}
-                    />
-                    <p className="text-900 mt-3 mb-0">Hyatt Hotels</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/hyatt.png"
+                        alt="Hyatt Hotels"
+                        height={50}
+                      />
+                      <p className="text-900 mt-3 mb-0">Hyatt Hotels</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/hotels/hilton.png"
-                      alt="Hilton Grand Vacations Club"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      Hilton Grand Vacations Club
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/hilton.png"
+                        alt="Hilton Grand Vacations Club"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Hilton Grand Vacations Club
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/hotels/aimbridge.png"
-                      alt="Aimbridge Hospitality"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">Aimbridge Hospitality</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/aimbridge.png"
+                        alt="Aimbridge Hospitality"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Aimbridge Hospitality
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/institutes/california-state-university.png"
-                      alt="California State University"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      California State University
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/california-state-university.png"
+                        alt="California State University"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        California State University
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/institutes/osher-life-long-learning-institute.png"
-                      alt="Osher Life Long Learning Institute"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      Osher Life Long Learning Institute
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/osher-life-long-learning-institute.png"
+                        alt="Osher Life Long Learning Institute"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Osher Life Long Learning Institute
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/institutes/mcbride-high-school.png"
-                      alt="MCBride High School"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">MCBride High School</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/mcbride-high-school.png"
+                        alt="MCBride High School"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">MCBride High School</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/institutes/longfellow-elementary-school.png"
-                      alt="Longfellow Elementary School"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      Longfellow Elementary School
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/longfellow-elementary-school.png"
+                        alt="Longfellow Elementary School"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Longfellow Elementary School
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/institutes/bixby-elementary-school.png"
-                      alt="Bixby Elementary School"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      Bixby Elementary School
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/bixby-elementary-school.png"
+                        alt="Bixby Elementary School"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Bixby Elementary School
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/institutes/sc-health-sciences-university.webp"
-                      alt="South California Health Sciences University"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      South California Health Sciences University
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/sc-health-sciences-university.webp"
+                        alt="South California Health Sciences University"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        South California Health Sciences University
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/california-endowment.png"
-                      alt="California Edowment"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">California Edowment</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/california-endowment.png"
+                        alt="California Edowment"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">California Edowment</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/california-psychological-association.png"
-                      alt="California Psychological Association"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      California Psychological Association
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/california-psychological-association.png"
+                        alt="California Psychological Association"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        California Psychological Association
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/county-of-los-angeles.png"
-                      alt="County of Los Angeles"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">County of Los Angeles</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/county-of-los-angeles.png"
+                        alt="County of Los Angeles"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        County of Los Angeles
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/lb-public-library-foundation.png"
-                      alt="Longbeach Public Library Foundation"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">
-                      Longbeach Public Library Foundation
-                    </p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/lb-public-library-foundation.png"
+                        alt="Longbeach Public Library Foundation"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Longbeach Public Library Foundation
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/sacred-roots.webp"
-                      alt="Sacred Roots"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">Sacred Roots</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/sacred-roots.webp"
+                        alt="Sacred Roots"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">Sacred Roots</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/wrd.png"
-                      alt="WRD"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">WRD</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/wrd.png"
+                        alt="Water Replenishment District"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Water Replenishment District
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/hss.png"
-                      alt="HSS"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">HSS</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hss.png"
+                        alt="Hindu Swayamsevak Sangh USA"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Hindu Swayamsevak Sangh USA
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-12 col-sm-6 col-lg-3">
-                  <div className="compatible hover-up text-center">
-                    <img
-                      src="/assets/imgs/clients/om.png"
-                      alt="OM"
-                      height={100}
-                    />
-                    <p className="text-900 mt-3 mb-0">OM</p>
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/om.png"
+                        alt="Vedic Friends Association"
+                        height={100}
+                      />
+                      <p className="text-900 mt-3 mb-0">
+                        Vedic Friends Association
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -22,14 +22,13 @@ export default function Hero1() {
                 <h1
                   className="ds-3 mb-5"
                 >
-                Elevating Wellness With Tailored Yoga Programs for Every Environment
-
+Professional Wellness Solutions for Organizations and Communities
                 </h1>
                 <p
                   className="pe-10 mb-5"
                 >
-               Procurement-ready wellness solutions for hotels, workplaces, schools, and healthcare organizations.
-               </p>
+              We specialise in delivering enterprise-grade wellness solutions for companies and institutions. 
+ </p>
 
                 {/* Scroll Button */}
                 <button
