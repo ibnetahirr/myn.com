@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://mynapi.onrender.com";
 
 export default function Brochure() {
   const [name, setName] = useState("");
