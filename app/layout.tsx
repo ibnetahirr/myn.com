@@ -1,3 +1,4 @@
+// app/layout.tsx
 import "/public/assets/css/vendors/bootstrap.min.css"
 import "/public/assets/css/vendors/swiper-bundle.min.css"
 import "/public/assets/css/vendors/aos.css"
@@ -85,6 +86,12 @@ export default function RootLayout({
         {/* Calendly JS */}
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
+
+        {/* ✅ Bootstrap JS Bundle (needed for modal) */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
 

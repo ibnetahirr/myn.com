@@ -8,6 +8,7 @@ declare global {
   }
 }
 
+import Brochure from "@/components/sections/Brochure";
 import Contact1 from "@/components/sections/Contact1";
 
 export default function Content() {
@@ -55,6 +56,7 @@ export default function Content() {
                   >
                     BOOK A CONSULTATION
                   </button>
+                  <Brochure/>
                 </div>
                 <div className="row pt-lg-150 pt-8 text-center d-none d-md-block">
                   <div className="text-center mb-8 mx-auto">
