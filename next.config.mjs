@@ -10,11 +10,12 @@ const nextConfig = {
     ],
   },
 
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: "/rambhakt",
         destination: "/rambhakt/index.html",
+        permanent: true,
       },
     ];
   },
