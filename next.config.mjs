@@ -8,8 +8,15 @@ const nextConfig = {
         pathname: "/storage/v1/object/public/**",
       },
     ],
-    // or simpler:
-    // domains: ["fazmwdhhessljlyxndee.supabase.co"],
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: "/rambhakt",
+        destination: "/rambhakt/index.html",
+      },
+    ];
   },
 };
 
