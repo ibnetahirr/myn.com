@@ -248,7 +248,7 @@ export default function PageAbout() {
 
             <div className="col mx-lg-auto">
               <div className="compatible-group bg-white p-5 mt-5 rounded-4 d-md-flex justify-content-between">
-                <div className="row g-4">
+                <div className="row g-5">
                   <div className="col-12 col-sm-6 col-lg-3">
                     <div className="compatible hover-up text-center">
                       <img
@@ -359,6 +359,29 @@ export default function PageAbout() {
                     </div>
                   </div>
 
+
+                   <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/sacred-roots.webp"
+                        alt="Sacred Roots"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+
+                   <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/county-of-los-angeles.png"
+                        alt="County of Los Angeles"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                
                   <div className="col-12 col-sm-6 col-lg-3">
                     <div className="compatible hover-up text-center">
                       <img
@@ -374,7 +397,7 @@ export default function PageAbout() {
                       <img
                         src="/assets/imgs/clients/california-endowment.png"
                         alt="California Edowment"
-                        height={100}
+                        height={80}
                       />
                     </div>
                   </div>
@@ -384,37 +407,18 @@ export default function PageAbout() {
                       <img
                         src="/assets/imgs/clients/california-psychological-association.png"
                         alt="California Psychological Association"
-                        height={100}
+                        height={80}
                       />
                     </div>
                   </div>
 
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/county-of-los-angeles.png"
-                        alt="County of Los Angeles"
-                        height={100}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
+                 
+                   <div className="col-12 col-sm-6 col-lg-3">
                     <div className="compatible hover-up text-center">
                       <img
                         src="/assets/imgs/clients/lb-public-library-foundation.png"
                         alt="Longbeach Public Library Foundation"
-                        height={100}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/sacred-roots.webp"
-                        alt="Sacred Roots"
-                        height={100}
+                        height={80}
                       />
                     </div>
                   </div>
@@ -424,7 +428,7 @@ export default function PageAbout() {
                       <img
                         src="/assets/imgs/clients/wrd.png"
                         alt="Water Replenishment District"
-                        height={100}
+                        height={80}
                       />
                     </div>
                   </div>
@@ -434,7 +438,7 @@ export default function PageAbout() {
                       <img
                         src="/assets/imgs/clients/hss.png"
                         alt="Hindu Swayamsevak Sangh USA"
-                        height={100}
+                        height={80}
                       />
                     </div>
                   </div>
@@ -442,9 +446,9 @@ export default function PageAbout() {
                   <div className="col-12 col-sm-6 col-lg-3">
                     <div className="compatible hover-up text-center">
                       <img
-                        src="/assets/imgs/clients/om.png"
-                        alt="Vedic Friends Association"
-                        height={100}
+                        src="/assets/imgs/clients/intex.png"
+                        alt="Intex"
+                        height={80}
                       />
                     </div>
                   </div>

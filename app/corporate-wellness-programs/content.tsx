@@ -106,7 +106,7 @@ export default function Content() {
                       <div className="col">
                         <div className="compatible hover-up">
                           <img
-                            src="/assets/imgs/clients/om.png"
+                            src="/assets/imgs/clients/intex.png"
                             alt="OM"
                             height={100}
                           />
