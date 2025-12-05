@@ -11,7 +11,7 @@ export default function Features3() {
           </div>
           <div className="row mt-6 position-relative">
             <div className="col-lg-4">
-              <div className="p-2 mt-lg-8 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
+              <div className="p-2 mt-lg-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                 <div className="card-service bg-white p-6 border rounded-4 text-center">
                   <img
                     src="/assets/imgs/why/1.png"
@@ -27,7 +27,7 @@ export default function Features3() {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
+              <div className="p-2 mt-lg-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                 <div className="card-service bg-white p-6 border rounded-3 text-center">
                   <img
                     src="/assets/imgs/why/2.png"
@@ -43,7 +43,7 @@ export default function Features3() {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="p-2 mt-lg-8 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up">
+              <div className="p-2 mt-lg-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up">
                 <div className="card-service bg-white p-6 border rounded-3 text-center">
                   <img
                     src="/assets/imgs/why/3.png"

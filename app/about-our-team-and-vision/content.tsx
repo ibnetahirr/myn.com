@@ -229,6 +229,232 @@ export default function PageAbout() {
         <div className="rotate-center-rev ellipse-rotate-primary position-absolute z-0" />
       </section>
 
+      <section className="section-padding position-relative overflow-hidden">
+        <div className="container">
+          <div className="row text-center d-none d-md-block">
+            <div className="text-center">
+              <h3 className="my-3">Our Clients</h3>
+              <p className="fs-5">
+                From Fortune 500 hospitality brands to school districts,
+                universities. and hospitals, we’ve partnered with organizations
+                that value tangible wellbeing outcomes. Our solutions are
+                trusted by Westin Hotels, California State University, and the
+                County of Los Angeles because we consistently deliver measurable
+                improvements in engagement, satisfaction, and resilience.
+                Explore our client roster and see how we can bring the same
+                results to your organization.
+              </p>
+            </div>
+
+            <div className="col mx-lg-auto">
+              <div className="compatible-group bg-white p-5 mt-5 rounded-4 d-md-flex justify-content-between">
+                <div className="row g-4">
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/westin.png"
+                        alt="Westin Hotels"
+                        height={50}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/dagny.png"
+                        alt="The Dagny"
+                        height={50}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/highgate.webp"
+                        alt="Highgate Hotel"
+                        height={50}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/hyatt.png"
+                        alt="Hyatt Hotels"
+                        height={50}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/hilton.png"
+                        alt="Hilton Grand Vacations Club"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hotels/aimbridge.png"
+                        alt="Aimbridge Hospitality"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/california-state-university.png"
+                        alt="California State University"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/osher-life-long-learning-institute.png"
+                        alt="Osher Life Long Learning Institute"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/mcbride-high-school.png"
+                        alt="MCBride High School"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/longfellow-elementary-school.png"
+                        alt="Longfellow Elementary School"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/bixby-elementary-school.png"
+                        alt="Bixby Elementary School"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/institutes/sc-health-sciences-university.webp"
+                        alt="South California Health Sciences University"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/california-endowment.png"
+                        alt="California Edowment"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/california-psychological-association.png"
+                        alt="California Psychological Association"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/county-of-los-angeles.png"
+                        alt="County of Los Angeles"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/lb-public-library-foundation.png"
+                        alt="Longbeach Public Library Foundation"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/sacred-roots.webp"
+                        alt="Sacred Roots"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/wrd.png"
+                        alt="Water Replenishment District"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/hss.png"
+                        alt="Hindu Swayamsevak Sangh USA"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="compatible hover-up text-center">
+                      <img
+                        src="/assets/imgs/clients/om.png"
+                        alt="Vedic Friends Association"
+                        height={100}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-project-2 pt-120 pb-8">
         <div className="container">
           <div className="row position-relative z-1">
@@ -350,346 +576,6 @@ export default function PageAbout() {
                 </SwiperSlide>
               </div>
             </Swiper>
-          </div>
-        </div>
-      </section>
-
-      {/*Static 2*/}
-      {/* <section className="section-static-1 position-relative fix z-0 py-8">
-        <div className="container">
-          <div className="inner">
-            <div className="row align-items-center justify-content-between">
-              <div className="col-lg-auto col-md-12 text-center text-lg-start mb-5 mb-lg-0">
-                <h4 className="mb-0">
-                  See why we are <br /> trusted the world over
-                </h4>
-              </div>
-              <div className="col-lg-auto col-md-6">
-                <div className="counter-item-cover counter-item">
-                  <div className="content text-center mx-auto">
-                    <span className="h1 count fw-black text-primary my-0">
-                      <span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={2728} />
-                    </span>
-                    <p>Wellness Sessions</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-auto col-md-6">
-                <div className="counter-item-cover counter-item">
-                  <div className="content text-center mx-auto">
-                    <span className="h1 count fw-black text-primary my-0">
-                      +<span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={28} />
-                    </span>
-                    <p>Partners Served</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-auto col-md-6">
-                <div className="counter-item-cover counter-item">
-                  <div className="content text-center mx-auto">
-                    <span className="h1 count fw-black text-primary my-0">
-                      +<span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={369} />
-                    </span>
-                    <p>Certified Instructors</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-auto col-md-6">
-                <div className="counter-item-cover counter-item">
-                  <div className="content text-center mx-auto">
-                    <span className="h1 count fw-black text-primary my-0">
-                      +<span className="odometer" />
-                      <CountUp enableScrollSpy={true} end={27} />
-                      <span>k</span>
-                    </span>
-                    <p>Our Network Size</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bouncing-blobs-container">
-          <div className="bouncing-blobs-glass fix" />
-          <div className="bouncing-blobs">
-            <div className="bouncing-blob bouncing-blob--green" />
-            <div className="bouncing-blob bouncing-blob--primary" />
-            <div className="bouncing-blob bouncing-blob--infor bouncing-blob--infor-2" />
-          </div>
-        </div>
-      </section> */}
-
-      <section className="section-padding position-relative overflow-hidden">
-        <div className="container">
-          <div className="row text-center d-none d-md-block">
-            <div className="text-center">
-              <h3 className="my-3">Our Clients</h3>
-              <p className="fs-5">
-                From Fortune 500 hospitality brands to school districts,
-                universities. and hospitals, we’ve partnered with organizations
-                that value tangible wellbeing outcomes. Our solutions are
-                trusted by Westin Hotels, California State University, and the
-                County of Los Angeles because we consistently deliver measurable
-                improvements in engagement, satisfaction, and resilience.
-                Explore our client roster and see how we can bring the same
-                results to your organization.
-              </p>
-            </div>
-
-            <div className="col mx-lg-auto">
-              <div className="compatible-group bg-white p-5 mt-5 rounded-4 d-md-flex justify-content-between">
-                <div className="row g-4">
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/hotels/westin.png"
-                        alt="Westin Hotels"
-                        height={50}
-                      />
-                      <p className="text-900 mt-3 mb-0">Westin Hotels</p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/hotels/dagny.png"
-                        alt="The Dagny"
-                        height={50}
-                      />
-                      <p className="text-900 mt-3 mb-0">The Dagny</p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/hotels/highgate.webp"
-                        alt="Highgate Hotel"
-                        height={50}
-                      />
-                      <p className="text-900 mt-3 mb-0">Highgate Hotel</p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/hotels/hyatt.png"
-                        alt="Hyatt Hotels"
-                        height={50}
-                      />
-                      <p className="text-900 mt-3 mb-0">Hyatt Hotels</p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/hotels/hilton.png"
-                        alt="Hilton Grand Vacations Club"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Hilton Grand Vacations Club
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/hotels/aimbridge.png"
-                        alt="Aimbridge Hospitality"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Aimbridge Hospitality
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/institutes/california-state-university.png"
-                        alt="California State University"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        California State University
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/institutes/osher-life-long-learning-institute.png"
-                        alt="Osher Life Long Learning Institute"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Osher Life Long Learning Institute
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/institutes/mcbride-high-school.png"
-                        alt="MCBride High School"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">MCBride High School</p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/institutes/longfellow-elementary-school.png"
-                        alt="Longfellow Elementary School"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Longfellow Elementary School
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/institutes/bixby-elementary-school.png"
-                        alt="Bixby Elementary School"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Bixby Elementary School
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/institutes/sc-health-sciences-university.webp"
-                        alt="South California Health Sciences University"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        South California Health Sciences University
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/california-endowment.png"
-                        alt="California Edowment"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">California Edowment</p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/california-psychological-association.png"
-                        alt="California Psychological Association"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        California Psychological Association
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/county-of-los-angeles.png"
-                        alt="County of Los Angeles"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        County of Los Angeles
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/lb-public-library-foundation.png"
-                        alt="Longbeach Public Library Foundation"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Longbeach Public Library Foundation
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/sacred-roots.webp"
-                        alt="Sacred Roots"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">Sacred Roots</p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/wrd.png"
-                        alt="Water Replenishment District"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Water Replenishment District
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/hss.png"
-                        alt="Hindu Swayamsevak Sangh USA"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Hindu Swayamsevak Sangh USA
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-sm-6 col-lg-3">
-                    <div className="compatible hover-up text-center">
-                      <img
-                        src="/assets/imgs/clients/om.png"
-                        alt="Vedic Friends Association"
-                        height={100}
-                      />
-                      <p className="text-900 mt-3 mb-0">
-                        Vedic Friends Association
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

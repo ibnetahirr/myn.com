@@ -150,7 +150,7 @@ export default function Content() {
         <div className="container">
           <div className="row mt-6 position-relative">
             <div className="col-lg-4">
-              <div className="p-2 mt-lg-8 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
+              <div className="p-2 mt-lg-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
                 <div className="card-service bg-white p-6 border rounded-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +200,7 @@ export default function Content() {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="p-2 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up">
+              <div className="p-2 mt-lg-5 shadow-1 bg-white position-relative z-1 hover-up">
                 <div className="card-service bg-white p-6 border rounded-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +250,7 @@ export default function Content() {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="p-2 mt-lg-8 mt-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up">
+              <div className="p-2 mt-lg-5 rounded-4 shadow-1 bg-white position-relative z-1 hover-up hover-up">
                 <div className="card-service bg-white p-6 border rounded-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
