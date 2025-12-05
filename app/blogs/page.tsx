@@ -1,4 +1,3 @@
-// app/(site)/blogs/page.tsx  (server component)
 import Layout from "@/components/layout/Layout";
 import Link from "next/link";
 
@@ -111,13 +110,13 @@ export default async function PageBlog2({ searchParams }: PageProps) {
                   {/* Text content */}
                   <div className="ms-0 ms-md-4 w-100 w-lg-50 me-auto">
                     <h6 className="my-3">
-                      <Link href={`/blog/${b.slug}`} className="text-reset">
+                      <Link href={`/post/${b.slug}`} className="text-reset">
                         {b.title}
                       </Link>
                     </h6>
                     <p>{truncate(b.meta_description, 180)}</p>
                     <Link
-                      href={`/blog/${b.slug}`}
+                      href={`/post/${b.slug}`}
                       className="rounded-pill bg-white border d-lg-inline-block px-4 py-2 d-none"
                     >
                       <svg
