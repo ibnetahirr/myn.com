@@ -1,0 +1,22 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bhakt;Ram;;;
+FN:Ram Bhakt
+ORG:My Yoga Network
+ADR;TYPE=WORK:
+TITLE:CEO
+TEL;TYPE=CELL:562-277-1269
+TEL;TYPE=WORK:
+TEL;TYPE=HOME:
+TEL;TYPE=MSG:562-277-1269
+EMAIL;TYPE=WORK:ram@myyoganetwork.com
+URL;TYPE=Digital Business Card:
+URL:https://myyoganetwork.com/
+URL;TYPE=WhatsApp:562-277-1269
+URL;TYPE=Website:https://myyoganetwork.com/
+URL;TYPE=LinkedIn:https://linkedin.com/in/myyoganetwork
+URL;TYPE=Instagram:https://instagram.com/myyoganetwork
+KEY;TYPE=PGP;ENCODING=b:
+NOTE:
+UID:EnBizCard-100107945
+END:VCARD
