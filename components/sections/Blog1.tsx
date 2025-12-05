@@ -60,7 +60,7 @@ export default async function Blog1() {
 
                 <div className="card-body p-0 bg-white">
                   <Link
-                    href={`/blog/${b.slug}`}
+                    href={`/post/${b.slug}`}
                     className="position-relative z-1 d-inline-flex mt-3"
                   >
                     <h6 className="my-3">{b.title}</h6>
@@ -71,7 +71,7 @@ export default async function Blog1() {
 
                 {/* Full clickable area */}
                 <Link
-                  href={`/blog/${b.slug}`}
+                  href={`/post/${b.slug}`}
                   className="position-absolute bottom-0 start-0 end-0 top-0 z-0"
                 />
               </div>
