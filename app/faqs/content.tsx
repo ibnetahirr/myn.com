@@ -1,276 +1,92 @@
 "use client";
 import { useState } from "react";
-export default function Content() {
-  // Accordion
-  const [activeItem, setActiveItem] = useState(1);
 
-  const handleActiveItem = (index: any) => {
-    setActiveItem(index);
+export default function FAQs() {
+  // FAQ DATA
+  const faqs = [
+    {
+      id: 1,
+      question: "What is My Yoga Network?",
+      answer:
+        "My Yoga Network is an online platform that connects certified yoga instructors with clients such as hotels, healthcare facilities, and individuals. We provide tailored yoga sessions to enhance wellness, therapeutic care, and personal fitness.",
+    },
+    {
+      id: 2,
+      question: "What services does My Yoga Network offer to hotels?",
+      answer:
+        "MYN partners with hotels to provide Yoga sessions by certified instructors on the property. Our programs improve guest satisfaction by offering wellness, mindfulness, and relaxation experiences.",
+    },
+    {
+      id: 3,
+      question:
+        "Is yoga therapy suitable for individuals with specific medical conditions?",
+      answer:
+        "Yes, therapeutic yoga is customizable for conditions like PTSD, chronic pain, and mobility challenges. Instructors adapt poses safely for recovery and rehabilitation.",
+    },
+    {
+      id: 4,
+      question: "Are online yoga sessions available?",
+      answer:
+        "Yes, My Yoga Network offers virtual yoga sessions ideal for home practice or remote locations where in-person sessions aren't feasible.",
+    },
+    {
+      id: 5,
+      question: "What types of yoga are available?",
+      answer:
+        "We offer Hatha, Vinyasa, restorative yoga, and specialized therapeutic yoga. Clients can choose styles based on fitness levels, goals, and preferences.",
+    },
+  ];
+
+  // Expand all FAQs by default
+  const [openItems, setOpenItems] = useState(faqs.map((f) => f.id));
+
+  const toggleItem = (id: number) => {
+    setOpenItems((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
   };
 
   return (
-    <>
-      <>
-        <section className="section-faqs-1 section-padding position-relative">
-          <div className="container position-relative z-2">
-            <div className="text-center mb-5">
-              <h3 className="mt-3 mb-3">Frequently Asked Questions</h3>
-              <p className="fs-5">
-                Share your details and questions below, and we'll get back to
-                you.
-              </p>
-            </div>
+    <section className="section-faqs-1 section-padding position-relative">
+      <div className="container position-relative z-2">
+        <div className="text-center mb-5">
+          <h3 className="mt-3 mb-3">Frequently Asked Questions</h3>
+          <p className="fs-5">
+            Share your details and questions below, and we'll get back to you.
+          </p>
+        </div>
 
-            <div className="row align-items-center">
-              <div className="col-lg-12 mt-lg-0 mt-8 ">
-                <div className="accordion">
-                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
-                    <div className="px-0 card-header border-0 bg-gradient-1">
-                      <a
-                        className={` ${activeItem} == 1 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
-                        onClick={() => handleActiveItem(1)}
-                        data-bs-toggle="collapse"
-                      >
-                        <h6 className="m-0">What is My Yoga Network?</h6>
-                        <span className="ms-auto arrow me-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={13}
-                            height={8}
-                            viewBox="0 0 13 8"
-                            fill="none"
-                          >
-                            <path
-                              className="stroke-dark"
-                              d="M11.5 1L6.25 6.5L1 1"
-                              stroke="#111827"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </a>
-                    </div>
-                    <div
-                      id="collapse01"
-                      className={
-                        activeItem == 1
-                          ? "accordion-collapse collapse show"
-                          : "accordion-collapse collapse"
-                      }
-                      data-bs-parent=".accordion"
-                    >
-                      <p className="ps-0 card-body">
-                        My Yoga Network is an online platform that connects
-                        certified yoga instructors with clients such as hotels,
-                        healthcare facilities, and individuals. We provide
-                        tailored yoga sessions to meet the needs of various
-                        settings, enhancing guest wellness, promoting
-                        therapeutic care, and supporting personal fitness goals.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
-                    <div className="px-0 card-header border-0 bg-gradient-1">
-                      <a
-                        className={` ${activeItem} == 2 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
-                        onClick={() => handleActiveItem(2)}
-                        data-bs-toggle="collapse"
-                      >
-                        <h6 className="m-0">
-                          What services does My Yoga Network offer to hotels?
-                        </h6>
-                        <span className="ms-auto arrow me-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={13}
-                            height={8}
-                            viewBox="0 0 13 8"
-                            fill="none"
-                          >
-                            <path
-                              className="stroke-dark"
-                              d="M11.5 1L6.25 6.5L1 1"
-                              stroke="#111827"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </a>
-                    </div>
-                    <div
-                      id="collapse02"
-                      className={
-                        activeItem == 2
-                          ? "accordion-collapse collapse show"
-                          : "accordion-collapse collapse"
-                      }
-                      data-bs-parent=".accordion"
-                    >
-                      <p className="ps-0 card-body">
-                        MYN partners with hotels to provide Yoga session by
-                        certified instructors on the hotel property. Our
-                        programs are proven to improve guest satisfaction scores
-                        and enhance the guest experience by providing
-                        relaxation, fitness, and mindfulness options to
-                        travelers.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
-                    <div className="px-0 card-header border-0 bg-gradient-1">
-                      <a
-                        className={` ${activeItem} == 3 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
-                        onClick={() => handleActiveItem(3)}
-                        data-bs-toggle="collapse"
-                      >
-                        <h6 className="m-0">
-                          Is yoga therapy suitable for individuals with specific
-                          medical conditions?
-                        </h6>
-                        <span className="ms-auto arrow me-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={13}
-                            height={8}
-                            viewBox="0 0 13 8"
-                            fill="none"
-                          >
-                            <path
-                              className="stroke-dark"
-                              d="M11.5 1L6.25 6.5L1 1"
-                              stroke="#111827"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </a>
-                    </div>
-                    <div
-                      id="collapse03"
-                      className={
-                        activeItem == 3
-                          ? "accordion-collapse collapse show"
-                          : "accordion-collapse collapse"
-                      }
-                      data-bs-parent=".accordion"
-                    >
-                      <p className="ps-0 card-body">
-                        Yes, therapeutic yoga is highly customizable to meet the
-                        needs of individuals with medical conditions like PTSD,
-                        chronic pain, and mobility issues. Instructors are
-                        trained to adapt poses and sequences to support recovery
-                        and rehabilitation in a safe and effective manner.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
-                    <div className="px-0 card-header border-0 bg-gradient-1">
-                      <a
-                        className={` ${activeItem} == 4 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
-                        onClick={() => handleActiveItem(4)}
-                        data-bs-toggle="collapse"
-                      >
-                        <h6 className="m-0">
-                          Are online yoga sessions available?
-                        </h6>
-                        <span className="ms-auto arrow me-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={13}
-                            height={8}
-                            viewBox="0 0 13 8"
-                            fill="none"
-                          >
-                            <path
-                              className="stroke-dark"
-                              d="M11.5 1L6.25 6.5L1 1"
-                              stroke="#111827"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </a>
-                    </div>
-                    <div
-                      id="collapse04"
-                      className={
-                        activeItem == 4
-                          ? "accordion-collapse collapse show"
-                          : "accordion-collapse collapse"
-                      }
-                      data-bs-parent=".accordion"
-                    >
-                      <p className="ps-0 card-body">
-                        Yes, My Yoga Network offers the option of virtual yoga
-                        sessions. These are ideal for people who prefer to
-                        practice from the comfort of their home or for those in
-                        remote locations where in-person sessions are not
-                        feasible.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mb-3 card p-3 border  bg-white rounded-2 shadow-2">
-                    <div className="px-0 card-header border-0 bg-gradient-1">
-                      <a
-                        className={` ${activeItem} == 5 ? "accordion-button" : "accordion-button collapsed"} pointer text-900 fw-bold d-flex align-items-center`}
-                        onClick={() => handleActiveItem(5)}
-                        data-bs-toggle="collapse"
-                      >
-                        <h6 className="m-0">
-                          What types of yoga are available?
-                        </h6>
-                        <span className="ms-auto arrow me-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={13}
-                            height={8}
-                            viewBox="0 0 13 8"
-                            fill="none"
-                          >
-                            <path
-                              className="stroke-dark"
-                              d="M11.5 1L6.25 6.5L1 1"
-                              stroke="#111827"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </a>
-                    </div>
-                    <div
-                      id="collapse05"
-                      className={
-                        activeItem == 5
-                          ? "accordion-collapse collapse show"
-                          : "accordion-collapse collapse"
-                      }
-                      data-bs-parent=".accordion"
-                    >
-                      <p className="ps-0 card-body">
-                        My Yoga Network offers a variety of yoga styles,
-                        including Hatha, Vinyasa, restorative yoga, and
-                        specialized therapeutic yoga. The diversity of yoga
-                        options allows clients to choose based on their fitness
-                        levels, preferences, and goals.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+        <div className="accordion">
+
+          {faqs.map((faq) => (
+            <div key={faq.id} className="mb-3 card p-3 border bg-white rounded-2 shadow-2">
+              <div
+                className="px-0 card-header border-0 d-flex align-items-center pointer"
+                onClick={() => toggleItem(faq.id)}
+              >
+                <h6 className="m-0">{faq.question}</h6>
+
+                <span className="ms-auto arrow me-2" style={{ transform: openItems.includes(faq.id) ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" fill="none">
+                    <path
+                      d="M11.5 1L6.25 6.5L1 1"
+                      stroke="#111827"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+
+              <div className={`accordion-collapse collapse ${openItems.includes(faq.id) ? "show" : ""}`}>
+                <p className="ps-0 card-body">{faq.answer}</p>
               </div>
             </div>
-          </div>
-        </section>
-      </>
-    </>
+          ))}
+
+        </div>
+      </div>
+    </section>
   );
 }
