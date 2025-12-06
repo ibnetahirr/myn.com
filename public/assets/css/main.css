@@ -861,7 +861,7 @@ body {
   font-family: var(--tc-body-font-family);
   font-size: var(--tc-body-font-size);
   font-weight: var(--tc-fw-regular);
-  color: var(--tc-neutral-900);
+  color: var(--tc-system-dark);
   line-height: var(--tc-body-line-height);
 }
 
@@ -1168,8 +1168,8 @@ p {
   font-family: var(--tc-body-font-family);
   font-size: var(--tc-body-font-size);
   line-height: var(--tc-body-line-height);
-  font-weight: var(--tc-fw-medium);
-  color: var(--tc-neutral-600);
+  /* font-weight: var(--tc-fw-medium); */
+  color: var(--tc-system-dark);
   margin-bottom: 15px;
 }
 

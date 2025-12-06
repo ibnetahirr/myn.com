@@ -76,7 +76,7 @@ export default function Content() {
                   <li>Respiratory challenges</li>
                   <li>Sleep disturbances</li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   Each session is adapted for clinical safety, therapeutic
                   pacing, and accessibility—seated, bed-based, or
                   chair-supported as needed.
@@ -129,7 +129,7 @@ export default function Content() {
                   <li>Reconnect with the body</li>
                   <li>Build emotional resilience</li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   This mind–body approach effectively complements traditional
                   treatment plans.
                 </p>
@@ -166,7 +166,7 @@ export default function Content() {
                     attention, mobility support, or trauma-sensitive care.
                   </li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   All sessions are risk-aware, clinically sensitive, and
                   tailored to patient limitations and recovery goals.{" "}
                 </p>
@@ -228,7 +228,7 @@ export default function Content() {
                     adoption
                   </li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   Each includes instructor management, scheduling,
                   documentation, and session reporting—minimizing workload for
                   your staff.

@@ -107,7 +107,7 @@ export default function Content() {
                         <div className="compatible hover-up">
                           <img
                             src="/assets/imgs/clients/intex.png"
-                            alt="OM"
+                            alt="Intex"
                             height={100}
                           />
                         </div>
@@ -338,7 +338,7 @@ export default function Content() {
                   <li>Pilates & Core Strength</li>
                   <li>Stretch & Relax Sessions</li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   <span className="fw-bold">Outcome:</span>Reduce stiffness and
                   anxiety, improve posture and focus, and counteract screen
                   fatigue; naturally boosting productivity.
@@ -392,7 +392,7 @@ export default function Content() {
                   <li>Innovation Through Mindfulness</li>
                   <li>Midday Reset Sessions</li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   <span className="fw-bold">Outcome:</span>Better thinking,
                   better communication, and better leadership across the
                   organization.
@@ -425,7 +425,7 @@ export default function Content() {
                   <li>Leadership Through Stillness </li>
                   <li>Creativity, Visioning & Goal-Setting </li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   <span className="fw-bold">Outcome:</span>Equip teams with
                   tools for resilience, productivity, and sustainable high
                   performance.
@@ -481,7 +481,7 @@ export default function Content() {
                   <li>Outdoor Mindfulness Walks</li>
                   <li>Resilience-Building Workshops</li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   <span className="fw-bold">Outcome:</span>Stronger team
                   cohesion and a more human-centered workplace culture.
                 </p>

@@ -111,7 +111,7 @@ export default function Content() {
                 <div className="mb-4">
                   <h4 className="fw-bold">Outcomes You Can Measure</h4>
                 </div>
-                <ul className="fs-5 ps-3">
+                <ul className="fs-5">
                   <li>Improved focus and classroom readiness</li>
                   <li>Better emotional balance and stress management</li>
                   <li>Increased confidence, teamwork, and leadership skills</li>
@@ -119,7 +119,7 @@ export default function Content() {
                     Stronger body awareness, coordination, and motor skills
                   </li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   Calmer school environments and more supported teachers
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function Content() {
                     professional coverage
                   </li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   We provide all required district paperwork, onboarding, and
                   site-specific compliance forms.
                 </p>
@@ -215,7 +215,7 @@ export default function Content() {
                     sensory-based mindfulness.
                   </li>
                 </ul>
-                <p className="fs-5">
+                <p>
                   We complement, not duplicate, the regular school day.
                 </p>
               </div>
