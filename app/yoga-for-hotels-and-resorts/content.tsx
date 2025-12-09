@@ -700,10 +700,7 @@ export default function Content() {
                   </div>
                   <div className="card-body ps-0">
                     <p className="mb-0">
-                      We recommend providing yoga mats, blocks, straps, and
-                      cushions. Depending on the space, additional items like
-                      blankets or towels may be useful. We can provide the
-                      equipment or help you source it.
+                     We help you chose the best yoga mats or any other required equipment for your classes.
                     </p>
                   </div>
                 </div>

@@ -363,8 +363,8 @@ export default function PageAbout() {
                    <div className="col-12 col-sm-6 col-lg-3">
                     <div className="compatible hover-up text-center">
                       <img
-                        src="/assets/imgs/clients/sacred-roots.webp"
-                        alt="Sacred Roots"
+                        src="/assets/imgs/clients/institutes/lbu-school.png"
+                        alt="Long Beach Unified Schoo District logo"
                         height={100}
                       />
                     </div>
