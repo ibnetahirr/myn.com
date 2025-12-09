@@ -134,12 +134,6 @@ export default function MobileMenu({
                     </ul>
                   </li>
 
-                  {/* Yoga AI */}
-                  {/* <li>
-                    <Link href="/ai">AI</Link>
-                  </li> */}
-
-                  {/* Contact */}
                   <li>
                     <Link href="contact-us">Contact</Link>
                   </li>
