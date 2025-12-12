@@ -66,7 +66,7 @@ export default function RootLayout({
               j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
               f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-5QXB8XWL');
+            })(window, document, 'script', 'dataLayer', 'GTM-K3GP8W3J');
           `}
         </Script>
       </head>
@@ -74,7 +74,7 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5QXB8XWL"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K3GP8W3J"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
