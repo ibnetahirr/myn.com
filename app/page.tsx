@@ -20,7 +20,7 @@ export default function Home() {
 				<HowItWork2 />
 				<Features2 />
 				<Features3 />
-				<Blog1 />
+				{/* <Blog1 /> */}
 				<Contact1 />
 			</Layout>
 		</>
