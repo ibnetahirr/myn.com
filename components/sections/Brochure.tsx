@@ -21,6 +21,7 @@ export default function Brochure() {
       const res = await fetch(`${API_BASE}/brochures/request`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ name, email }),
       });
 

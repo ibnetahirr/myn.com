@@ -26,6 +26,7 @@ export default function Content() {
       const res = await fetch("https://mynapi.onrender.com/contact/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ name, email, message }),
       });
 

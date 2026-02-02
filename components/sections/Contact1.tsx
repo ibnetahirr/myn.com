@@ -39,6 +39,7 @@ export default function Contact1() {
       const res = await fetch(`${API_BASE}/program/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           name,
           org,
