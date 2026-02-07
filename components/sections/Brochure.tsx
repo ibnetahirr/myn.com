@@ -1,28 +1,66 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 
 const API_BASE = "https://mynapi.onrender.com";
 
+declare global {
+  interface Window {
+    onTurnstileBrochureSuccess: (token: string) => void;
+  }
+}
+
 export default function Brochure() {
+  const startedAt = useRef(Date.now());
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  // anti-spam
+  const [company, setCompany] = useState(""); // honeypot
+  const [turnstileToken, setTurnstileToken] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
+  useEffect(() => {
+    window.onTurnstileBrochureSuccess = (token: string) => {
+      setTurnstileToken(token);
+    };
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setErrorMsg("");
     setSuccessMsg("");
+
+    // honeypot
+    if (company) return;
+
+    // fast-submit bot check
+    if (Date.now() - startedAt.current < 3000) return;
+
+    if (!turnstileToken) {
+      setErrorMsg("Please verify you are human.");
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const res = await fetch(`${API_BASE}/brochures/request`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          startedAt: startedAt.current,
+          turnstileToken,
+        }),
       });
 
       if (!res.ok) {
@@ -33,8 +71,9 @@ export default function Brochure() {
       setSuccessMsg("Saved successfully!");
       setName("");
       setEmail("");
+      setTurnstileToken("");
+      startedAt.current = Date.now();
 
-      // Close modal after 1s
       setTimeout(() => {
         (document.getElementById("leadModalCloseBtn") as any)?.click();
       }, 1000);
@@ -47,6 +86,12 @@ export default function Brochure() {
 
   return (
     <>
+      {/* Cloudflare Turnstile script */}
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        strategy="afterInteractive"
+      />
+
       {/* Trigger Button */}
       <button
         className="btn btn-gradient mt-5 mx-2"
@@ -82,6 +127,17 @@ export default function Brochure() {
             <form onSubmit={handleSubmit}>
               <div className="modal-body">
 
+                {/* Honeypot */}
+                <input
+                  type="text"
+                  name="company"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  style={{ display: "none" }}
+                />
+
                 <div className="mb-3">
                   <label className="form-label">Name</label>
                   <input
@@ -103,6 +159,15 @@ export default function Brochure() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
+                  />
+                </div>
+
+                {/* Turnstile */}
+                <div className="mb-3">
+                  <div
+                    className="cf-turnstile"
+                    data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    data-callback="onTurnstileBrochureSuccess"
                   />
                 </div>
 
