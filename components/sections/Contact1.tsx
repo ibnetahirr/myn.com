@@ -162,7 +162,7 @@ export default function Contact1() {
               <div className="col-12 mt-4">
                 <div
                   className="cf-turnstile"
-                  data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                  data-sitekey="0x4AAAAAAAQjbtM06zTUaKPe"
                   data-callback="onTurnstileProgramSuccess"
                 />
               </div>

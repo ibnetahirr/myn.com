@@ -166,7 +166,7 @@ export default function Brochure() {
                 <div className="mb-3">
                   <div
                     className="cf-turnstile"
-                    data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    data-sitekey="0x4AAAAAAAQjbtM06zTUaKPe"
                     data-callback="onTurnstileBrochureSuccess"
                   />
                 </div>
