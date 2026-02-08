@@ -1,0 +1,13 @@
+/**
+* @license
+*
+*
+*/
+@font-face {
+    font-family: 'Roca-Regular';
+    src:
+            url('./fonts/regular.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+    font-weight:400;
+}
