@@ -1,5 +1,7 @@
 "use client";
 import Layout from "@/components/layout/Layout";
+import { HotelAIScanForm } from "./ai-scan";
+
 
 
 export default function HotelAIPlatformContent() {
@@ -100,6 +102,9 @@ export default function HotelAIPlatformContent() {
           </div>
         </div>
       </section>
+
+      <HotelAIScanForm />
+
 
       {/* AI SERVICES */}
       <section id="ai-services" className="section-padding">

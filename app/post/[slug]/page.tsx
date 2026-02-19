@@ -1,4 +1,3 @@
-// app/blogs/[slug]/page.tsx
 import Layout from "@/components/layout/Layout";
 import { notFound } from "next/navigation";
 
@@ -27,18 +26,22 @@ async function getPost(slug: string): Promise<Post> {
   const res = await fetch(`${API_BASE}/api/blogs/${slug}`, {
     cache: "no-store",
   });
+
   if (res.status === 404) notFound();
   if (!res.ok) throw new Error("Failed to load post");
+
   return res.json();
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   try {
-    const post = await getPost(params.slug);
+    const { slug } = await params;
+    const post = await getPost(slug);
+
     const title = post.meta_title || `${post.title} | My Yoga Network`;
     const description =
       post.meta_description ||
@@ -49,7 +52,8 @@ export async function generateMetadata({
       title,
       description,
       keywords:
-        post.keywords || "Yoga, Wellness, Mindfulness, Fitness, Meditation",
+        post.keywords ||
+        "Yoga, Wellness, Mindfulness, Fitness, Meditation",
       openGraph: {
         title,
         description,
@@ -66,7 +70,6 @@ export async function generateMetadata({
       },
     };
   } catch {
-    // fallback SEO for safety
     return {
       title: "Blog | My Yoga Network",
       description:
@@ -78,15 +81,18 @@ export async function generateMetadata({
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   return (
     <Layout>
       <section className="container">
         <main className="max-w-3xl mx-auto px-5 py-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">{post.title}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">
+            {post.title}
+          </h1>
 
           <div className="text-sm opacity-70 mb-6">
             {post.created_at && (
